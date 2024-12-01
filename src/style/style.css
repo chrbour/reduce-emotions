@@ -1,17 +1,146 @@
-/* Error: expected ";".
- *   ,
- * 1 | @import 'base' from './sass/base/base';
- *   |                     ^
- *   '
- *   src\style\sass\main.scss 1:21  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: expected \";\".\a   \2577 \a 1 \2502  @import 'base' from './sass/base/base';\a   \2502                      ^\a   \2575 \a   src\\style\\sass\\main.scss 1:21  root stylesheet";
+.button {
+  height: 60px;
+  width: 160px;
+  font-size: 20px;
+  font-family: inknut_antiqua-bold;
+  font-weight: bold;
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  margin: 0 15px;
+  color: #000000;
+  box-shadow: inset -5px 5px 10px grey;
 }
+.button:hover {
+  color: red;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+#Home__credits {
+  font-size: 20px;
+  color: #FFFFFF;
+}
+#Home__credits:hover {
+  color: rgb(123, 123, 237);
+  cursor: pointer;
+}
+
+#Credits {
+  display: flex;
+  color: black;
+  background-color: #D1EBFC;
+  width: 50%;
+  justify-content: center;
+  flex-direction: row-reverse;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+}
+#Credits__close {
+  font-size: 20px;
+}
+#Credits__close:hover {
+  color: red;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: inknut_antiqua-bold;
+  src: url("../../../assets/polices/InknutAntiqua-Bold-webfont.woff");
+}
+body {
+  overflow: hidden;
+  font-family: inknut_antiqua-bold;
+}
+
+@media screen and (min-width: 1301px) {
+  #Home {
+    width: 100vw;
+  }
+  #Home__wallpaper {
+    width: 100vw;
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: -1;
+  }
+  #Home__titleAndbuttons {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #Home__title {
+    color: #FFFFFF;
+    padding: 120px 0 0 80px;
+    margin: 0;
+    font-size: 5em;
+  }
+  #Home__buttons {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 50px;
+  }
+  #Home__credits {
+    position: absolute;
+    bottom: 0px;
+    padding: 0 50px;
+  }
+}
+@media screen and (max-width: 1765px) {
+  #Home__title {
+    font-size: 4em;
+  }
+}
+@media screen and (max-width: 1450px) {
+  #Home__title {
+    font-size: 3em;
+  }
+}
+@media screen and (max-width: 1300px) {
+  #Home {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column-reverse;
+  }
+  #Home__wallpaper {
+    display: flex;
+    width: 200vw;
+    transform: translate(-25%);
+  }
+  #Home__titleAndbuttons {
+    width: 100vw;
+    height: 320px;
+    background-color: #3E3F3A;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #Home__title {
+    color: #FFFFFF;
+    padding: 20px;
+    margin: 0;
+    font-size: 3em;
+    text-align: center;
+  }
+  #Home__buttons {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 50px;
+  }
+  #Home__credits {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 0px;
+    padding: 0 50px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+.button{
+    height: 60px;
+    width: 160px;
+    font-size: 20px;
+    font-family: inknut_antiqua-bold;
+    font-weight: bold;
+    background-color: $backgroundColorButton;
+    border-radius: 50px;
+    margin: 0 15px;
+    color: $buttonTextColor;
+    box-shadow: inset -5px 5px 10px $buttonShadow;
+    &:hover{
+        color: $buttonTextColorHover;
+        font-size: 22px;
+        cursor:pointer;
+    }
+}
