@@ -18,8 +18,10 @@
     left:50%;
     transform: translate(-50%, -50%);
     padding: 15px;
+    border-radius: 20px;
     &__close{
         font-size: 20px;
+        height: 20px;
         &:hover{
             color: $buttonTextColorHover;
             cursor: pointer;

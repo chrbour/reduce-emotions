@@ -28,9 +28,16 @@
             display: flex;
             justify-content: center;
             padding: 0 0 50px;
+            &--inscription{
+                height: 60px;
+                width: 160px;
+            }
+            &--connexion{
+                height: 60px;
+                width: 160px;
+            }
         }
         &__credits{
-
             position: absolute;
             bottom: 0px;
             padding: 0 50px;
@@ -76,6 +83,14 @@
             display: flex;
             justify-content: center;
             padding: 0 0 50px;
+             &--inscription{
+                height: 60px;
+                width: 160px;
+            }
+            &--connexion{
+                height: 60px;
+                width: 160px;
+            }
         }
         &__credits{
             position: absolute;

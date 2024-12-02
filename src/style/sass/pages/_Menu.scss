@@ -1,0 +1,100 @@
+@media screen and (min-width:1301px){
+#Menu{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    &__imageContainer{
+        width: 50%;
+        overflow: hidden;
+        &--image{
+            transform: translate(-30%);
+        }
+    }
+    &__options{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: $textColor;
+        background-color: $backgroundColor;
+       &--title{
+        margin: 0 0 50px;
+       }
+       &--arrowTurnLeftContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        height: 80px;
+        width: 80px;
+        margin: 20px;
+        background-color: $backgroundColorIcon;
+       }
+       &--arrowTurnLeftIcon{
+        font-size: 50px;
+        color: $iconColor;
+        background-color: $backgroundColorIcon;
+        &:hover{
+            color: $iconColorHover;
+        }
+        
+       }
+    }
+}
+.button{
+    height: 60px;
+    width: 350px;
+    margin: 13px;
+}
+}
+@media screen and (max-width:1300px){
+    #Menu{
+        width: 100vw;
+        height: 100vh;
+        overflow: scroll;
+        background-color: $backgroundColor;
+        display: flex;
+        flex-direction: column;
+        &__imageContainer{
+            &--image{
+                width: 100vw;
+            }
+        }
+        &__options{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: $textColor;
+            background-color: $backgroundColor;
+           &--title{
+            margin: 0 0 50px;
+           }
+           &--arrowTurnLeftContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            height: 80px;
+            width: 80px;
+            margin: 20px;
+            background-color: $backgroundColorIcon;
+           }
+           &--arrowTurnLeftIcon{
+            font-size: 50px;
+            color: $iconColor;
+            background-color: $backgroundColorIcon;
+            &:hover{
+                color: $iconColorHover;
+            }
+            
+           }
+        }
+    }
+    .button{
+        height: 60px;
+        width: 350px;
+        margin: 13px;
+    }
+    }
