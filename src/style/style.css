@@ -14,6 +14,22 @@
   cursor: pointer;
 }
 
+.returnIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: #FFFFFF;
+}
+
+.returnIcon {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+.returnIcon:hover {
+  color: #fd0505;
+}
+
 #Home__credits {
   font-size: 20px;
   color: #FFFFFF;
@@ -53,6 +69,40 @@
 body {
   overflow: hidden;
   font-family: inknut_antiqua-bold;
+}
+
+@media screen and (min-width: 1301px) {
+  .page {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template: 100%/40% 1fr 8%;
+    padding: 0px;
+    color: #FFFFFF;
+    background-color: #3E3F3A;
+    text-align: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .page {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    color: #FFFFFF;
+    background-color: #3E3F3A;
+    display: grid;
+    grid-template: 20% 1fr 5%;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+  }
+}
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (min-width: 1301px) {
@@ -163,6 +213,9 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
+    padding: 20px;
+    color: #FFFFFF;
+    background-color: #3E3F3A;
   }
   #Menu__imageContainer {
     width: 50%;
@@ -184,22 +237,12 @@ body {
     margin: 0 0 50px;
   }
   #Menu__options--arrowTurnLeftContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
     height: 80px;
     width: 80px;
     margin: 20px;
-    background-color: #FFFFFF;
   }
   #Menu__options--arrowTurnLeftIcon {
     font-size: 50px;
-    color: #000000;
-    background-color: #FFFFFF;
-  }
-  #Menu__options--arrowTurnLeftIcon:hover {
-    color: #fd0505;
   }
   .button {
     height: 60px;
@@ -212,6 +255,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: scroll;
+    color: #FFFFFF;
     background-color: #3E3F3A;
     display: flex;
     flex-direction: column;
@@ -231,22 +275,45 @@ body {
     margin: 0 0 50px;
   }
   #Menu__options--arrowTurnLeftContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
     height: 80px;
     width: 80px;
     margin: 20px;
-    background-color: #FFFFFF;
   }
   #Menu__options--arrowTurnLeftIcon {
     font-size: 50px;
-    color: #000000;
-    background-color: #FFFFFF;
   }
-  #Menu__options--arrowTurnLeftIcon:hover {
-    color: #fd0505;
+  .button {
+    height: 60px;
+    width: 350px;
+    margin: 13px;
+  }
+}
+@media screen and (min-width: 1301px) {
+  #Anchor__image {
+    height: 100vh;
+  }
+  #Anchor__arrowTurnLeftContainer {
+    height: 80px;
+    width: 80px;
+    margin: 20px;
+  }
+  #Anchor__arrowTurnLeftIcon {
+    font-size: 50px;
+  }
+  .button {
+    height: 60px;
+    width: 350px;
+    margin: 13px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  #Anchor__arrowTurnLeftContainer {
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+  }
+  #Anchor__arrowTurnLeftIcon {
+    font-size: 50px;
   }
   .button {
     height: 60px;

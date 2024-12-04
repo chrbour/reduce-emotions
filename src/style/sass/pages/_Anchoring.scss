@@ -1,0 +1,37 @@
+@media screen and (min-width:1301px){
+    #Anchor{
+        &__image{
+            height: 100vh;
+        }
+        &__arrowTurnLeftContainer{
+            height: 80px;
+            width: 80px;
+            margin: 20px;
+        }
+        &__arrowTurnLeftIcon{
+                font-size: 50px ;
+        }
+    }
+    .button{
+        height: 60px;
+        width: 350px;
+        margin: 13px;
+    }
+}
+@media screen and (max-width:1300px){
+    #Anchor{
+        &__arrowTurnLeftContainer{
+            width: 80px;
+            height: 80px;
+            margin: 20px;
+        }
+        &__arrowTurnLeftIcon{
+                font-size: 50px;
+        }
+    }
+    .button{
+        height: 60px;
+        width: 350px;
+        margin: 13px;
+    }
+    }

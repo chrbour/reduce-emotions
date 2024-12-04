@@ -3,6 +3,9 @@
     width: 100vw;
     height: 100vh;
     display: flex;
+    padding: 20px;
+    color: $textColor;
+    background-color: $backgroundColor;
     &__imageContainer{
         width: 50%;
         overflow: hidden;
@@ -22,23 +25,12 @@
         margin: 0 0 50px;
        }
        &--arrowTurnLeftContainer{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50px;
         height: 80px;
         width: 80px;
         margin: 20px;
-        background-color: $backgroundColorIcon;
        }
        &--arrowTurnLeftIcon{
         font-size: 50px;
-        color: $iconColor;
-        background-color: $backgroundColorIcon;
-        &:hover{
-            color: $iconColorHover;
-        }
-        
        }
     }
 }
@@ -53,6 +45,7 @@
         width: 100vw;
         height: 100vh;
         overflow: scroll;
+        color: $textColor;
         background-color: $backgroundColor;
         display: flex;
         flex-direction: column;
@@ -72,23 +65,12 @@
             margin: 0 0 50px;
            }
            &--arrowTurnLeftContainer{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50px;
             height: 80px;
             width: 80px;
             margin: 20px;
-            background-color: $backgroundColorIcon;
            }
            &--arrowTurnLeftIcon{
-            font-size: 50px;
-            color: $iconColor;
-            background-color: $backgroundColorIcon;
-            &:hover{
-                color: $iconColorHover;
-            }
-            
+            font-size: 50px;            
            }
         }
     }

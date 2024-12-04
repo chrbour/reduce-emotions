@@ -57,7 +57,8 @@
 
 @media screen and (max-width: 1300px){
     #Home{
-        display: flex;overflow: hidden;
+        display: flex;
+        overflow: hidden;
         flex-direction: column-reverse;
         &__wallpaper{
             display: flex;

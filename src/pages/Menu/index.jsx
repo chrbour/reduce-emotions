@@ -5,6 +5,9 @@ export default function Menu(){
     console.log('Menu OK');
     let Navigate = useNavigate();
     
+    function handleAnchoring(){
+        Navigate("/Anchoring");
+    }
     function handleReturn() {
         Navigate("/");
     }
@@ -20,16 +23,17 @@ export default function Menu(){
                 <input id= "Menu__options--roueDesEmotions" className = "button"
                     type = "button" value = "Roue des émotions"/>
                 <input id= "Menu__options--techniquesDancrage" className = "button"
-                    type = "button" value = "Techniques d'Ancrage"/>
+                    type = "button" value = "Techniques d'Ancrage"
+                    onClick = {handleAnchoring} />
                     <input id= "Menu__options--competenceStop" className = "button"
                     type = "button" value = "Compétence STOP"/>
                 <input id= "Menu__options--méhtodeTipp" className = "button"
                     type = "button" value = "Méthode TIPP"/>
                 <input id= "Menu__options--ressourcesEnLigne" className = "button"
-                    type = "button" value = "Ressources en ligne   "/>
-                <div id = "Menu__options--arrowTurnLeftContainer"> 
+                    type = "button" value = "Ressources en ligne"/>
+                <div id = "Menu__options--arrowTurnLeftContainer" className = "returnIconContainer"> 
                     <i id = "Menu__options--arrowTurnLeftIcon" 
-                        className = "fa-solid fa-rotate-left"
+                        className = "fa-solid fa-rotate-left returnIcon"
                         onClick = {handleReturn}></i>
                 </div>
             </div>

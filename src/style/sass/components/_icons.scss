@@ -1,0 +1,14 @@
+.returnIconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: $backgroundColorIcon;
+}
+.returnIcon{
+    color: $iconColor;
+    background-color: $backgroundColorIcon;
+    &:hover{
+        color: $iconColorHover;
+    }
+}
