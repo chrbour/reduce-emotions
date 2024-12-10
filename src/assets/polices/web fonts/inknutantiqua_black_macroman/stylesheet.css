@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'inknut_antiquablack';
+    src: url('InknutAntiqua-Black-webfont.eot');
+    src: url('InknutAntiqua-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('InknutAntiqua-Black-webfont.woff2') format('woff2'),
+         url('InknutAntiqua-Black-webfont.woff') format('woff'),
+         url('InknutAntiqua-Black-webfont.ttf') format('truetype'),
+         url('InknutAntiqua-Black-webfont.svg#inknut_antiquablack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
