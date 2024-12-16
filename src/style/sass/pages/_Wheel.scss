@@ -10,29 +10,46 @@
     }
     &__imageContainer{
         height: 100vh;
+        width: auto;
+        
+
     }
     &__image{
-        &--wheelAndTriangle{
+        &--trianglesAndWheel{
             height: 100vh;
         }
         &--wheel{
             height: 100%;
-            z-index: 1;
-            position: relative;
-            bottom: 50%;
+            width: auto;
+            z-index: 1;//transform: rotate(160deg);
         }
-        &--triangle{
+        &--triangleLeft{
+            position: relative;
+            left: -1%;
+            bottom: 50%;
+            z-index: 3;
+            transform: rotate(180deg);
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        &--triangleRight{
             position: relative;
             bottom: 50%;
+            left: 1%;
+            z-index: 3;
+            &:hover{
+                cursor: pointer;
+            }
         }
         &--rightArrowContainer{
+           z-index: 2;
            position: relative;
-           top: 50px;  
-           z-index: 1;
+           top: 6%;
         }
         &--rightArrow{
             transform: rotate(40deg);
-           
+            position: relative;
         }
         &--rightArrowHover{
             position: absolute;
@@ -46,8 +63,8 @@
         }
         &--leftArrowContainer{
             position: relative;
-            top: 340px;
-            z-index: 1;
+            z-index: 2;
+            bottom: 5%;
         }
         &--leftArrow{
             transform: rotate(140deg);

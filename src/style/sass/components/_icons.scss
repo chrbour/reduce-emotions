@@ -10,5 +10,6 @@
     background-color: $backgroundColorIcon;
     &:hover{
         color: $iconColorHover;
+        cursor: pointer;
     }
 }

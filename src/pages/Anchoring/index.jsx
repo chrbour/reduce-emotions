@@ -11,7 +11,7 @@ function Anchoring() {
         <div id = "Anchor" className = "page">
             <div id = "Anchor__title">
                 <h1 id = "Anchor__title--primary">Techniques d&apos;Ancrage</h1>
-                <p id = "Anchor__title--secondary">Dr Igor THIRIEZ</p>
+                <h3 id = "Anchor__title--secondary">Dr Igor THIRIEZ</h3>
             </div>
             <div id = "Anchor__imageContainer" className = "imageContainer">
                 <img id = "Anchor__image" src = {ancrage} alt = "Technique d'Ancrage" />
