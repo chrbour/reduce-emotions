@@ -4,7 +4,7 @@
             flex-direction: column;
         }
         &__imageContainer{
-            height: 50vh;
+            height: 40vh;
         }
         &__image{
             height: 100%;
@@ -16,7 +16,7 @@
     &__text{
         text-align: start;
         display: grid;
-        grid-template: 15% 10% 21% 21% / 1fr 5fr 12fr;
+        grid-template: 20% 20% 20% 20% / 1fr 5fr 12fr;
         align-items: center;
     }
     &__arrowTurnLeftContainer{
@@ -40,8 +40,8 @@
         margin: 0;
     }
     &--details{
-        font-size: 20px;
-        overflow: visible;
+        font-size: 16px;
         padding: 10px;
+        font-style: Arial;
     }
 }

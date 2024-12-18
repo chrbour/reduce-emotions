@@ -4,9 +4,6 @@ import ancrage from "../../assets/images/ancrage.webp"
 
 function Anchoring() {
     let Navigate = useNavigate();
-    function handleReturn(){
-        Navigate("/Menu");
-    }
     return (
         <div id = "Anchor" className = "page">
             <div id = "Anchor__title">
@@ -19,7 +16,7 @@ function Anchoring() {
             <div id = "Anchor__arrowTurnLeftContainer" className = "returnIconContainer"> 
                 <i id = "Anchor__arrowTurnLeftIcon" 
                     className = "fa-solid fa-rotate-left returnIcon"
-                    onClick = {handleReturn}></i>
+                    onClick = {() => Navigate("/Menu")}></i>
             </div>
         </div>
     )

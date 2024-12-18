@@ -3,9 +3,6 @@ import stop from "../../assets/images/stop-drawn_1280.webp"
 
 function STOP() {
     let Navigate = useNavigate();
-    function handleReturn(){
-        Navigate("/Menu");
-    }
     return (
         <div id = "Stop" className = "page">
             <div id = "Stop__title">
@@ -36,7 +33,7 @@ function STOP() {
             <div id = "Stop__arrowTurnLeftContainer" className = "returnIconContainer"> 
                 <i id = "Stop__arrowTurnLeftIcon" 
                     className = "fa-solid fa-rotate-left returnIcon"
-                    onClick = {handleReturn}></i>
+                    onClick = {() => Navigate("/Menu")}></i>
             </div>
         </div>
     )

@@ -324,7 +324,7 @@ body {
   flex-direction: column;
 }
 #Stop__imageContainer {
-  height: 50vh;
+  height: 40vh;
 }
 #Stop__image {
   height: 100%;
@@ -336,7 +336,7 @@ body {
 #Stop__text {
   text-align: start;
   display: grid;
-  grid-template: 15% 10% 21% 21%/1fr 5fr 12fr;
+  grid-template: 20% 20% 20% 20%/1fr 5fr 12fr;
   align-items: center;
 }
 #Stop__arrowTurnLeftContainer {
@@ -358,9 +358,9 @@ body {
   margin: 0;
 }
 .Stop__text--details {
-  font-size: 20px;
-  overflow: visible;
+  font-size: 16px;
   padding: 10px;
+  font-style: Arial;
 }
 
 #EmotionsWheel__title {
@@ -447,6 +447,101 @@ body {
 }
 #EmotionsWheel__arrowTurnLeftIcon {
   font-size: 50px;
+}
+
+#TIPP__title--secondary {
+  margin: 100px;
+}
+#TIPP__detailsContainer {
+  height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+#TIPP__temperature {
+  background-color: #F4F1D1;
+}
+#TIPP__intenseExercise {
+  background-color: #FFE3E3;
+}
+#TIPP__pacedBreathing {
+  background-color: #E1F9D2;
+}
+#TIPP__pairedMuscleRelaxation {
+  background-color: #DEF1FF;
+}
+#TIPP__arrowTurnLeftContainer {
+  height: 80px;
+  width: 80px;
+  margin: 20px;
+}
+#TIPP__arrowTurnLeftIcon {
+  font-size: 50px;
+}
+
+.rectangleTipp {
+  overflow: visible;
+  height: 20%;
+  display: grid;
+  padding: 10px;
+  margin: 10px 60px;
+  border-radius: 20px;
+  color: #000000;
+  grid-template: 100%/30% 60%;
+}
+.rectangleTipp span {
+  color: red;
+}
+
+.TIPP__imageContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.TIPP__image {
+  height: 100%;
+}
+
+.TIPP__paragraph {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: center;
+  font-family: arial;
+  padding: 0 30px 0 0;
+}
+.TIPP__paragraph h2, .TIPP__paragraph p {
+  margin: 0;
+}
+
+#Webresources__arrowTurnLeftContainer {
+  height: 80px;
+  width: 80px;
+  margin: 20px;
+}
+#Webresources__arrowTurnLeftIcon {
+  font-size: 50px;
+}
+
+.webresources__button {
+  background-color: #B2CBE3;
+  font-size: 16px;
+  color: black;
+  border: 1px solid white;
+  margin: 10px;
+  padding: 0 15px;
+  border-radius: 20px;
+}
+.webresources__button a {
+  color: black;
+}
+.webresources__button a:hover {
+  color: red;
+  cursor: pointer;
+}
+.webresources__button:hover {
+  border: red solid 1px;
 }
 
 /*# sourceMappingURL=style.css.map */

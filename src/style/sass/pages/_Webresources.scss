@@ -1,0 +1,30 @@
+
+#Webresources{
+    &__arrowTurnLeftContainer{
+        height: 80px;
+        width: 80px;
+        margin: 20px;
+    }
+    &__arrowTurnLeftIcon{
+        font-size: 50px ;
+    }
+}
+.webresources__button{
+    background-color: #B2CBE3;
+    font-size: 16px;
+    color: black;
+    border: 1px solid white;
+    margin: 10px;
+    padding: 0 15px;
+    border-radius: 20px;
+    & a{
+        color: black;
+    }
+    & a:hover{
+        color: red;
+        cursor: pointer;
+    }
+    &:hover{
+        border: red solid 1px;
+    }
+}

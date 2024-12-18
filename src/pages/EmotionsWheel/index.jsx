@@ -159,11 +159,7 @@ function EmotionsWheel() {
             }
         }
     }
-    let Navigate = useNavigate();
-    function handleReturn(){
-        Navigate("/Menu");
-    }
-    
+    let Navigate = useNavigate();    
     return (
         <div id = "EmotionsWheel" className = "page">
             <div id = "EmotionsWheel__title">
@@ -211,7 +207,7 @@ function EmotionsWheel() {
             <div id = "EmotionsWheel__arrowTurnLeftContainer" className = "returnIconContainer"> 
                 <i id = "EmotionsWheel__arrowTurnLeftIcon" 
                     className = "fa-solid fa-rotate-left returnIcon"
-                    onClick = {handleReturn}></i>
+                    onClick = {() => Navigate("/Menu")}></i>
             </div>
         </div>
     )

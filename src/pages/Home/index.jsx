@@ -11,9 +11,6 @@ function Home() {
     const displayCredits = () => {
         creditsStatus == true? creditsStatusUpdate(false) : creditsStatusUpdate(true);
     }
-    const handleInscription = () => {
-        Navigate("/Menu");
-    }
     return (
         <Fragment >
                 <div id = "Home">
@@ -23,7 +20,7 @@ function Home() {
                     <div id = "Home__titleAndbuttons">
                         <h1 id = "Home__title" >MON PLAN DE<br/>PROTECTION<br/>PERSONNALISE</h1>
                         <div id = "Home__buttons">
-                            <input id = "Home__buttons--inscription" onClick={handleInscription}
+                            <input id = "Home__buttons--inscription" onClick={() => Navigate("/Menu")}
                                 className = "button" type = "button" value = "Inscription"/>
                             <input id = "Home__buttons--connexion" 
                                 className = "button" type = "button" value = "Connexion" />

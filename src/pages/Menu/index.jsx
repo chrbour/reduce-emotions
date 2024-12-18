@@ -2,21 +2,7 @@ import wallpaper from "../../assets/images/woman-illustration_1920.webp"
 import {useNavigate} from "react-router-dom";
 
 export default function Menu(){
-    console.log('Menu OK');
     let Navigate = useNavigate();
-    
-    function handleAnchoring(){
-        Navigate("/Anchoring");
-    }
-    function handleWheel(){
-        Navigate("/EmotionsWheel");
-    }
-    function handleStop(){
-        Navigate("/STOP");
-    }
-    function handleReturn() {
-        Navigate("/");
-    }
     return (
         <div id = "Menu">
             <div id = "Menu__imageContainer">
@@ -27,18 +13,18 @@ export default function Menu(){
                 <input id = "Menu__options--thermometre" className = "button" 
                     type = "button" value = "Thermomètre des émotions"/>
                 <input id= "Menu__options--roueDesEmotions" className = "button"
-                    type = "button" value = "Roue des émotions" onClick = {handleWheel}/>
+                    type = "button" value = "Roue des émotions" onClick = {() => Navigate("/EmotionsWheel")}/>
                 <input id= "Menu__options--techniquesDancrage" className = "button"
-                    type = "button" value = "Techniques d'Ancrage" onClick = {handleAnchoring} />
+                    type = "button" value = "Techniques d'Ancrage" onClick = {() => Navigate("/Anchoring")} />
                     <input id= "Menu__options--competenceStop" className = "button"
-                    type = "button" value = "Compétence STOP" onClick =  {handleStop}/>
+                    type = "button" value = "Compétence STOP" onClick =  {() => Navigate("/STOP")}/>
                 <input id= "Menu__options--méhtodeTipp" className = "button"
-                    type = "button" value = "Méthode TIPP"/>
+                    type = "button" value = "Méthode TIPP" onClick = {() => Navigate("/TIPP")}/>
                 <input id= "Menu__options--ressourcesEnLigne" className = "button"
-                    type = "button" value = "Ressources en ligne"/>
+                    type = "button" value = "Ressources en ligne" onClick = {() => Navigate("/WebResources")}/>
                 <div id = "Menu__options--arrowTurnLeftContainer" className = "returnIconContainer"> 
                     <i id = "Menu__options--arrowTurnLeftIcon" 
-                        className = "fa-solid fa-rotate-left returnIcon" onClick = {handleReturn}></i>
+                        className = "fa-solid fa-rotate-left returnIcon" onClick = {() => Navigate("/")}></i>
                 </div>
             </div>
         </div>

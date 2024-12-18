@@ -11,8 +11,6 @@
     &__imageContainer{
         height: 100vh;
         width: auto;
-        
-
     }
     &__image{
         &--trianglesAndWheel{
@@ -21,7 +19,7 @@
         &--wheel{
             height: 100%;
             width: auto;
-            z-index: 1;//transform: rotate(160deg);
+            z-index: 1;
         }
         &--triangleLeft{
             position: relative;
