@@ -9,7 +9,7 @@ import STOP  from "../../pages/STOP";
 import TIPP from "../../pages/TIPP";
 import EmotionsWheel from "../../pages/EmotionsWheel";
 import WebResources from "../../pages/Webresources";
-// import Thermometer from "../../pages/Thermometer";
+import Thermometer from "../../pages/Thermometer";
 
 function Routeur() {
     return (
@@ -24,7 +24,7 @@ function Routeur() {
                         <Route path = "/STOP" element = {<STOP />} />
                         <Route path = "/EmotionsWheel" element = {<EmotionsWheel />} />
                         <Route path = "/WebResources" element = {<WebResources />} />
-                        {/*<Route path = "/Thermometer" element = {<Thermometer />} /> */}
+                        <Route path = "/Thermometer" element = {<Thermometer />} />
                 </Routes>
             </CreditsProvider>
         </Router>

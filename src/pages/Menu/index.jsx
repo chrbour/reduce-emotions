@@ -11,7 +11,7 @@ export default function Menu(){
             <div id = "Menu__options">
                 <h2 id = "Menu__options--title">Que veux-tu consulter?</h2>
                 <input id = "Menu__options--thermometre" className = "button" 
-                    type = "button" value = "Thermomètre des émotions"/>
+                    type = "button" value = "Thermomètre des émotions" onClick = {() => Navigate('/Thermometer')}/>
                 <input id= "Menu__options--roueDesEmotions" className = "button"
                     type = "button" value = "Roue des émotions" onClick = {() => Navigate("/EmotionsWheel")}/>
                 <input id= "Menu__options--techniquesDancrage" className = "button"
