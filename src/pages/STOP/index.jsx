@@ -7,6 +7,9 @@ function STOP() {
         <div id = "Stop" className = "page">
             <div id = "Stop__title">
                 <h1 id = "Stop__title--primary">Compétence STOP</h1>
+                <p>Lorsque vous réagissez de façon impulsive, vous n&apos;avez pas le temps d&apos;utiliser vos compétences et vous centrer dans l&apos;esprit éclairé. <br />
+                Pour utiliser vos compétences, vous devez vous empêcher de réagir. <br />
+                Pour garder le contrôle, utilisez la compétence STOP.</p>
             </div>
             <div id = "Stop__imageContainerAndText">
                 <div id = "Stop__imageContainer" className = "imageContainer">
@@ -16,7 +19,7 @@ function STOP() {
                     <div id = "Stop__text">
                         <p className = "Stop__text--initials">S</p>
                         <p className = "Stop__text--legend">Stop:</p>
-                        <p className = "Stop__text--details">Je fais une pause.<br/>J&apos;arrête ce que je suis en train de faire et je peux même poser ma main sur un endroit précis de mon corps sur lequel je souhaite porter mon attention</p>
+                        <p className = "Stop__text--details">Je fais une pause.<br/>J&apos;arrête ce que je suis en train de faire et je peux même poser ma main sur un endroit précis de mon corps sur lequel je souhaite porter mon attention.</p>
                         <p className = "Stop__text--initials">T</p>
                         <p className = "Stop__text--legend">Temps calme:</p>
                         <p className = "Stop__text--details">Je reste concentré sur ma respiration pour revenir au calme.</p>

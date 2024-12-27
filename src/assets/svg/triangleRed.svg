@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="5.1999998mm"
+   height="5.8000002mm"
+   viewBox="0 0 5.1999999 5.8000003"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="triangleRed.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#e407e6"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="8.1336326"
+     inkscape:cx="20.593505"
+     inkscape:cy="38.174825"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="star"
+       style="opacity:0.8;fill:#ffffff;fill-opacity:1;stroke:#e40a2f;stroke-width:3.44821044;stroke-linecap:square;stroke-dashoffset:15.2239;stroke-opacity:1;paint-order:fill markers stroke;stroke-dasharray:none"
+       id="path1"
+       inkscape:flatsided="true"
+       sodipodi:sides="3"
+       sodipodi:cx="1.3987702"
+       sodipodi:cy="0.65059084"
+       sodipodi:r1="0.69540215"
+       sodipodi:r2="0.34770107"
+       sodipodi:arg1="2.9533711"
+       sodipodi:arg2="4.0005687"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 0.71564987,0.78070903 1.6276447,-0.00606783 1.853016,1.1771313 Z"
+       inkscape:transform-center-x="0.13847821"
+       inkscape:transform-center-y="0.00019669322"
+       transform="matrix(0.78332389,0.14978006,-0.14978006,0.78332389,2.2615014,2.1653707)" />
+  </g>
+</svg>

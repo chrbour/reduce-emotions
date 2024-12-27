@@ -544,4 +544,89 @@ body {
   border: red solid 1px;
 }
 
+#thermometer {
+  overflow: hidden;
+  font-family: "Inknut Antiqua", serif;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #3E3F3A;
+}
+#thermometer__titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100vw;
+}
+#thermometer__titleContainer i {
+  font-size: 70px;
+  position: absolute;
+  right: 50px;
+  top: 20px;
+}
+#thermometer__imageContainer {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: end;
+}
+#thermometer__imageContainer--image {
+  display: flex;
+  align-items: center;
+}
+#thermometer__imageContainer--image img {
+  height: 90vh;
+}
+#thermometer__imageContainer--triangle {
+  height: 100%;
+  display: grid;
+  align-items: center;
+  grid-template: repeat(5, 15vh)/5vw;
+}
+#thermometer__imageContainer--triangle img {
+  height: 8vh;
+}
+#thermometer__imageContainer--rectangle {
+  width: 50vw;
+  height: 70vh;
+  margin: 0 30px;
+  border-radius: 30px;
+  display: grid;
+  grid-template: 100%/1fr 2fr;
+  text-align: center;
+  align-items: center;
+}
+#thermometer__arrowTurnLeftContainer {
+  height: 80px;
+  width: 80px;
+  margin: 20px;
+}
+#thermometer__arrowTurnLeftIcon {
+  font-size: 50px;
+}
+#thermometer__text {
+  position: absolute;
+  bottom: 50%;
+  left: 1%;
+  font-size: 30px;
+  margin: 0 10px;
+}
+#thermometer__frameEmotion {
+  height: 50% !important;
+  grid-column-start: 1;
+  margin: auto;
+}
+
+.thermometer__triangle {
+  position: relative;
+}
+.thermometer__triangle--red {
+  position: absolute;
+  left: 0px;
+  opacity: 0;
+}
+.thermometer__triangle--red:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
 /*# sourceMappingURL=style.css.map */

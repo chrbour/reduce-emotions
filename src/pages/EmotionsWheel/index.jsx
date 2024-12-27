@@ -46,6 +46,10 @@ const EmotionIntensity = styled.span`
     padding: 0px 10px;
     margin: 0;
 `
+const NeedAssociated = styled.span`
+    color: ${({couleur}) => couleur};
+    text-shadow: 1px 1px #000000;
+`
 
 function EmotionsWheel() {
     const [angle, setAngle] = useState(90);
@@ -56,6 +60,7 @@ function EmotionsWheel() {
     const emotions = {
         emotionBase: ['Colère', 'Peur', 'Surprise', 'Heureux', 'Tristesse', 'Dégoût'],
         couleurBase: ['#D2232A', '#784D9F', '#1075BE', '#448C36', '#B5A933', '#DB812C'],
+        besoinAssocie: ['Besoin de justice, sens', 'Besoin de sécurité', 'Besoin de comprendre', 'Besoin de partager', 'Besoin de réconfort', 'Besoin de dignité, de propreté'],
         emotionsAssociees: [
             ['Critique', 'Distant', 'Frustré', 'Agressif', 'En colère', 'Haineux', 'Menacé', 'Blessé'],
             ['Humilié', 'Rejeté', 'Docile', 'Insécure', 'Anxieux', 'Apeuré'],
@@ -175,6 +180,8 @@ function EmotionsWheel() {
                     </li>
                     <li>Analyse les intensités: <span> </span>
                         <EmotionIntensity couleur = {emotions.couleursIntensite[emotion]}><b>{emotions.intensites[emotion][intensityEmotion]}</b></EmotionIntensity></li>
+                    <li>Besoin associé: <span></span>
+                        <NeedAssociated couleur = {emotions.couleurBase[emotion]}><b>{emotions.besoinAssocie[emotion]}</b></NeedAssociated></li>
                     <li>Réfléchis aux déclencheurs</li>
                     <li>Apprivoise tes émotions</li>
                 </ol>

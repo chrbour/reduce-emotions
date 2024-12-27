@@ -21,7 +21,9 @@ function Home() {
                         <h1 id = "Home__title" >MON PLAN DE<br/>PROTECTION<br/>PERSONNALISE</h1>
                         <div id = "Home__buttons">
                             <input id = "Home__buttons--inscription" onClick={() => Navigate("/Menu")}
-                                className = "button" type = "button" value = "Entrez"/>
+                                className = "button" type = "button" value = "Inscription"/>
+                            <input id = "Home__buttons--connexion" 
+                                className = "button" type = "button" value = "Connexion" />
                         </div>
                         <p id = "Home__credits" onClick={displayCredits}>Credits</p>
                         {creditsStatus == true? <Credits/> : null}
