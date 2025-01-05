@@ -63,6 +63,21 @@
   cursor: pointer;
 }
 
+#containerListOfActions__contImg {
+  border-right: 1px solid #000000;
+  display: flex;
+  align-items: center;
+}
+#containerListOfActions__contImg img {
+  height: 100px !important;
+  width: 148px;
+  margin: auto;
+}
+#containerListOfActions__text {
+  color: #000000;
+  margin: auto 20px;
+}
+
 body {
   overflow: hidden;
   font-family: "Inknut Antiqua", serif;
@@ -563,6 +578,38 @@ body {
   right: 50px;
   top: 20px;
 }
+#thermometer__titleContainer i:hover {
+  color: #fd0505;
+  cursor: pointer;
+}
+#thermometer__titleContainer--bubble {
+  position: absolute;
+  display: flex;
+  font-family: Arial;
+  justify-content: center;
+  align-items: center;
+  top: 30px;
+  right: 150px;
+  font-size: 12px;
+  width: 200px;
+  height: 50px;
+  color: white;
+  background-color: black;
+  border-radius: 20px;
+}
+#thermometer__titleContainer--bubble::after {
+  content: "";
+  height: 0;
+  width: 0;
+  border-left: 15px solid #000000;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  left: 100%;
+}
+#thermometer__titleContainer--bubble:hover {
+  font-size: 13px;
+}
 #thermometer__imageContainer {
   display: flex;
   height: 90vh;
@@ -591,7 +638,7 @@ body {
   margin: 0 30px;
   border-radius: 30px;
   display: grid;
-  grid-template: 100%/1fr 2fr;
+  grid-template: 100%/1.5fr 2fr;
   text-align: center;
   align-items: center;
 }
@@ -627,6 +674,10 @@ body {
 .thermometer__triangle--red:hover {
   cursor: pointer;
   opacity: 1;
+}
+
+#emotion__title {
+  margin-top: -50px;
 }
 
 /*# sourceMappingURL=style.css.map */

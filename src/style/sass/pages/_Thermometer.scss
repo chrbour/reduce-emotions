@@ -16,6 +16,38 @@
             position: absolute;
             right: 50px;
             top: 20px;
+            &:hover{
+                color: $iconColorHover;
+                cursor: pointer;
+            }
+        }
+        &--bubble{
+            position: absolute;
+            display: flex;
+            font-family: Arial;
+            justify-content: center;
+            align-items: center;
+            top: 30px;
+            right: 150px;
+            font-size: 12px;
+            width: 200px;
+            height: 50px;
+            color: white;
+            background-color: black;
+            border-radius: 20px;
+            &::after{
+                content: "";
+                height: 0;
+                width: 0;
+                border-left: 15px solid #000000;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                position: absolute;
+                left: 100%;
+            }
+            &:hover{
+                font-size: 13px;
+            }
         }
     }
     &__imageContainer{
@@ -45,7 +77,7 @@
             margin: 0 30px;
             border-radius: 30px; 
             display: grid;
-            grid-template: 100% / 1fr 2fr;
+            grid-template: 100% / 1.5fr 2fr;
             text-align: center;
             align-items: center;
         }
@@ -84,6 +116,11 @@
         }
     }
 }
+#emotion__title{
+    margin-top: -50px;
+}
+
+
 @media screen and (min-width: 120px){
 
 }

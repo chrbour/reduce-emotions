@@ -3,13 +3,13 @@ import {CreditsProvider} from "../../utils/context/CreditsProvider";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "../../pages/Home";
 import Menu from "../../pages/Menu";
-
 import Anchoring from "../../pages/Anchoring";
 import STOP  from "../../pages/STOP";
 import TIPP from "../../pages/TIPP";
 import EmotionsWheel from "../../pages/EmotionsWheel";
 import WebResources from "../../pages/Webresources";
 import Thermometer from "../../pages/Thermometer";
+import Configure from "../../pages/Configure";
 
 function Routeur() {
     return (
@@ -25,6 +25,7 @@ function Routeur() {
                         <Route path = "/EmotionsWheel" element = {<EmotionsWheel />} />
                         <Route path = "/WebResources" element = {<WebResources />} />
                         <Route path = "/Thermometer" element = {<Thermometer />} />
+                        <Route path = "Configure" element = {<Configure/>} />
                 </Routes>
             </CreditsProvider>
         </Router>
