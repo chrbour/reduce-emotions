@@ -25,18 +25,19 @@ function Thermometer() {
     let Navigate = useNavigate();
     const Emotion = ({emotion}) => {
         setContainerColor(emotion.color);
-        console.log("rt",emotion,emotion.color);
         return(
             <>
-                {emotion.title != '' ? 
+                {
+                emotion.title != '' ? 
                     <>
-                    <div>
-                        <img src = {emotion.icon} alt = "Icône émotion" id = 'thermometer__frameEmotion'/>
-                        <h2 id = "emotion__title">{emotion.title}</h2>
-                    </div>
-                    <ListOfActions emotion = {emotion}  check = {check}/>
+                        <div>
+                            <img src = {emotion.icon} alt = "Icône émotion" id = 'thermometer__frameEmotion'/>
+                            <h2 id = "emotion__title">{emotion.title}</h2>
+                        </div>
+                        <ListOfActions emotion = {emotion}  check = {check}/>
                     </>
-                    : null}
+                    : null
+                }
             </>
         )
     }
@@ -50,7 +51,6 @@ function Thermometer() {
             icon: "",
             color: "rgb(202, 202, 202)",
             title : "",
-            action: "",
         },
         greenEmotion:{
             icon: greenCloud,

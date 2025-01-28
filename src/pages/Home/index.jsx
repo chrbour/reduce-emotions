@@ -1,16 +1,11 @@
-import {Fragment, useContext} from "react";
+import {Fragment, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {CreditsContext} from '../../utils/context/CreditsContext'
 import wallpaper from "../../assets/images/woman-illustration_1920.webp";
 import Credits from "../../components/Credits";
 
 function Home() {
-    const {creditsStatus} = useContext(CreditsContext);
-    const {creditsStatusUpdate} = useContext(CreditsContext);
+    const [creditsStatus, creditsStatusUpdate] = useState(false);
     const Navigate = useNavigate();
-    const displayCredits = () => {
-        creditsStatus == true? creditsStatusUpdate(false) : creditsStatusUpdate(true);
-    }
     return (
         <Fragment >
                 <div id = "Home">
@@ -23,9 +18,9 @@ function Home() {
                             <input id = "Home__buttons--inscription" onClick={() => Navigate("/Menu")}
                                 className = "button" type = "button" value = "Entrez"/>
                         </div>
-                        <p id = "Home__credits" onClick={displayCredits}>Credits</p>
-                        {creditsStatus == true? <Credits/> : null}
                     </div>
+                        <p id = "Home__credits" onClick={() => creditsStatusUpdate(true)}>Credits</p>
+                        {creditsStatus === true? <Credits creditsStatus = {creditsStatus} creditsStatusUpdate = {creditsStatusUpdate}/> : null};
                 </div>
         </Fragment>
     )

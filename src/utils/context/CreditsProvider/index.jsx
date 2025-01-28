@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {CreditsContext} from "../CreditsContext";
+import {CreditsContext} from "../Context";
 import PropTypes from "prop-types";
 
 export const CreditsProvider = ({children}) => {

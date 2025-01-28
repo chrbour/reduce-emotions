@@ -1,5 +1,5 @@
 import React from "react";
-import {CreditsProvider} from "../../utils/context/CreditsProvider";
+import { AddItemGreenProvider } from "../../utils/context/AddItemGreenProvider";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "../../pages/Home";
 import Menu from "../../pages/Menu";
@@ -15,19 +15,19 @@ function Routeur() {
     return (
     <React.StrictMode>
         <Router>
-            <CreditsProvider>
+            <AddItemGreenProvider>
                 <Routes>
-                        <Route path = "/" element = {<Home/>} />  
-                        <Route path = "/Menu" element = {<Menu />} />
-                        <Route path = "/TIPP" element = {<TIPP />} />
-                        <Route path = "/Anchoring" element = {<Anchoring />} />
-                        <Route path = "/STOP" element = {<STOP />} />
-                        <Route path = "/EmotionsWheel" element = {<EmotionsWheel />} />
-                        <Route path = "/WebResources" element = {<WebResources />} />
-                        <Route path = "/Thermometer" element = {<Thermometer />} />
-                        <Route path = "Configure" element = {<Configure/>} />
+                    <Route path = "/" element = {<Home/>} />  
+                    <Route path = "/Menu" element = {<Menu />} />
+                    <Route path = "/TIPP" element = {<TIPP />} />
+                    <Route path = "/Anchoring" element = {<Anchoring />} />
+                    <Route path = "/STOP" element = {<STOP />} />
+                    <Route path = "/EmotionsWheel" element = {<EmotionsWheel />} />
+                    <Route path = "/WebResources" element = {<WebResources />} />
+                    <Route path = "/Thermometer" element = {<Thermometer />} />
+                    <Route path = "Configure" element = {<Configure/>} />
                 </Routes>
-            </CreditsProvider>
+            </AddItemGreenProvider>
         </Router>
     </React.StrictMode>
     )

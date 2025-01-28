@@ -36,6 +36,39 @@ import range from '../../assets/images/glasses_1280.webp';
 import pills from '../../assets/images/stethoscope_1280.webp';
 import emergencies from '../../assets/images/ambulance_1280.webp';
 
+const DisplayListOfActions = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50vw;
+    height: 100%;
+`
+const ContainerListOfActions = styled.div`
+        grid-template: ${({check}) => check === 0 ? '100% / 150px 300px' : '100% / 50px 100px 300px'
+        };
+        border: 1px solid #000000;
+        width: ${({check}) => check ===0 ? '500px': '450px'}; 
+        display: grid;
+        margin: 1px;
+    `  
+    const ContainerImgListOfActions = styled.div`
+        border-right: 1px solid #000000;
+        display: flex;
+        align-items: center;
+    `
+    const ImgListOfActions = styled.img`
+        height: ${({check}) => 
+            check === 0? '100px !important' : '50px !important'};
+        width: ${({check}) => 
+            check === 0 ? '148px' : '74px'};
+        margin: auto;
+    `
+    const TextListOfActions = styled.div`
+        color: #000000; 
+        margin: auto 20px;
+        font-size: ${({check}) => check === 0 ? '20px' : '12px'};
+    `
 const ListOfActions = ({emotion, check}) => {
     const image = [music, "Ecoute de la musique", 
                     play, "Joue avec ta famille/tes amis",
@@ -73,38 +106,31 @@ const ListOfActions = ({emotion, check}) => {
                     pills, "Prends ton traitement prescrit en cas de crise",
                     emergencies,  "Appelle les urgences",
                 ];
-    const ContainerListOfActions = styled.div`
-        grid-template: ${({check}) => check === 0 ? '100% / 150px 300px' : '100% / 50px 150px 300px'
-        };
-        border: 1px solid #000000;
-        width: 500px; 
-        display: grid;
-        justify-content: start;
-        margin: 1px;
-    `           
+    
+
     let picture;
     let actions = image.map((i, id) => {
         for (let e of emotion.action){
             if(e === i){
                 picture = image[id-1];
                 return (
-                    <ContainerListOfActions key = {i} check= {check}>
+                    <ContainerListOfActions id = "containerListOfActions" key = {i} check= {check}>
                         {check === 0? null : <input type = "checkbox" />}
-                        <div id = "containerListOfActions__contImg">
-                            <img src={picture} alt = "actions" />
-                        </div>
-                        <div id = "containerListOfActions__text">
+                        <ContainerImgListOfActions id = "containerListOfActions__contImg" check= {check}>
+                            <ImgListOfActions src={picture} alt = "actions" check= {check}/>
+                        </ContainerImgListOfActions>
+                        <TextListOfActions id = "containerListOfActions__text" check= {check}>
                             <p>{e}</p>
-                        </div>   
+                        </TextListOfActions>   
                     </ContainerListOfActions>
                 )
             }
         }
     });
-    return <div>{actions}</div>
+    return <DisplayListOfActions >{actions}</DisplayListOfActions>
 }
 ListOfActions.propTypes = {
-    emotion: PropTypes.string,
+    emotion: PropTypes.object,
     check: PropTypes.number
     }
 

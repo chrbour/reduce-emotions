@@ -1,0 +1,90 @@
+
+#configure{
+    background-color: $backgroundColor;
+    height: 100vh;
+    width: 100vw;
+    color: $textColor;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.configure{
+  &__container{
+    margin: 5px;
+    height: 800px;
+    width: 80%;
+    background-color: $rectangleColorConfigure;
+    border-radius: 20px;
+    display: grid;
+    grid-template: 100% / 3fr 6fr 1fr;
+    border: 15px solid;
+    & i{
+      display: flex;
+      margin: auto;
+      font-size: 50px;
+      &:hover{
+        cursor: pointer;
+        font-size:52px;
+      }
+    }
+  }
+  &__imgContainer{
+    margin: auto;
+    &--text{
+      text-align: center;
+      margin-top: -50px;
+    }
+    & p{
+      color: $textColorConfigure;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+};
+@keyframes enterGreenForm{
+  from{
+    transform: scale(110%)
+  }
+  to{
+    transform: scale(50%)
+  }
+}
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    border-radius: 50px;
+    height: 30px;
+    width: 30px;
+    background: #fff;
+    border: 1px solid #000000;
+    margin: auto;
+    &:hover{
+      cursor: pointer;
+    }
+}
+input[type="checkbox"]:checked {
+  $nbGreen: $nbGreen + 1;
+  background: pink;
+  margin: auto;
+  position: relative;
+  &:before {
+    font-family: FontAwesome;
+    content: '\f00c';
+    display: block;
+    color: green;
+    font-size: 16px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+  }
+
+}
+
+.addItemForm{
+  animation: 5s ease-in-out infinite both enterGreenForm;
+  width: 500px;
+  height: 500px;
+}
