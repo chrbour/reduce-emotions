@@ -87,7 +87,7 @@ const ListOfActions = ({emotion, check}) => {
                     tryAgain, "Détends-toi et réessaye",
                     nap, "Fais une sieste",
                     smile, "Souris et pratique la gratitude",
-                    goals, "Fais des pas vers tes objectifs",
+                    goals, "Avance vers tes objectifs",
                     peaceFullPlace, "Pense à un endroit paisible", 
                     innerSpeech, "Utilise un discours intérieur positif",
                     muscles, "Tends et détends tes muscles",

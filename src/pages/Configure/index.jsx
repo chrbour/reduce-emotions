@@ -1,6 +1,5 @@
 import {useNavigate} from "react-router-dom";
 import {useState} from 'react';
-import {useContext} from 'react';
 import AddItem from '../../components/AddItem';
 import styled from "styled-components";
 import greenCloud from '../../assets/svg/Nuage_vert.svg';
@@ -9,7 +8,7 @@ import redCloud from '../../assets/svg/Nuage_rouge.svg';
 import brownCloud from '../../assets/svg/Nuage_marron_avec_pieds_noirs.svg';
 import blackCloud from '../../assets/svg/Nuage_noir_avec_pieds_noirs.svg';
 import ListOfActions from "../../components/ListOfActions";
-import { AddItemGreenContext } from "../../utils/context/Context";
+
 
 
 const Container = styled.div`
@@ -21,12 +20,8 @@ console.log("choices", choices);
 
 const Configure = () =>{
     let Navigate = useNavigate();
-    const {setAddItemGreen} = useContext(AddItemGreenContext);
-    const {addItemGreen} = useContext(AddItemGreenContext);
-    const addItemForm = () => {
-        setAddItemGreen("entering");
-        console.log(addItemGreen);
-    }
+    const [addItemGreen, setAddItemGreen] = useState("no");
+    const [addItemYellow, setAddItemYellow] = useState("no");
     const feeling = {
             noEmotion : {
                 icon: "",
@@ -42,7 +37,7 @@ const Configure = () =>{
                     "Sors prendre l'air", "Obtiens ou fais un câlin", "Fais une activité que tu aimes",
                     "Fais des étirements", "Bouge ou fais du sport", "Continue d'écouter", "Utilise des mots gentils et positifs",
                     "Ecris tes succès", "Aide quelqu'un d'autre", "Souris et pratique la gratitude",
-                    "Fais des pas vers tes objectifs", "Range/Mets de l'ordre dans tes affaires"]
+                    "Avance vers tes objectifs", "Range/Mets de l'ordre dans tes affaires"]
             },
             yellowEmotion: {
                 icon:  yellowCloud,
@@ -51,7 +46,7 @@ const Configure = () =>{
                 action: ["Ecoute de la musique", "Parle avec des amis ou ta famille", "Sors prendre l'air", "Obtiens ou fais un câlin",
                     "Fais une activité que tu aimes", "Fais des étirements", "Bouge ou fais du sport", "Continue d'écouter",
                     "Utilise des mots gentils et positifs", "Ecris tes succès", "Aide quelqu'un d'autre", 
-                    "Respire profondément", "Fais une pause", "Détends-toi et réessaye", "Fais des pas vers tes objectifs", 
+                    "Respire profondément", "Fais une pause", "Détends-toi et réessaye", "Avance vers tes objectifs", 
                     "Pense à un endroit paisible", "Utilise un discours intérieur positif", "Tends et détends tes muscles", 
                     "Isole-toi", "Arrête-toi et sors", "Pratique des techniques d'ancrage", "Appelle/Parle à quelqu'un", 
                     "Pousse les murs", "Serre un fruit glacé dans tes mains", "Evite les lieux à risque", 
@@ -103,9 +98,9 @@ const Configure = () =>{
                     <p>Que puis-je faire dans ce cas-là?</p>
                 </div>
                 <ListOfActions  className = "configure__listOfActions" emotion = {feeling.greenEmotion} check = {1} />
-                <i className="fa-solid fa-circle-plus" onClick = {addItemForm}></i>
+                <i className="fa-solid fa-circle-plus" onClick = {() => setAddItemGreen("entering")}></i>
                 {addItemGreen != "no" ? 
-                    <AddItem act = {addItemGreen}/> 
+                    <AddItem act = {addItemGreen} setAct = {setAddItemGreen}/> 
                     : null}
                 
             </Container>
@@ -118,7 +113,10 @@ const Configure = () =>{
                     <p>Que puis-je faire dans ce cas-là?</p>
                 </div>
                 <ListOfActions className = "configure__listOfActions" check = {1} emotion = {feeling.yellowEmotion}/>
-                <i className="fa-solid fa-circle-plus" ></i>
+                <i className="fa-solid fa-circle-plus" onClick = {() => setAddItemYellow("entering")}></i>
+                {addItemYellow != "no" ? 
+                    <AddItem act = {addItemYellow} setAct = {setAddItemYellow}/> 
+                    : null}
             </Container>
             <Container color = {feeling.redEmotion.color} className = "configure__container" >
                 <div className = "configure__imgContainer">

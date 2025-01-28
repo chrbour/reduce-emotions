@@ -1,5 +1,4 @@
 import React from "react";
-import { AddItemGreenProvider } from "../../utils/context/AddItemGreenProvider";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "../../pages/Home";
 import Menu from "../../pages/Menu";
@@ -15,7 +14,6 @@ function Routeur() {
     return (
     <React.StrictMode>
         <Router>
-            <AddItemGreenProvider>
                 <Routes>
                     <Route path = "/" element = {<Home/>} />  
                     <Route path = "/Menu" element = {<Menu />} />
@@ -27,7 +25,6 @@ function Routeur() {
                     <Route path = "/Thermometer" element = {<Thermometer />} />
                     <Route path = "Configure" element = {<Configure/>} />
                 </Routes>
-            </AddItemGreenProvider>
         </Router>
     </React.StrictMode>
     )
