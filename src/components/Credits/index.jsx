@@ -53,5 +53,5 @@ function Credits({creditsStatusUpdate}){
 export default Credits;
 
 Credits.propTypes = {
-    creditsStatusUpdate: PropTypes.bool
+    creditsStatusUpdate: PropTypes.func
 }

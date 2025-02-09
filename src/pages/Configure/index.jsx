@@ -7,7 +7,7 @@ import yellowCloud from '../../assets/svg/Nuage_jaune.svg';
 import redCloud from '../../assets/svg/Nuage_rouge.svg';
 import brownCloud from '../../assets/svg/Nuage_marron_avec_pieds_noirs.svg';
 import blackCloud from '../../assets/svg/Nuage_noir_avec_pieds_noirs.svg';
-import ListOfActions from "../../components/ListOfActions";
+import ListOfActions from "../../components/ListOfActionsParams";
 
 
 
@@ -15,21 +15,24 @@ const Container = styled.div`
     border-color: ${({color})=> color};
     color: ${({color})=> color};
 `
-let choices = localStorage.getItem("emotions");
-console.log("choices", choices);
 
 const Configure = () =>{
     let Navigate = useNavigate();
     const [addItemGreen, setAddItemGreen] = useState("no");
     const [addItemYellow, setAddItemYellow] = useState("no");
-    const feeling = {
+    const [addItemRed, setAddItemRed] = useState("no");
+    const [addItemBrown, setAddItemBrown] = useState("no");
+    const [addItemBlack, setAddItemBlack] = useState("no");
+    let allEmotions = {
             noEmotion : {
+                name: "",
                 icon: "",
                 color: "rgb(202, 202, 202)",
                 title : "",
                 action: "",
             },
             greenEmotion:{
+                name: "greenEmotion",
                 icon: greenCloud,
                 color: "#5FCE84",
                 title: "Je me sens bien",
@@ -40,6 +43,7 @@ const Configure = () =>{
                     "Avance vers tes objectifs", "Range/Mets de l'ordre dans tes affaires"]
             },
             yellowEmotion: {
+                name: "yellowEmotion",
                 icon:  yellowCloud,
                 color: "#EAB801",
                 title: "Je suis nerveux, triste",
@@ -53,6 +57,7 @@ const Configure = () =>{
                     "Enroule-toi dans une couverture/plaid", "Tapping", "Range/Mets de l'ordre dans tes affaires"]
             },
             redEmotion: {
+                name: "redEmotion",
                 icon: redCloud,
                 color: "#D40101",
                 title: "Je suis fâché, angoissé", 
@@ -66,6 +71,7 @@ const Configure = () =>{
                     "Range/Mets de l'ordre dans tes affaires"],
             },
             brownEmotion: {
+                name: "brownEmotion",
                 icon: brownCloud,
                 color: "#791A1A",
                 title: "Je suis furieux, agacé", 
@@ -77,6 +83,7 @@ const Configure = () =>{
                     "Prends ton traitement prescrit en cas de crise"]
             },
             blackEmotion: {
+                name: "blackEmotion",
                 icon: blackCloud,
                 color: "#000000",
                 title: "J'ai des idées noires",
@@ -85,71 +92,156 @@ const Configure = () =>{
                         "Prends ton traitement prescrit en cas de crise", "Appelle les urgences"]
             }
         };
+        let defaultEmotions = {
+            noEmotion : {
+                name: "",
+                icon: "",
+                color: "rgb(202, 202, 202)",
+                title : "",
+                action: "",
+            },
+            greenEmotion:{
+                name: "greenEmotion",
+                icon: greenCloud,
+                color: "#5FCE84",
+                title: "Je me sens bien",
+                action: ["Ecoute de la musique", "Bouge ou fais du sport", "Souris et pratique la gratitude"]
+            },
+            yellowEmotion: {
+                name: "yellowEmotion",
+                icon:  yellowCloud,
+                color: "#EAB801",
+                title: "Je suis nerveux, triste",
+                action: ["Ecoute de la musique", "Bouge ou fais du sport", "Détends-toi et réessaye",
+                    "Pense à un endroit paisible"]
+            },
+            redEmotion: {
+                name: "redEmotion",
+                icon: redCloud,
+                color: "#D40101",
+                title: "Je suis fâché, angoissé", 
+                action: ["Sors prendre l'air", "Obtiens ou fais un câlin", "Bouge ou fais du sport", 
+                    "Respire profondément", "Pense à un endroit paisible", "Pratique des techniques d'ancrage"],
+            },
+            brownEmotion: {
+                name: "brownEmotion",
+                icon: brownCloud,
+                color: "#791A1A",
+                title: "Je suis furieux, agacé", 
+                action: ["Respire profondément", "Arrête-toi et sors", "Serre un fruit glacé dans tes mains", "Frappe un oreiller/sac de frappe"]
+            },
+            blackEmotion: {
+                name: "blackEmotion",
+                icon: blackCloud,
+                color: "#000000",
+                title: "J'ai des idées noires",
+                action: ["Demande de l'aide", "Prends ton traitement prescrit en cas de crise", "Appelle les urgences"]
+            }
+        };
         
+        let selection = defaultEmotions;
+        let option;
+        let objLinea = localStorage.getItem("emotions");
+    
+        if (objLinea){
+            let objJson = JSON.parse(objLinea); 
+            selection = objJson;
+            if (objJson.option != null){
+                option = objJson.option;
+        }
+        }
     return(
         <div id = "configure" >
             <h1 id = "configure__title">Paramétrage du thermomètre</h1>
-            <Container color = {feeling.greenEmotion.color} className = "configure__container" >
+            <Container color = {allEmotions.greenEmotion.color} className = "configure__container" >
                 <div className = "configure__imgContainer">
-                    <img className = "configure__imgContainer--img" src= {feeling.greenEmotion.icon} alt="green emotion" />
+                    <img className = "configure__imgContainer--img" src= {allEmotions.greenEmotion.icon} alt="green emotion" />
                     <h2 className = "configure__imgContainer--text" >
-                        {feeling.greenEmotion.title}
+                        {allEmotions.greenEmotion.title}
                     </h2>
                     <p>Que puis-je faire dans ce cas-là?</p>
                 </div>
-                <ListOfActions  className = "configure__listOfActions" emotion = {feeling.greenEmotion} check = {1} />
-                <i className="fa-solid fa-circle-plus" onClick = {() => setAddItemGreen("entering")}></i>
-                {addItemGreen != "no" ? 
-                    <AddItem act = {addItemGreen} setAct = {setAddItemGreen}/> 
-                    : null}
-                
-            </Container>
-            <Container color = {feeling.yellowEmotion.color} className = "configure__container" >
-                <div className = "configure__imgContainer">
-                    <img className = "configure__imgContainer--img" src= {feeling.yellowEmotion.icon} alt="yellow emotion" />
-                    <h2 className = "configure__imgContainer--text">
-                        {feeling.yellowEmotion.title}
-                    </h2>
-                    <p>Que puis-je faire dans ce cas-là?</p>
-                </div>
-                <ListOfActions className = "configure__listOfActions" check = {1} emotion = {feeling.yellowEmotion}/>
-                <i className="fa-solid fa-circle-plus" onClick = {() => setAddItemYellow("entering")}></i>
-                {addItemYellow != "no" ? 
-                    <AddItem act = {addItemYellow} setAct = {setAddItemYellow}/> 
+                <ListOfActions  className = "configure__listOfActions" display = {allEmotions.greenEmotion} check = {1}  selection= {selection} option = {option} />
+                <i className="fa-solid fa-circle-plus" onClick = {() => 
+                    (addItemYellow == "entering" || addItemRed == "entering" || addItemBrown == "entering" || addItemBlack == "entering")? 
+                    null :
+                    setAddItemGreen("entering")}>
+                </i>
+                {addItemGreen != "no"  ? 
+                    <AddItem act = {addItemGreen} setAct = {setAddItemGreen} color = {allEmotions.greenEmotion.color}/> 
                     : null}
             </Container>
-            <Container color = {feeling.redEmotion.color} className = "configure__container" >
+            <Container color = {allEmotions.yellowEmotion.color} className = "configure__container" >
                 <div className = "configure__imgContainer">
-                    <img className = "configure__imgContainer--img" src= {feeling.redEmotion.icon} alt="red emotion" />
+                    <img className = "configure__imgContainer--img" src= {allEmotions.yellowEmotion.icon} alt="yellow emotion" />
                     <h2 className = "configure__imgContainer--text">
-                        {feeling.redEmotion.title}
+                        {allEmotions.yellowEmotion.title}
                     </h2>
                     <p>Que puis-je faire dans ce cas-là?</p>
                 </div>
-                <ListOfActions className = "configure__listOfActions" check = {1} emotion = {feeling.redEmotion}/>
-                <i className="fa-solid fa-circle-plus" ></i>
+                <ListOfActions className = "configure__listOfActions" check = {1} display = {allEmotions.yellowEmotion}  selection= {selection} option = {option}/>
+                <i className="fa-solid fa-circle-plus" onClick = {() => 
+                    (addItemGreen == "entering" || addItemRed == "entering" || addItemBrown == "entering" || addItemBlack == "entering")? 
+                    null :
+                    setAddItemYellow("entering")}>
+                </i>
+                {addItemYellow != "no"  ? 
+                    <AddItem act = {addItemYellow} setAct = {setAddItemYellow} color = {allEmotions.yellowEmotion.color}/> 
+                    : null}
             </Container>
-            <Container color = {feeling.brownEmotion.color} className = "configure__container" >
+            <Container color = {allEmotions.redEmotion.color} className = "configure__container" >
                 <div className = "configure__imgContainer">
-                    <img className = "configure__imgContainer--img" src= {feeling.brownEmotion.icon} alt="brown emotion" />
+                    <img className = "configure__imgContainer--img" src= {allEmotions.redEmotion.icon} alt="red emotion" />
                     <h2 className = "configure__imgContainer--text">
-                        {feeling.brownEmotion.title}
+                        {allEmotions.redEmotion.title}
                     </h2>
                     <p>Que puis-je faire dans ce cas-là?</p>
                 </div>
-                <ListOfActions className = "configure__listOfActions" check = {1} emotion = {feeling.brownEmotion}/>
-                <i className="fa-solid fa-circle-plus" ></i>
+                <ListOfActions className = "configure__listOfActions" check = {1} display = {allEmotions.redEmotion}  selection= {selection} option = {option}/>
+                <i className="fa-solid fa-circle-plus" onClick = {() => 
+                    (addItemGreen == "entering" || addItemYellow == "entering" || addItemBrown == "entering" || addItemBlack == "entering")? 
+                    null :
+                    setAddItemRed("entering")}>
+                </i>
+                {addItemRed != "no"  ? 
+                    <AddItem act = {addItemRed} setAct = {setAddItemRed} color = {allEmotions.redEmotion.color}/> 
+                    : null}
             </Container>
-            <Container color = {feeling.blackEmotion.color}className = "configure__container" >
+            <Container color = {allEmotions.brownEmotion.color} className = "configure__container" >
                 <div className = "configure__imgContainer">
-                    <img className = "configure__imgContainer--img" src= {feeling.blackEmotion.icon} alt="" />
+                    <img className = "configure__imgContainer--img" src= {allEmotions.brownEmotion.icon} alt="brown emotion" />
                     <h2 className = "configure__imgContainer--text">
-                        {feeling.blackEmotion.title}
+                        {allEmotions.brownEmotion.title}
                     </h2>
                     <p>Que puis-je faire dans ce cas-là?</p>
                 </div>
-                <ListOfActions className = "configure__listOfActions" check = {1} emotion = {feeling.blackEmotion}/>
-                <i className="fa-solid fa-circle-plus" ></i>
+                <ListOfActions className = "configure__listOfActions" check = {1} display = {allEmotions.brownEmotion}  selection= {selection} option = {option}/>
+                <i className="fa-solid fa-circle-plus" onClick = {() => 
+                    (addItemGreen == "entering" || addItemRed == "entering" || addItemYellow == "entering" || addItemBlack == "entering")? 
+                    null :
+                    setAddItemBrown("entering")}>
+                </i>
+                {addItemBrown != "no"  ? 
+                    <AddItem act = {addItemBrown} setAct = {setAddItemBrown} color = {allEmotions.brownEmotion.color}/> 
+                    : null}
+            </Container>
+            <Container color = {allEmotions.blackEmotion.color} className = "configure__container" >
+                <div className = "configure__imgContainer">
+                    <img className = "configure__imgContainer--img" src= {allEmotions.blackEmotion.icon} alt="" />
+                    <h2 className = "configure__imgContainer--text">
+                        {allEmotions.blackEmotion.title}
+                    </h2>
+                    <p>Que puis-je faire dans ce cas-là?</p>
+                </div>
+                <ListOfActions className = "configure__listOfActions" check = {1} display = {allEmotions.blackEmotion}  selection= {selection} option = {option}/>
+                <i className="fa-solid fa-circle-plus" onClick = {() => 
+                    (addItemGreen == "entering" || addItemRed == "entering" || addItemYellow == "entering" || addItemBrown == "entering")? 
+                    null :
+                    setAddItemBlack("entering")}>
+                </i>
+                {addItemBlack != "no"  ? 
+                    <AddItem act = {addItemBlack} setAct = {setAddItemBlack} color = {allEmotions.blackEmotion.color}/> 
+                    : null}
             </Container>
             <div id = "Anchor__arrowTurnLeftContainer" className = "returnIconContainer"> 
                     <i id = "Anchor__arrowTurnLeftIcon" 

@@ -21,7 +21,6 @@ const Frame = styled.div`
     color: ${({color}) => color};
 `
 function Thermometer() {
-    let check = 0;
     let Navigate = useNavigate();
     const Emotion = ({emotion}) => {
         setContainerColor(emotion.color);
@@ -34,7 +33,7 @@ function Thermometer() {
                             <img src = {emotion.icon} alt = "Icône émotion" id = 'thermometer__frameEmotion'/>
                             <h2 id = "emotion__title">{emotion.title}</h2>
                         </div>
-                        <ListOfActions emotion = {emotion}  check = {check}/>
+                        <ListOfActions display = {emotion} />
                     </>
                     : null
                 }
@@ -43,39 +42,45 @@ function Thermometer() {
     }
     
     Emotion.propTypes = {
-        emotion: PropTypes.string
+        emotion: PropTypes.object
     }
     
     const feeling = {
         noEmotion : {
+            name:"",
             icon: "",
             color: "rgb(202, 202, 202)",
             title : "",
         },
         greenEmotion:{
+            name: "greenEmotion",
             icon: greenCloud,
             color: "#5FCE84",
             title: "Je me sens bien",
         },
         yellowEmotion: {
+            name: "yellowEmotion",
             icon:  yellowCloud,
             color: "#EAB801",
             title: "Je suis nerveux, triste",
         },
         redEmotion: {
+            name: "redEmotion",
             icon: redCloud,
             color: "#D40101",
             title: "Je suis fâché, angoissé", 
         },
         brownEmotion: {
+            name: "brownEmotion",
             icon: brownCloud,
             color: "#791A1A",
             title: "Je suis furieux, agacé"
         },
         blackEmotion: {
-             icon: blackCloud,
-        color: "#000000",
-        title: "J'ai des idées noires",
+            name: "blackEmotion",
+            icon: blackCloud,
+            color: "#000000",
+            title: "J'ai des idées noires",
         }
     }
     const preferencesList = "";

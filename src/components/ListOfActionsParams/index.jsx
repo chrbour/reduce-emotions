@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import {useState} from 'react';
 import music from '../../assets/images/woman-earphones_1280.webp';
 import play from '../../assets/images/board-game_1280.webp';
 import friends from '../../assets/images/holding-hands_1280.webp';
@@ -45,9 +46,10 @@ const DisplayListOfActions = styled.div`
     height: 100%;
 `
 const ContainerListOfActions = styled.div`
-        grid-template: 100% / 150px 300px;
+        grid-template: ${({check}) => check === 0 ? '100% / 150px 300px' : '100% / 50px 100px 300px'
+        };
         border: 1px solid #000000;
-        width: 500px; 
+        width: ${({check}) => check ===0 ? '500px': '450px'}; 
         display: grid;
         margin: 1px;
     `  
@@ -57,16 +59,18 @@ const ContainerListOfActions = styled.div`
         align-items: center;
     `
     const ImgListOfActions = styled.img`
-        height: 100px !important;
-        width: 148px;
+        height: ${({check}) => 
+            check === 0? '100px !important' : '50px !important'};
+        width: ${({check}) => 
+            check === 0 ? '148px' : '74px'};
         margin: auto;
     `
     const TextListOfActions = styled.div`
         color: #000000; 
         margin: auto 20px;
-        font-size: 20px};
+        font-size: ${({check}) => check === 0 ? '20px' : '12px'};
     `
-const ListOfActions = ({display}) => {
+const ListOfActions = ({display, check, selection, option}) => {
     const image = [music, "Ecoute de la musique", 
                     play, "Joue avec ta famille/tes amis",
                     friends, "Parle avec des amis ou ta famille",
@@ -103,18 +107,30 @@ const ListOfActions = ({display}) => {
                     pills, "Prends ton traitement prescrit en cas de crise",
                     emergencies,  "Appelle les urgences",
                 ];
+    const [firstDisplay, UpdateFirstDisplay] = useState(1);
     let picture;
-    
+    let actionSelected =[];
+    let selectionArray = Object.keys(selection).map((key) => [Number(key), selection[key]]);
+    selectionArray.map((e,id) => { if (selectionArray[id][1].name === display.name){
+        actionSelected = selectionArray[id][1].action;
+    }});
+    console.log('actionSelected',actionSelected);
+   
     let actions = image.map((i, id) => {
         for (let element of display.action){
+            
             if(element === i){
                 picture = image[id-1];
                 return (
-                    <ContainerListOfActions id = "containerListOfActions" key = {i} >
-                        <ContainerImgListOfActions id = "containerListOfActions__contImg" >
-                            <ImgListOfActions src={picture} alt = "actions" />
+                    <ContainerListOfActions id = "containerListOfActions" key = {i} check= {check}>
+                        {check === 0? null : 
+                            firstDisplay && actionSelected.includes(element)?
+                            (console.log(element),<input type = "checkbox" id = {i} name = {`checkbox${id}`} defaultChecked = {true}/>)
+                            :<input type = "checkbox" id = {i} name = {`checkbox${id}`}/>}
+                        <ContainerImgListOfActions id = "containerListOfActions__contImg" check= {check}>
+                            <ImgListOfActions src={picture} alt = "actions" check= {check}/>
                         </ContainerImgListOfActions>
-                        <TextListOfActions id = "containerListOfActions__text" >
+                        <TextListOfActions id = "containerListOfActions__text" check= {check}>
                             <p>{element}</p>
                         </TextListOfActions>   
                     </ContainerListOfActions>

@@ -13,19 +13,19 @@ const RightArrow = styled.div`
         (angle<90 && triangle === 'right') || (angle<95 && triangle === 'left') ? 'visible' : 'hidden'};
 `
 const RightTriangle = styled.img`
-    visibility: ${({triangleActivated}) => triangleActivated === "right" ? 'visible' : 'hidden'}
+    visibility: ${({triangleactivated}) => triangleactivated === "right" ? 'visible' : 'hidden'}
 `
 const Wheel = styled.img`
     transition: 0.3s ease-in-out;
     transform: rotate(${({angle}) => angle}deg);
 `
 const LeftTriangle = styled.img`
-    visibility: ${({triangleActivated}) => triangleActivated === "left" ? 'visible' : 'hidden'}
+    visibility: ${({triangleactivated}) => triangleactivated === "left" ? 'visible' : 'hidden'}
 `
 const LeftArrow = styled.div`
     visibility: ${({angle, triangle}) => 
         (angle < -75 && triangle === 'left') || (angle < -80 && triangle === 'right')? 'hidden' : 'visible'};
-    setTriangleActivated('right');
+    settriangleactivated('right');
 `
 const EmotionBase = styled.span`
     font-family: Arial;
@@ -53,7 +53,7 @@ const NeedAssociated = styled.span`
 
 function EmotionsWheel() {
     const [angle, setAngle] = useState(90);
-    const [triangleActivated, setTriangleActivated] = useState('right');
+    const [triangleactivated, settriangleactivated] = useState('right');
     const [emotion, setEmotion] = useState(0);
     const [associatedEmotion, setAssociatedEmotion] = useState(3);
     const [intensityEmotion, setIntensityEmotion] = useState(7);
@@ -84,7 +84,7 @@ function EmotionsWheel() {
         let base = emotion;
         let assoc = associatedEmotion;
         let intens = intensityEmotion
-        if ((angle < 90 && triangleActivated === 'right') || (angle < 95 && triangleActivated ==='left')){
+        if ((angle < 90 && triangleactivated === 'right') || (angle < 95 && triangleactivated ==='left')){
             setAngle(angle + 5);
             if (intens + 1 > emotions.intensites[base].length-1){
                 base + 1 > emotions.emotionBase.length-1 ? base = 0 : base++;
@@ -125,7 +125,7 @@ function EmotionsWheel() {
         let assoc = associatedEmotion;
         let intens = intensityEmotion;
         if (angle !=95){
-            setTriangleActivated('right');
+            settriangleactivated('right');
             for (let i = 0; i < 35; i++){
                 if (intens - 1 < 0){
                     intens = emotions.intensites[base].length-1;
@@ -147,7 +147,7 @@ function EmotionsWheel() {
         let assoc = associatedEmotion;
         let intens = intensityEmotion;
         if (angle !=-85){
-            setTriangleActivated('left');
+            settriangleactivated('left');
             for (let i = 0; i < 35; i++){
                 console.log('i:', i);
                 if (intens + 1 > emotions.intensites[base].length-1){
@@ -189,22 +189,22 @@ function EmotionsWheel() {
                 <p>Clique sur la flèche de sélection pour la passer de part et d&apos;autre de la roue</p>
             </div>
             <div id = "EmotionsWheel__imageContainer" className = "imageContainer">
-                <RightArrow id = "EmotionsWheel__image--rightArrowContainer" angle = {angle} triangle = {triangleActivated}>
+                <RightArrow id = "EmotionsWheel__image--rightArrowContainer" angle = {angle} triangle = {triangleactivated}>
                     <img id = "EmotionsWheel__image--rightArrow"src = {rightArrow} alt="Tourner à droite" />
                     <img id = "EmotionsWheel__image--rightArrowHover" src = {rightArrowHover} alt="Tourner à droite"
                             onClick = {turnRight} />
                 </RightArrow>
                 <div id = "EmotionsWheel__image--trianglesAndWheel">
                     <LeftTriangle id = "EmotionsWheel__image--triangleLeft" src= {triangle} alt="triangle" 
-                                triangleActivated = {triangleActivated} angle = {angle}
+                                triangleactivated = {triangleactivated} angle = {angle}
                                 onClick = {leftChoice}/>
                     <Wheel id = "EmotionsWheel__image--wheel" src = {wheel} alt = "Roue des émotions" 
                         angle = {angle}/>
                     <RightTriangle id = "EmotionsWheel__image--triangleRight" src= {triangle} alt="triangle" 
-                                triangleActivated = {triangleActivated} angle = {angle}
+                                triangleactivated = {triangleactivated} angle = {angle}
                                 onClick = {rightChoice}/>
                 </div>
-                <LeftArrow id = "EmotionsWheel__image--leftArrowContainer" angle = {angle} triangle = {triangleActivated}>
+                <LeftArrow id = "EmotionsWheel__image--leftArrowContainer" angle = {angle} triangle = {triangleactivated}>
                     <img id = "EmotionsWheel__image--leftArrow"src = {leftArrow} alt="Tourner à gauche" />
                     <img id = "EmotionsWheel__image--leftArrowHover"src = {leftArrowHover} alt="Tourner à gauche"
                         onClick = {turnLeft} />
@@ -220,3 +220,4 @@ function EmotionsWheel() {
     )
 }
 export default EmotionsWheel;
+

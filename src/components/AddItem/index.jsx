@@ -10,7 +10,7 @@ const ContainerAddItem = styled.div`
     transform: translate(-50%);
     background-color: grey;
     border: 15px solid;
-    
+    border-color: ${({color}) => color};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,11 +39,11 @@ const ContainerAddItem = styled.div`
         & input{
         }
 `
-const AddItem = ({act, setAct}) => {
+const AddItem = ({act, setAct, color}) => {
     return(
-        <ContainerAddItem act = {act} id = "AddItem__Container" >
+        <ContainerAddItem act = {act} id = "AddItem__Container" color = {color}>
             <label htmlFor = "newAction" style = {{color: '#FFFFFF', fontSize: '22px'}}>Qu&apos;elle action veux-tu ajouter?</label>
-            <input type="text" id = "newAction" placeholder = {act} style = {{width: '90%', height: '50px', fontSize:'20px', margin: '10px auto'}}/>
+            <input type="text" id = "newAction" placeholder = {color} style = {{width: '90%', height: '50px', fontSize:'20px', margin: '10px auto'}}/>
             <div>
                 <button style = {{margin: '5px'}}  >Valider</button>
                 <button style = {{margin: '5px'}} onClick = {() => setAct('closing')}>Annuler</button>
@@ -55,5 +55,6 @@ export default AddItem;
 
 AddItem.propTypes = {
     act: PropTypes.function,
-    setAct: PropTypes.function
+    setAct: PropTypes.function,
+    color: PropTypes.string
 }
