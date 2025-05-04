@@ -23,7 +23,7 @@ function Routeur() {
                     <Route path = "/EmotionsWheel" element = {<EmotionsWheel />} />
                     <Route path = "/WebResources" element = {<WebResources />} />
                     <Route path = "/Thermometer" element = {<Thermometer />} />
-                    <Route path = "Configure" element = {<Configure/>} />
+                    <Route path = "/Configure" element = {<Configure/>} />
                 </Routes>
         </Router>
     </React.StrictMode>

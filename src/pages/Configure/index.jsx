@@ -7,7 +7,7 @@ import yellowCloud from '../../assets/svg/Nuage_jaune.svg';
 import redCloud from '../../assets/svg/Nuage_rouge.svg';
 import brownCloud from '../../assets/svg/Nuage_marron_avec_pieds_noirs.svg';
 import blackCloud from '../../assets/svg/Nuage_noir_avec_pieds_noirs.svg';
-import ListOfActions from "../../components/ListOfActionsParams";
+import ListOfActionsParams from "../../components/ListOfActionsParams";
 
 
 
@@ -161,7 +161,7 @@ const Configure = () =>{
                     </h2>
                     <p>Que puis-je faire dans ce cas-là?</p>
                 </div>
-                <ListOfActions  className = "configure__listOfActions" display = {allEmotions.greenEmotion} check = {1}  selection= {selection} option = {option} />
+                <ListOfActionsParams  className = "configure__listOfActions" display = {allEmotions.greenEmotion} selection= {selection} option = {option} color = "Green"/>
                 <i className="fa-solid fa-circle-plus" onClick = {() => 
                     (addItemYellow == "entering" || addItemRed == "entering" || addItemBrown == "entering" || addItemBlack == "entering")? 
                     null :
@@ -179,7 +179,7 @@ const Configure = () =>{
                     </h2>
                     <p>Que puis-je faire dans ce cas-là?</p>
                 </div>
-                <ListOfActions className = "configure__listOfActions" check = {1} display = {allEmotions.yellowEmotion}  selection= {selection} option = {option}/>
+                <ListOfActionsParams className = "configure__listOfActions" display = {allEmotions.yellowEmotion}  selection= {selection} option = {option} color = "Yellow"/>
                 <i className="fa-solid fa-circle-plus" onClick = {() => 
                     (addItemGreen == "entering" || addItemRed == "entering" || addItemBrown == "entering" || addItemBlack == "entering")? 
                     null :
@@ -197,7 +197,7 @@ const Configure = () =>{
                     </h2>
                     <p>Que puis-je faire dans ce cas-là?</p>
                 </div>
-                <ListOfActions className = "configure__listOfActions" check = {1} display = {allEmotions.redEmotion}  selection= {selection} option = {option}/>
+                <ListOfActionsParams className = "configure__listOfActions" display = {allEmotions.redEmotion}  selection= {selection} option = {option} color = "Red"/>
                 <i className="fa-solid fa-circle-plus" onClick = {() => 
                     (addItemGreen == "entering" || addItemYellow == "entering" || addItemBrown == "entering" || addItemBlack == "entering")? 
                     null :
@@ -215,7 +215,7 @@ const Configure = () =>{
                     </h2>
                     <p>Que puis-je faire dans ce cas-là?</p>
                 </div>
-                <ListOfActions className = "configure__listOfActions" check = {1} display = {allEmotions.brownEmotion}  selection= {selection} option = {option}/>
+                <ListOfActionsParams className = "configure__listOfActions" display = {allEmotions.brownEmotion}  selection= {selection} option = {option} color = "Brown"/>
                 <i className="fa-solid fa-circle-plus" onClick = {() => 
                     (addItemGreen == "entering" || addItemRed == "entering" || addItemYellow == "entering" || addItemBlack == "entering")? 
                     null :
@@ -233,7 +233,7 @@ const Configure = () =>{
                     </h2>
                     <p>Que puis-je faire dans ce cas-là?</p>
                 </div>
-                <ListOfActions className = "configure__listOfActions" check = {1} display = {allEmotions.blackEmotion}  selection= {selection} option = {option}/>
+                <ListOfActionsParams className = "configure__listOfActions" display = {allEmotions.blackEmotion}  selection= {selection} option = {option} color = "Black"/>
                 <i className="fa-solid fa-circle-plus" onClick = {() => 
                     (addItemGreen == "entering" || addItemRed == "entering" || addItemYellow == "entering" || addItemBrown == "entering")? 
                     null :
@@ -243,7 +243,7 @@ const Configure = () =>{
                     <AddItem act = {addItemBlack} setAct = {setAddItemBlack} color = {allEmotions.blackEmotion.color}/> 
                     : null}
             </Container>
-            <div id = "Anchor__arrowTurnLeftContainer" className = "returnIconContainer"> 
+            <div id = "Anchor__arrowTurnLeftContainer" className = "returnIconContainer" style = {{height: '500px'}}> 
                     <i id = "Anchor__arrowTurnLeftIcon" 
                         className = "fa-solid fa-rotate-left returnIcon"
                         onClick = {() => Navigate("/Thermometer")}></i>

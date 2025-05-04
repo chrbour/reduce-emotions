@@ -54,7 +54,7 @@ const AddItem = ({act, setAct, color}) => {
 export default AddItem;
 
 AddItem.propTypes = {
-    act: PropTypes.function,
-    setAct: PropTypes.function,
+    act: PropTypes.string,
+    setAct: PropTypes.func,
     color: PropTypes.string
 }

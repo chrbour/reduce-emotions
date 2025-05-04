@@ -68,7 +68,8 @@ const TextListOfActions = styled.div`
     font-size: 12px;
 `
 const ListOfActions = ({display, selection, option, color}) => {
-    const image_LinkAndName = [music, "Ecoute de la musique", 
+    console.log(color);
+    const image = [music, "Ecoute de la musique", 
                     play, "Joue avec ta famille/tes amis",
                     friends, "Parle avec des amis ou ta famille",
                     goOut, "Sors prendre l'air",
@@ -104,76 +105,97 @@ const ListOfActions = ({display, selection, option, color}) => {
                     pills, "Prends ton traitement prescrit en cas de crise",
                     emergencies,  "Appelle les urgences",
                 ];
-    let actionPreSelected = [];
-    let picture;
+    let actionSelected =[];
+    let ret = []; let picture;
     let selectionArray = Object.keys(selection).map((key) => [Number(key), selection[key]]);
     selectionArray.map((e,id) => { if (selectionArray[id][1].name === display.name){
-        actionPreSelected = selectionArray[id][1].action;
-    }});     
-    const [itemsChecked, setItemsChecked] = useState(actionPreSelected);
-    
-    const isChecked = (id, element) => {
-        if (itemsChecked?.includes(element)){
-           return true
-            }
-        else{
-            return false
-        };
-    };
-
-    const checkboxClick = (e) => {
+        actionSelected = selectionArray[id][1].action;
+    }});console.log("ActionSelected: ", actionSelected, selectionArray);
+    const [itemsChecked, setItemsChecked] = useState([ret]);
+    const selectAction = (e) => {
+        console.log('ret.length: ', ret.length);
+        console.log('itemschecked: ', itemsChecked);
         const {value, checked} = e.target;
-        if (checked && itemsChecked?.length >= 5){
-           alert('Vous ne pouvez sélectionner plus de 5 items');
+        if (checked && itemsChecked?.length>5){
+            console.log("Rien");
             return;
         }
-        setItemsChecked((prevCheckedItems)=>{
-            if (checked){
-                const addingItem = [...prevCheckedItems,value];
-                switch(display.name){
-                    case 'greenEmotion': updateNbActionsGreen(nbActionsGreen + 1); break;
-                    case 'yellowEmotion': updateNbActionsYellow(nbActionsYellow + 1); break;
-                    case 'redEmotion': updateNbActionsRed(nbActionsRed + 1); break;
-                    case 'brownEmotion': updateNbActionsBrown(nbActionsBrown + 1); break;
-                    case 'blackEmotion': updateNbActionsBlack(nbActionsBlack + 1); break;
-                }
-                return addingItem;
-            }
-            else {
-                const removingItem = prevCheckedItems.filter((e) => e != value);
-                switch(display.name){
-                    case 'greenEmotion': updateNbActionsGreen(nbActionsGreen - 1); break;
-                    case 'yellowEmotion': updateNbActionsYellow(nbActionsYellow - 1); break;
-                    case 'redEmotion': updateNbActionsRed(nbActionsRed - 1); break;
-                    case 'brownEmotion': updateNbActionsBrown(nbActionsBrown - 1); break;
-                    case 'blackEmotion': updateNbActionsBlack(nbActionsBlack - 1); break;
-                }
-                return removingItem;
-            }
-        })       
+        switch(display.name){
+            case 'greenEmotion': 
+                setItemsChecked((prevCheckedItems)=>{
+                    if (checked){
+                        updateNbActionsGreen(nbActionsGreen + 1);
+                        return [...prevCheckedItems, value];
+                    }
+                    else {
+                        updateNbActionsGreen(nbActionsGreen -1);
+                        return prevCheckedItems.filter(item => item !==value);
+                    }
+                })
+                // e.target.checked === true? 
+                // (updateNbActionsGreen(nbActionsGreen + 1, setItemsChecked()))
+                // : updateNbActionsGreen(nbActionsGreen -1);
+                break;
+                case 'yellowEmotion': e.target.checked === true? 
+                updateNbActionsYellow(nbActionsYellow + 1)
+                : updateNbActionsYellow(nbActionsYellow -1);
+                break;
+                case 'redEmotion': e.target.checked === true? 
+                updateNbActionsRed(nbActionsRed + 1)
+                : updateNbActionsRed(nbActionsRed -1);
+                break;
+                case 'brownEmotion': e.target.checked === true? 
+                updateNbActionsBrown(nbActionsBrown + 1)
+                : updateNbActionsBrown(nbActionsBrown -1);
+                break;
+                case 'blackEmotion': e.target.checked === true? 
+                updateNbActionsBlack(nbActionsBlack + 1)
+                : updateNbActionsBlack(nbActionsBlack -1);
+                break;
+        }
     }
     
     const [nbActionsGreen, updateNbActionsGreen] = useState(selection.greenEmotion.action.length);
     const [nbActionsYellow, updateNbActionsYellow] = useState(0);
     const [nbActionsRed, updateNbActionsRed] = useState(0);
     const [nbActionsBrown, updateNbActionsBrown] = useState(0);
-    const [nbActionsBlack, updateNbActionsBlack] = useState(0); 
+    const [nbActionsBlack, updateNbActionsBlack] = useState(0);
+    
+    // let initiatingItemsChecked = (element, value) => {
+    //     if (actionSelected.includes(element)){
+    //         // setItemsChecked([ret]);
+    //         ret.push(value);
+    //         console.log('element : ', element, value, ret)
+    //     };
+    //     return actionSelected.includes(element)
+    // };
 
-    let i = -1; 
-    let actions = image_LinkAndName.map((AdressAndName, id) => {
-        
-        for (let element of display.action){  
-            if(element === AdressAndName){
-                i++;
-                picture = image_LinkAndName[id-1];
+    const testChecked = (id, element) => {
+        if (actionSelected.includes(element)){
+            // setItemsChecked((prevCheckedItems) => {
+            //     return [ ...prevCheckedItems, id]
+            // })
+            ret.push(id);
+            };
+        if (itemsChecked.includes(`checkbox${id}`) || actionSelected.includes(element)){
+            return true;
+        }
+    }
+    console.log('image:', image);
+    let actions = image.map((i, id) => {console.log("i, id", i , id);
+        for (let element of display.action){   
+            if(element === i){
+                picture = image[id-1];
                 return (
-                    <ContainerListOfActions id = "containerListOfActions" key = {AdressAndName} >
-                            <input type = "checkbox" id = {AdressAndName} value = {element} 
-                                checked = {isChecked(`checkbox${i}`, element)}
-                                onChange = {checkboxClick}
+                    <ContainerListOfActions id = "containerListOfActions" key = {i} >
+                            <input type = "checkbox" id = {i} value = {`checkbox${id}`} 
+                                checked = {testChecked(`checkbox${id}`, element)}
+                                disabled = {itemsChecked.length >5 && (!itemsChecked.includes(`checkbox${id}`))}
+                                onChange = {selectAction}
                             />
                         <ContainerImgListOfActions id = "containerListOfActions__contImg" >
                             <ImgListOfActions src={picture} alt = "actions" />
+                            {nbActionsGreen}
                         </ContainerImgListOfActions>
                         <TextListOfActions id = "containerListOfActions__text">
                             <p>{element}</p>
