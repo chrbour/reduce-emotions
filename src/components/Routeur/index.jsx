@@ -9,6 +9,7 @@ import EmotionsWheel from "../../pages/EmotionsWheel";
 import WebResources from "../../pages/Webresources";
 import Thermometer from "../../pages/Thermometer";
 import Configure from "../../pages/Configure";
+import Error from "../../pages/Error";
 
 function Routeur() {
     return (
@@ -24,6 +25,7 @@ function Routeur() {
                     <Route path = "/WebResources" element = {<WebResources />} />
                     <Route path = "/Thermometer" element = {<Thermometer />} />
                     <Route path = "/Configure" element = {<Configure/>} />
+                    <Route path = "*" element = {<Error/>} />
                 </Routes>
         </Router>
     </React.StrictMode>

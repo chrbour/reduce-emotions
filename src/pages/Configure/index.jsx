@@ -9,14 +9,11 @@ import brownCloud from '../../assets/svg/Nuage_marron_avec_pieds_noirs.svg';
 import blackCloud from '../../assets/svg/Nuage_noir_avec_pieds_noirs.svg';
 import ListOfActionsParams from "../../components/ListOfActionsParams";
 
-
-
 const Container = styled.div`
     border-color: ${({color})=> color};
     color: ${({color})=> color};
 `
-
-const Configure = () =>{
+const Configure = () => {
     let Navigate = useNavigate();
     const [addItemGreen, setAddItemGreen] = useState("no");
     const [addItemYellow, setAddItemYellow] = useState("no");
@@ -121,7 +118,7 @@ const Configure = () =>{
                 color: "#D40101",
                 title: "Je suis fâché, angoissé", 
                 action: ["Sors prendre l'air", "Obtiens ou fais un câlin", "Bouge ou fais du sport", 
-                    "Respire profondément", "Pense à un endroit paisible", "Pratique des techniques d'ancrage"],
+                    "Pense à un endroit paisible", "Pratique des techniques d'ancrage"],
             },
             brownEmotion: {
                 name: "brownEmotion",
@@ -243,11 +240,11 @@ const Configure = () =>{
                     <AddItem act = {addItemBlack} setAct = {setAddItemBlack} color = {allEmotions.blackEmotion.color}/> 
                     : null}
             </Container>
-            <div id = "Anchor__arrowTurnLeftContainer" className = "returnIconContainer" style = {{height: '500px'}}> 
-                    <i id = "Anchor__arrowTurnLeftIcon" 
-                        className = "fa-solid fa-rotate-left returnIcon"
-                        onClick = {() => Navigate("/Thermometer")}></i>
-                </div>
+            <div>
+                <button className = "configure__btn">Enregistrer</button>
+                <button className = "configure__btn">Réinitialiser</button>
+                <button className = "configure__btn" onClick = {() => Navigate("/Thermometer")}>Annuler</button>
+            </div>
         </div>
     )
 }

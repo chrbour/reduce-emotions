@@ -42,16 +42,19 @@
       text-align: center;
     }
   }
+  &__btn{
+    color: #000000;
+    font-size: 16px;
+    margin: 10px;
+    border: solid 2px black;
+    &:hover{
+      border: solid 2px #fff;
+      color: red;
+    }
+  }
 };
-@keyframes enterGreenForm{
-  from{
-    transform: scale(110%)
-  }
-  to{
-    transform: scale(50%)
-  }
-}
-input[type=checkbox] {
+
+input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -80,11 +83,4 @@ input[type="checkbox"]:checked {
     top: 25%;
     left: 25%;
   }
-
-}
-
-.addItemForm{
-  animation: 5s ease-in-out infinite both enterGreenForm;
-  width: 500px;
-  height: 500px;
 }

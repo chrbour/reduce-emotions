@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import music from '../../assets/images/woman-earphones_1280.webp';
 import play from '../../assets/images/board-game_1280.webp';
 import friends from '../../assets/images/holding-hands_1280.webp';
@@ -36,6 +36,7 @@ import help from '../../assets/images/help_1280.webp';
 import range from '../../assets/images/glasses_1280.webp';
 import pills from '../../assets/images/stethoscope_1280.webp';
 import emergencies from '../../assets/images/ambulance_1280.webp';
+import AlertParam from "../AlertParam";
 
 const DisplayListOfActions = styled.div`
     display: flex;
@@ -67,7 +68,7 @@ const TextListOfActions = styled.div`
     margin: auto 20px;
     font-size: 12px;
 `
-const ListOfActions = ({display, selection, option, color}) => {
+const ListOfActionsParams = ({display, selection}) => {
     const image_LinkAndName = [music, "Ecoute de la musique", 
                     play, "Joue avec ta famille/tes amis",
                     friends, "Parle avec des amis ou ta famille",
@@ -111,7 +112,13 @@ const ListOfActions = ({display, selection, option, color}) => {
         actionPreSelected = selectionArray[id][1].action;
     }});     
     const [itemsChecked, setItemsChecked] = useState(actionPreSelected);
-    
+    const [nbActionsGreen, updateNbActionsGreen] = useState(selection.greenEmotion.action.length);
+    const [nbActionsYellow, updateNbActionsYellow] = useState(selection.yellowEmotion.action.length);
+    const [nbActionsRed, updateNbActionsRed] = useState(selection.redEmotion.action.length);
+    const [nbActionsBrown, updateNbActionsBrown] = useState(selection.brownEmotion.action.length);
+    const [nbActionsBlack, updateNbActionsBlack] = useState(selection.blackEmotion.action.length); 
+    const [displayAlert, setDisplayAlert] = useState(false);
+   
     const isChecked = (id, element) => {
         if (itemsChecked?.includes(element)){
            return true
@@ -124,8 +131,11 @@ const ListOfActions = ({display, selection, option, color}) => {
     const checkboxClick = (e) => {
         const {value, checked} = e.target;
         if (checked && itemsChecked?.length >= 5){
-           alert('Vous ne pouvez sélectionner plus de 5 items');
+           setDisplayAlert(true);
             return;
+        }
+        else {
+            displayAlert == true? setDisplayAlert(false) : true
         }
         setItemsChecked((prevCheckedItems)=>{
             if (checked){
@@ -152,16 +162,9 @@ const ListOfActions = ({display, selection, option, color}) => {
             }
         })       
     }
-    
-    const [nbActionsGreen, updateNbActionsGreen] = useState(selection.greenEmotion.action.length);
-    const [nbActionsYellow, updateNbActionsYellow] = useState(0);
-    const [nbActionsRed, updateNbActionsRed] = useState(0);
-    const [nbActionsBrown, updateNbActionsBrown] = useState(0);
-    const [nbActionsBlack, updateNbActionsBlack] = useState(0); 
 
     let i = -1; 
     let actions = image_LinkAndName.map((AdressAndName, id) => {
-        
         for (let element of display.action){  
             if(element === AdressAndName){
                 i++;
@@ -184,14 +187,17 @@ const ListOfActions = ({display, selection, option, color}) => {
         };
     
     });
-    return <DisplayListOfActions >{actions}</DisplayListOfActions>
+    return <DisplayListOfActions >
+                {actions}
+                {displayAlert == true? <AlertParam/> : null}
+            </DisplayListOfActions>
 }
     
 
-ListOfActions.propTypes = {
+ListOfActionsParams.propTypes = {
     display: PropTypes.object,
     selection: PropTypes.object,
     option: PropTypes.object
     }
 
-export default ListOfActions;
+export default ListOfActionsParams;

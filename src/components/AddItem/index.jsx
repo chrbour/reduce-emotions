@@ -2,12 +2,12 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const ContainerAddItem = styled.div`
+    z-index: 6;
     position: absolute;
     padding: 20px;
     top: 50%;
     left: 50%; 
     border-radius: 20px;
-    transform: translate(-50%);
     background-color: grey;
     border: 15px solid;
     border-color: ${({color}) => color};
@@ -21,7 +21,6 @@ const ContainerAddItem = styled.div`
     
     @keyframes entering{
         from{
-            
             transform: translateX(100vw)
         }
         to{
@@ -36,8 +35,6 @@ const ContainerAddItem = styled.div`
             transform: translateX(100vw);  
         }
     }
-        & input{
-        }
 `
 const AddItem = ({act, setAct, color}) => {
     return(

@@ -713,15 +713,17 @@ body {
   font-weight: bold;
   text-align: center;
 }
-
-@keyframes enterGreenForm {
-  from {
-    transform: scale(110%);
-  }
-  to {
-    transform: scale(50%);
-  }
+.configure__btn {
+  color: #000000;
+  font-size: 16px;
+  margin: 10px;
+  border: solid 2px black;
 }
+.configure__btn:hover {
+  border: solid 2px #fff;
+  color: red;
+}
+
 input[type=checkbox] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -751,12 +753,6 @@ input[type=checkbox]:checked:before {
   position: absolute;
   top: 25%;
   left: 25%;
-}
-
-.addItemForm {
-  animation: 5s ease-in-out infinite both enterGreenForm;
-  width: 500px;
-  height: 500px;
 }
 
 /*# sourceMappingURL=style.css.map */
