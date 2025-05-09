@@ -1,5 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import {useState} from 'react';
+//import {SavingParamsContext} from "../../utils/context/Context";
 import AddItem from '../../components/AddItem';
 import styled from "styled-components";
 import greenCloud from '../../assets/svg/Nuage_vert.svg';
@@ -15,6 +16,7 @@ const Container = styled.div`
 `
 const Configure = () => {
     let Navigate = useNavigate();
+    //const {params} = useContext(SavingParamsContext);
     const [addItemGreen, setAddItemGreen] = useState("no");
     const [addItemYellow, setAddItemYellow] = useState("no");
     const [addItemRed, setAddItemRed] = useState("no");
@@ -241,7 +243,7 @@ const Configure = () => {
                     : null}
             </Container>
             <div>
-                <button className = "configure__btn">Enregistrer</button>
+                <button className = "configure__btn" onClick = {() => console.log('Params: ')}>Enregistrer</button>
                 <button className = "configure__btn">Réinitialiser</button>
                 <button className = "configure__btn" onClick = {() => Navigate("/Thermometer")}>Annuler</button>
             </div>

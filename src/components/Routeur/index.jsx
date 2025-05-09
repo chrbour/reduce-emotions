@@ -1,5 +1,6 @@
 import React from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import SavingParamsProvider from "../../utils/context/SavingParamsProvider";
 import Home from "../../pages/Home";
 import Menu from "../../pages/Menu";
 import Anchoring from "../../pages/Anchoring";
@@ -15,6 +16,7 @@ function Routeur() {
     return (
     <React.StrictMode>
         <Router>
+            <SavingParamsProvider>
                 <Routes>
                     <Route path = "/" element = {<Home/>} />  
                     <Route path = "/Menu" element = {<Menu />} />
@@ -24,9 +26,10 @@ function Routeur() {
                     <Route path = "/EmotionsWheel" element = {<EmotionsWheel />} />
                     <Route path = "/WebResources" element = {<WebResources />} />
                     <Route path = "/Thermometer" element = {<Thermometer />} />
-                    <Route path = "/Configure" element = {<Configure/>} />
+                   <Route path = "/Configure" element = {<Configure/>} />                
                     <Route path = "*" element = {<Error/>} />
                 </Routes>
+            </SavingParamsProvider>
         </Router>
     </React.StrictMode>
     )

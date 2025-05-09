@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import {useState} from 'react';
+import {useState, useContext} from 'react';
+import {SavingParamsContext} from "../../utils/context/Context";
 import music from '../../assets/images/woman-earphones_1280.webp';
 import play from '../../assets/images/board-game_1280.webp';
 import friends from '../../assets/images/holding-hands_1280.webp';
@@ -118,9 +119,11 @@ const ListOfActionsParams = ({display, selection}) => {
     const [nbActionsBrown, updateNbActionsBrown] = useState(selection.brownEmotion.action.length);
     const [nbActionsBlack, updateNbActionsBlack] = useState(selection.blackEmotion.action.length); 
     const [displayAlert, setDisplayAlert] = useState(false);
+    //const {updateParams} = useContext(SavingParamsContext);
    
     const isChecked = (id, element) => {
         if (itemsChecked?.includes(element)){
+            //updateParams(itemsChecked);
            return true
             }
         else{
@@ -139,7 +142,7 @@ const ListOfActionsParams = ({display, selection}) => {
         }
         setItemsChecked((prevCheckedItems)=>{
             if (checked){
-                const addingItem = [...prevCheckedItems,value];
+                const addingItem = [...prevCheckedItems, value];
                 switch(display.name){
                     case 'greenEmotion': updateNbActionsGreen(nbActionsGreen + 1); break;
                     case 'yellowEmotion': updateNbActionsYellow(nbActionsYellow + 1); break;
@@ -163,16 +166,16 @@ const ListOfActionsParams = ({display, selection}) => {
         })       
     }
 
-    let i = -1; 
+    let index = -1; 
     let actions = image_LinkAndName.map((AdressAndName, id) => {
         for (let element of display.action){  
             if(element === AdressAndName){
-                i++;
+                index++;
                 picture = image_LinkAndName[id-1];
                 return (
                     <ContainerListOfActions id = "containerListOfActions" key = {AdressAndName} >
                             <input type = "checkbox" id = {AdressAndName} value = {element} 
-                                checked = {isChecked(`checkbox${i}`, element)}
+                                checked = {isChecked(`checkbox${index}`, element)}
                                 onChange = {checkboxClick}
                             />
                         <ContainerImgListOfActions id = "containerListOfActions__contImg" >
