@@ -1,6 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import SavingParamsProvider from "../../utils/context/SavingParamsProvider";
+import EmotionsProvider from "../../utils/context/EmotionsProvider";
 import Home from "../../pages/Home";
 import Menu from "../../pages/Menu";
 import Anchoring from "../../pages/Anchoring";
@@ -12,11 +13,13 @@ import Thermometer from "../../pages/Thermometer";
 import Configure from "../../pages/Configure";
 import Error from "../../pages/Error";
 
+
 function Routeur() {
     return (
     <React.StrictMode>
         <Router>
             <SavingParamsProvider>
+            <EmotionsProvider>
                 <Routes>
                     <Route path = "/" element = {<Home/>} />  
                     <Route path = "/Menu" element = {<Menu />} />
@@ -29,6 +32,7 @@ function Routeur() {
                    <Route path = "/Configure" element = {<Configure/>} />                
                     <Route path = "*" element = {<Error/>} />
                 </Routes>
+            </EmotionsProvider>
             </SavingParamsProvider>
         </Router>
     </React.StrictMode>

@@ -3,7 +3,7 @@ import { SavingParamsContext } from "../Context";
 import PropTypes from "prop-types";
 
 const SavingParamsProvider = ({children}) => {
-    const [params, updateParams] = useState ('');
+    const [params, updateParams] = useState({});
     return(
         <SavingParamsContext.Provider value = {{ params, updateParams}}>
             {children}

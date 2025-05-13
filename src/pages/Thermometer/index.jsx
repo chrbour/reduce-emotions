@@ -1,9 +1,9 @@
 
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import {useNavigate} from "react-router-dom";
+import {EmotionsContext} from '../../utils/context/Context';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import ListOfActions from '../../components/ListOfActions'
+import Emotion from '../../components/Emotion';
 import thermometer from "../../assets/svg/Thermomètre_Humeurs.svg";
 import triangleWhite from '../../assets/svg/triangleWhite.svg';
 import triangleRed from '../../assets/svg/triangleRed.svg';
@@ -22,30 +22,9 @@ const Frame = styled.div`
 `
 function Thermometer() {
     let Navigate = useNavigate();
-    const Emotion = ({emotion}) => {
-        setContainerColor(emotion.color);
-        return(
-            <>
-                {
-                emotion.title != '' ? 
-                    <>
-                        <div>
-                            <img src = {emotion.icon} alt = "Icône émotion" id = 'thermometer__frameEmotion'/>
-                            <h2 id = "emotion__title">{emotion.title}</h2>
-                        </div>
-                        <ListOfActions display = {emotion} />
-                    </>
-                    : null
-                }
-            </>
-        )
-    }
-    
-    Emotion.propTypes = {
-        emotion: PropTypes.object
-    }
-    
-    const feeling = {
+    const {defaultEmotions} = useContext(EmotionsContext);
+
+    const allEmotions = {
         noEmotion : {
             name:"",
             icon: "",
@@ -85,35 +64,14 @@ function Thermometer() {
     }
     const preferencesList = "";
     let preferences = {};
-    const defaultList = {
-        greenEmotion: {
-            action: ["Ecoute de la musique", "Bouge ou fais du sport", "Souris et pratique la gratitude",
-            "Fais des pas vers tes objectifs"],
-        },
-        yellowEmotion: {
-            action: ["Ecoute de la musique", "Bouge ou fais du sport", "Pense à un endroit paisible", 
-            "Détends-toi et réessaye"],
-        },
-        redEmotion: {
-            action: ["Sors prendre l'air", "Bouge ou fais du sport", "Respire profondément",
-                "Pense à un endroit paisible", "Pratique des techniques d'ancrage"],
-            },
-        brownEmotion: {
-            action: ["Respire profondément", "Arrête-toi et sors", "Serre un fruit glacé dans tes mains",
-                "Frappe un oreiller/sac de frappe"],
-            },
-        blackEmotion: {
-            action: ["Demande de l'aide", "Prends ton traitement prescrit en cas de crise", "Appelle les urgences"],
-            },
-        }
     const [feelEmotion, setFeelEmotion] = useState('noEmotion');
-    const [containerColor, setContainerColor] = useState(feeling[{feelEmotion}.color]);
-    preferencesList === "" ? preferences = defaultList : preferences = preferencesList;
-    feeling.greenEmotion.action = preferences.greenEmotion.action;
-    feeling.yellowEmotion.action = preferences.yellowEmotion.action;
-    feeling.redEmotion.action = preferences.redEmotion.action;
-    feeling.brownEmotion.action = preferences.brownEmotion.action;
-    feeling.blackEmotion.action = preferences.blackEmotion.action;
+    const [containerColor, setContainerColor] = useState(allEmotions[{feelEmotion}.color]);
+    preferencesList === "" ? preferences = defaultEmotions : preferences = preferencesList;
+    allEmotions.greenEmotion.action = preferences.greenEmotion.action;
+    allEmotions.yellowEmotion.action = preferences.yellowEmotion.action;
+    allEmotions.redEmotion.action = preferences.redEmotion.action;
+    allEmotions.brownEmotion.action = preferences.brownEmotion.action;
+    allEmotions.blackEmotion.action = preferences.blackEmotion.action;
     return (
         <div id = "thermometer">
             <div id = "thermometer__titleContainer">
@@ -153,7 +111,7 @@ function Thermometer() {
                         </div>
                     </div>
                     <Frame id = "thermometer__imageContainer--rectangle" color = {containerColor}>
-                        <Emotion emotion = {feeling[feelEmotion]} />
+                        <Emotion emotion = {allEmotions[feelEmotion]} setContainerColor = {setContainerColor} />
                     </Frame>
                 </div>
                 <div id = "thermometer__arrowTurnLeftContainer" className = "returnIconContainer"> 
