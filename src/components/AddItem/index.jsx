@@ -36,7 +36,8 @@ const ContainerAddItem = styled.div`
         }
     }
 `
-const AddItem = ({act, setAct, color}) => {
+const AddItem = ({...props}) => {
+    const {act, setAct, color} = props;
     return(
         <ContainerAddItem act = {act} id = "AddItem__Container" color = {color}>
             <label htmlFor = "newAction" style = {{color: '#FFFFFF', fontSize: '22px'}}>Qu&apos;elle action veux-tu ajouter?</label>

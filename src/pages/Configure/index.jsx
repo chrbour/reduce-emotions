@@ -24,17 +24,18 @@ const Configure = () => {
     let selection = defaultEmotions;
     let option;
     let objLinea = localStorage.getItem("emotions");
+    console.log('objLinea',objLinea);
     if (objLinea){
-        let objJson = JSON.parse(objLinea); 
-        selection = objJson;
-        if (objJson.option != null){
-            option = objJson.option;
+        selection = JSON.parse(objLinea); 
+        if (selection.option != null){
+            option = selection.option;
     }
     }
+    console.log("selection",selection);
     const save = () => {
         if(message == ''){
-            let objLinea = JSON.stringify(params);
-            localStorage.setItem("Emotions", objLinea);
+            let objLinea = JSON.stringify(params);console.log('params',params);
+            localStorage.setItem("emotions", objLinea);
             setMessage('Votre sélection a été enregistrée !');
             console.log(message);
         }

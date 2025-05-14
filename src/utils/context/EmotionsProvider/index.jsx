@@ -43,73 +43,6 @@ import blackCloud from '../../../assets/svg/Nuage_noir_avec_pieds_noirs.svg';
 
 
 const EmotionsProvider = ({children}) => {
-    const defaultEmotions = {
-        noEmotion: {
-            name: "",
-            action: ""
-        },
-        greenEmotion: {
-            name: "greenEmotion",
-            action: ["Ecoute de la musique", "Bouge ou fais du sport", "Souris et pratique la gratitude",
-            "Avance vers tes objectifs"],
-        },
-        yellowEmotion: {
-            name: "yellowEmotion",
-            action: ["Ecoute de la musique", "Bouge ou fais du sport", "Pense à un endroit paisible", 
-            "Détends-toi et réessaye"],
-        },
-        redEmotion: {
-            name: "redEmotion",
-            action: ["Sors prendre l'air", "Bouge ou fais du sport", "Respire profondément",
-                "Pense à un endroit paisible", "Pratique des techniques d'ancrage"],
-            },
-        brownEmotion: {
-            name: "brownEmotion",
-            action: ["Respire profondément", "Arrête-toi et sors", "Serre un fruit glacé dans tes mains",
-                "Frappe un oreiller/sac de frappe"],
-            },
-        blackEmotion: {
-            name: "blackEmotion",
-            action: ["Demande de l'aide", "Prends ton traitement prescrit en cas de crise", "Appelle les urgences"],
-            },
-        };
-
-        const image_LinkAndName = [music, "Ecoute de la musique", 
-                            play, "Joue avec ta famille/tes amis",
-                            friends, "Parle avec des amis ou ta famille",
-                            goOut, "Sors prendre l'air",
-                            cuddly, "Obtiens ou fais un câlin", 
-                            draw, "Fais une activité que tu aimes",
-                            stretching, "Fais des étirements",
-                            sport, "Bouge ou fais du sport", 
-                            listen, "Continue d'écouter",
-                            positiveWords, "Utilise des mots gentils et positifs",
-                            success, "Ecris tes succès",
-                            reachOut, "Aide quelqu'un d'autre",
-                            deepBreath, "Respire profondément",
-                            pause, "Fais une pause",
-                            tryAgain, "Détends-toi et réessaye",
-                            nap, "Fais une sieste",
-                            smile, "Souris et pratique la gratitude",
-                            goals, "Avance vers tes objectifs",
-                            peaceFullPlace, "Pense à un endroit paisible", 
-                            innerSpeech, "Utilise un discours intérieur positif",
-                            muscles, "Tends et détends tes muscles",
-                            breakup, "Isole-toi",
-                            stop, "Arrête-toi et sors",
-                            shipping, "Pratique des techniques d'ancrage",
-                            push, "Pousse les murs",
-                            fruit, "Serre un fruit glacé dans tes mains",
-                            keepOut, "Evite les lieux à risque",
-                            hitPillow, "Frappe un oreiller/sac de frappe",
-                            blanket, "Enroule-toi dans une couverture/plaid",
-                            tapping, "Tapping",
-                            call, "Appelle/Parle à quelqu'un",
-                            help, "Demande de l'aide",
-                            range, "Range/Mets de l'ordre dans tes affaires",
-                            pills, "Prends ton traitement prescrit en cas de crise",
-                            emergencies, "Appelle les urgences",
-                        ];
     const allEmotions = {
             noEmotion : {
                 name: "",
@@ -178,9 +111,117 @@ const EmotionsProvider = ({children}) => {
                         "Appelle/Parle à quelqu'un", "Demande de l'aide",
                         "Prends ton traitement prescrit en cas de crise", "Appelle les urgences"]
             }
+       };
+    const emotionsWithoutAction = {
+            noEmotion : {
+            name: "",
+            icon: "",
+            color: "rgb(202, 202, 202)",
+            title : "",
+            },
+            greenEmotion:{
+                name: "greenEmotion",
+                icon: greenCloud,
+                color: "#5FCE84",
+                title: "Je me sens bien",
+            },
+            yellowEmotion: {
+                name: "yellowEmotion",
+                icon:  yellowCloud,
+                color: "#EAB801",
+                title: "Je suis nerveux, triste",
+            },
+            redEmotion: {
+                name: "redEmotion",
+                icon: redCloud,
+                color: "#D40101",
+                title: "Je suis fâché, angoissé",
+            },
+            brownEmotion: {
+                name: "brownEmotion",
+                icon: brownCloud,
+                color: "#791A1A",
+                title: "Je suis furieux, agacé", 
+            },
+            blackEmotion: {
+                name: "blackEmotion",
+                icon: blackCloud,
+                color: "#000000",
+                title: "J'ai des idées noires",
+            }
+        }
+                   
+    const defaultEmotions = {
+        noEmotion: {
+            name: "",
+            action: ""
+        },
+        greenEmotion: {
+            name: "greenEmotion",
+            action: ["Ecoute de la musique", "Bouge ou fais du sport", "Souris et pratique la gratitude",
+            "Avance vers tes objectifs"],
+        },
+        yellowEmotion: {
+            name: "yellowEmotion",
+            action: ["Ecoute de la musique", "Bouge ou fais du sport", "Pense à un endroit paisible", 
+            "Détends-toi et réessaye"],
+        },
+        redEmotion: {
+            name: "redEmotion",
+            action: ["Sors prendre l'air", "Bouge ou fais du sport", "Respire profondément",
+                "Pense à un endroit paisible", "Pratique des techniques d'ancrage"],
+            },
+        brownEmotion: {
+            name: "brownEmotion",
+            action: ["Respire profondément", "Arrête-toi et sors", "Serre un fruit glacé dans tes mains",
+                "Frappe un oreiller/sac de frappe"],
+            },
+        blackEmotion: {
+            name: "blackEmotion",
+            action: ["Demande de l'aide", "Prends ton traitement prescrit en cas de crise", "Appelle les urgences"],
+            },
         };
+
+        const image_LinkAndName = [music, "Ecoute de la musique", 
+                            play, "Joue avec ta famille/tes amis",
+                            friends, "Parle avec des amis ou ta famille",
+                            goOut, "Sors prendre l'air",
+                            cuddly, "Obtiens ou fais un câlin", 
+                            draw, "Fais une activité que tu aimes",
+                            stretching, "Fais des étirements",
+                            sport, "Bouge ou fais du sport", 
+                            listen, "Continue d'écouter",
+                            positiveWords, "Utilise des mots gentils et positifs",
+                            success, "Ecris tes succès",
+                            reachOut, "Aide quelqu'un d'autre",
+                            deepBreath, "Respire profondément",
+                            pause, "Fais une pause",
+                            tryAgain, "Détends-toi et réessaye",
+                            nap, "Fais une sieste",
+                            smile, "Souris et pratique la gratitude",
+                            goals, "Avance vers tes objectifs",
+                            peaceFullPlace, "Pense à un endroit paisible", 
+                            innerSpeech, "Utilise un discours intérieur positif",
+                            muscles, "Tends et détends tes muscles",
+                            breakup, "Isole-toi",
+                            stop, "Arrête-toi et sors",
+                            shipping, "Pratique des techniques d'ancrage",
+                            push, "Pousse les murs",
+                            fruit, "Serre un fruit glacé dans tes mains",
+                            keepOut, "Evite les lieux à risque",
+                            hitPillow, "Frappe un oreiller/sac de frappe",
+                            blanket, "Enroule-toi dans une couverture/plaid",
+                            tapping, "Tapping",
+                            call, "Appelle/Parle à quelqu'un",
+                            help, "Demande de l'aide",
+                            range, "Range/Mets de l'ordre dans tes affaires",
+                            pills, "Prends ton traitement prescrit en cas de crise",
+                            emergencies, "Appelle les urgences",
+                        ];
+    
+    
     return(
-        <EmotionsContext.Provider value = {{defaultEmotions, image_LinkAndName, allEmotions}}>
+        <EmotionsContext.Provider value = {{emotionsWithoutAction, defaultEmotions, image_LinkAndName, allEmotions}}>
             {children}
         </EmotionsContext.Provider>
     )

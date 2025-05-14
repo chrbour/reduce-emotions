@@ -125,8 +125,9 @@ const ListOfActionsParams = ({display, selection}) => {
         updateParams((params) => {
             let allParams = {...params};
             allParams[name]={
-            action: itemsChecked,
-            option: null,
+                name: name,
+                action: itemsChecked,
+                option: null,
             };
             return (allParams)
         });
