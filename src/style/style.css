@@ -720,7 +720,7 @@ body {
   border: solid 2px black;
 }
 .configure__btn:hover {
-  border: solid 2px #fff;
+  border: solid 2px white;
   color: red;
 }
 

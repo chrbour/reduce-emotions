@@ -9,6 +9,7 @@ const Container = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 30px;
+    border: 1px black solid;
     background-color: #33FF71;
     color: #000;
     padding: 100px;

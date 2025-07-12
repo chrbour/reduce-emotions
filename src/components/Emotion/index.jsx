@@ -2,14 +2,13 @@ import PropTypes from "prop-types";
 import ListOfActions from "../ListOfActions";
 
 const Emotion = ({emotion}) => {
-    const {icon, title} = emotion;
-   
+    const {icon, title} = emotion;console.log('Emotion:', emotion);
     return(
         <>
             {
             emotion.title != '' ? 
                 <>
-                    <div>
+                    <div >
                         <img src = {icon} alt = "Icône émotion" id = 'thermometer__frameEmotion'/>
                         <h2 id = "emotion__title">{title}</h2>
                     </div>

@@ -50,6 +50,7 @@ const EmotionsProvider = ({children}) => {
                 color: "rgb(202, 202, 202)",
                 title : "",
                 action: "",
+                option: []
             },
             greenEmotion:{
                 name: "greenEmotion",
@@ -60,7 +61,8 @@ const EmotionsProvider = ({children}) => {
                     "Sors prendre l'air", "Obtiens ou fais un câlin", "Fais une activité que tu aimes",
                     "Fais des étirements", "Bouge ou fais du sport", "Continue d'écouter", "Utilise des mots gentils et positifs",
                     "Ecris tes succès", "Aide quelqu'un d'autre", "Souris et pratique la gratitude",
-                    "Avance vers tes objectifs", "Range/Mets de l'ordre dans tes affaires"]
+                    "Avance vers tes objectifs", "Range/Mets de l'ordre dans tes affaires"],
+                option: []
             },
             yellowEmotion: {
                 name: "yellowEmotion",
@@ -74,7 +76,8 @@ const EmotionsProvider = ({children}) => {
                     "Pense à un endroit paisible", "Utilise un discours intérieur positif", "Tends et détends tes muscles", 
                     "Isole-toi", "Arrête-toi et sors", "Pratique des techniques d'ancrage", "Appelle/Parle à quelqu'un", 
                     "Pousse les murs", "Serre un fruit glacé dans tes mains", "Evite les lieux à risque", 
-                    "Enroule-toi dans une couverture/plaid", "Tapping", "Range/Mets de l'ordre dans tes affaires"]
+                    "Enroule-toi dans une couverture/plaid", "Tapping", "Range/Mets de l'ordre dans tes affaires"],
+                option: []
             },
             redEmotion: {
                 name: "redEmotion",
@@ -89,6 +92,7 @@ const EmotionsProvider = ({children}) => {
                     "Serre un fruit glacé dans tes mains", "Evite les lieux à risque", "Frappe un oreiller/sac de frappe",
                     "Enroule-toi dans une couverture/plaid", "Tapping", "Appelle/Parle à quelqu'un", "Demande de l'aide",
                     "Range/Mets de l'ordre dans tes affaires"],
+                option: []
             },
             brownEmotion: {
                 name: "brownEmotion",
@@ -100,7 +104,8 @@ const EmotionsProvider = ({children}) => {
                     "Arrête-toi et sors", "Pratique des techniques d'ancrage", "Pousse les murs",
                     "Serre un fruit glacé dans tes mains", "Evite les lieux à risque", "Frappe un oreiller/sac de frappe",
                     "Enroule-toi dans une couverture/plaid", "Tapping", "Appelle/Parle à quelqu'un", "Demande de l'aide",
-                    "Prends ton traitement prescrit en cas de crise"]
+                    "Prends ton traitement prescrit en cas de crise"],
+                option: ""
             },
             blackEmotion: {
                 name: "blackEmotion",
@@ -109,76 +114,89 @@ const EmotionsProvider = ({children}) => {
                 title: "J'ai des idées noires",
                 action: ["Obtiens ou fais un câlin", "Fais une sieste", "Pousse les murs", "Serre un fruit glacé dans tes mains", "Evite les lieux à risque", "Frappe un oreiller/sac de frappe",
                         "Appelle/Parle à quelqu'un", "Demande de l'aide",
-                        "Prends ton traitement prescrit en cas de crise", "Appelle les urgences"]
+                        "Prends ton traitement prescrit en cas de crise", "Appelle les urgences"],
+                option: []
             }
        };
     const emotionsWithoutAction = {
             noEmotion : {
-            name: "",
-            icon: "",
-            color: "rgb(202, 202, 202)",
-            title : "",
+                name: "",
+                icon: "",
+                color: "rgb(202, 202, 202)",
+                title : "",
+                option: ""
             },
             greenEmotion:{
                 name: "greenEmotion",
                 icon: greenCloud,
                 color: "#5FCE84",
                 title: "Je me sens bien",
+                option: ""
             },
             yellowEmotion: {
                 name: "yellowEmotion",
                 icon:  yellowCloud,
                 color: "#EAB801",
                 title: "Je suis nerveux, triste",
+                option: ""
             },
             redEmotion: {
                 name: "redEmotion",
                 icon: redCloud,
                 color: "#D40101",
                 title: "Je suis fâché, angoissé",
+                option: ""
             },
             brownEmotion: {
                 name: "brownEmotion",
                 icon: brownCloud,
                 color: "#791A1A",
                 title: "Je suis furieux, agacé", 
+                option: ""
             },
             blackEmotion: {
                 name: "blackEmotion",
                 icon: blackCloud,
                 color: "#000000",
                 title: "J'ai des idées noires",
+                option: ""
             }
         }
                    
     const defaultEmotions = {
         noEmotion: {
             name: "",
-            action: ""
+            action: "",
+            option: ""
         },
         greenEmotion: {
             name: "greenEmotion",
             action: ["Ecoute de la musique", "Bouge ou fais du sport", "Souris et pratique la gratitude",
             "Avance vers tes objectifs"],
+            option: ""
         },
         yellowEmotion: {
             name: "yellowEmotion",
             action: ["Ecoute de la musique", "Bouge ou fais du sport", "Pense à un endroit paisible", 
             "Détends-toi et réessaye"],
+            option: ""
         },
         redEmotion: {
             name: "redEmotion",
             action: ["Sors prendre l'air", "Bouge ou fais du sport", "Respire profondément",
                 "Pense à un endroit paisible", "Pratique des techniques d'ancrage"],
+            option: ""
             },
         brownEmotion: {
             name: "brownEmotion",
             action: ["Respire profondément", "Arrête-toi et sors", "Serre un fruit glacé dans tes mains",
                 "Frappe un oreiller/sac de frappe"],
+            option: ""
             },
         blackEmotion: {
             name: "blackEmotion",
             action: ["Demande de l'aide", "Prends ton traitement prescrit en cas de crise", "Appelle les urgences"],
+            option: ""
             },
         };
 

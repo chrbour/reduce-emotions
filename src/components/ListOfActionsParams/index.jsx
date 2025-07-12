@@ -28,13 +28,17 @@ const ContainerImgListOfActions = styled.div`
 const ImgListOfActions = styled.img`
     height: 50px !important;
     width: 74px;
-    margin: auto;
+    margin: 12.5px;
 `
 const TextListOfActions = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: #000000; 
-    margin: auto 20px;
+    margin: 20px;
     font-size: 12px;
 `
+
 const ListOfActionsParams = ({display, selection}) => {
     const {image_LinkAndName} = useContext(EmotionsContext);
     let actionPreSelected = [];
@@ -50,7 +54,7 @@ const ListOfActionsParams = ({display, selection}) => {
     const [nbActionsBrown, updateNbActionsBrown] = useState(selection.brownEmotion.action.length);
     const [nbActionsBlack, updateNbActionsBlack] = useState(selection.blackEmotion.action.length); 
     const [displayAlert, setDisplayAlert] = useState(false);
-    const {updateParams} = useContext(SavingParamsContext);
+    const {params, updateParams} = useContext(SavingParamsContext);
     let name = display.name;
 
     const isChecked = (id, element) => {
@@ -64,7 +68,7 @@ const ListOfActionsParams = ({display, selection}) => {
 
     const checkboxClick = (e) => {
         const {value, checked} = e.target;
-        if (checked && itemsChecked?.length >= 5){
+        if ((checked && itemsChecked?.length >= 5) || (!checked && itemsChecked.length == 1)){
            setDisplayAlert(true);
             return;
         }
@@ -80,7 +84,12 @@ const ListOfActionsParams = ({display, selection}) => {
                     case 'redEmotion': updateNbActionsRed(nbActionsRed + 1); break;
                     case 'brownEmotion': updateNbActionsBrown(nbActionsBrown + 1); break;
                     case 'blackEmotion': updateNbActionsBlack(nbActionsBlack + 1); break;
-                }
+                };
+                console.log('addingItem', addingItem, 'params', params[display.ContainerImgListOfActions]);
+                const paramsActualized = params;
+                paramsActualized[display.name].action = addingItem;
+                let objLinea = JSON.stringify(paramsActualized);
+                localStorage.setItem("emotions", objLinea);
                 return addingItem;
             }
             else {
@@ -92,9 +101,26 @@ const ListOfActionsParams = ({display, selection}) => {
                     case 'brownEmotion': updateNbActionsBrown(nbActionsBrown - 1); break;
                     case 'blackEmotion': updateNbActionsBlack(nbActionsBlack - 1); break;
                 }
+                console.log('removingItem', removingItem,'params', params[display.name]);
+                const paramsActualized = params;
+                paramsActualized[display.name].action = removingItem;
+                let objLinea = JSON.stringify(paramsActualized);
+                localStorage.setItem("emotions", objLinea);
                 return removingItem;
             }
-        })       
+        });console.log('itemsCheked',itemsChecked, value);
+        console.log('selection',selection);
+    };
+    const erase = (e) => {
+        e.preventDefault();
+        let element = e.target.dataset.element;
+        
+        let index = selection[name].option.indexOf(element);
+        console.log("poubelle cliquée avant", name,selection[name].option, index);
+        selection[name].option.splice(index,1);
+        console.log("poubelle cliquée après", name,selection[name].option, index);
+        //const {checked, value} = e.target;
+        //console.log("Effacement:",value, checked)
     }
 
     let index = -1; 
@@ -113,29 +139,57 @@ const ListOfActionsParams = ({display, selection}) => {
                             <ImgListOfActions src={picture} alt = "actions" />
                         </ContainerImgListOfActions>
                         <TextListOfActions id = "containerListOfActions__text">
-                            <p>{element}</p>
+                            {element}
                         </TextListOfActions>   
                     </ContainerListOfActions>
                 )
             }
         };
     });
-    
+    let options = "";
+    if (selection[name].option == null || selection[name].option == ""){
+        options = null;
+    }
+    else{
+        options = selection[name].option.map((element, id)=>{
+                return (
+                    <ContainerListOfActions id = "containerListOfActions" key = {id} >
+                            <input type = "checkbox" id = {id} value = {element} 
+                                checked = {isChecked(`checkbox${index}`, element)}
+                                onChange = {checkboxClick}
+                            />
+                        <ContainerImgListOfActions id = "containerListOfActions__contImg" >
+                            <ImgListOfActions src={display.icon} alt = "actions" />
+                        </ContainerImgListOfActions>
+                        <TextListOfActions id = "containerListOfActions__text">
+                            {element}
+                            <i style = {{fontSize: "20px", margin: "0"}} className="fa-solid fa-trash-can" data-Element = {element} onClick = {erase}></i>
+                        </TextListOfActions>   
+                    </ContainerListOfActions>
+                )
+    }
+       
+    );
+    }
     useEffect (() => {
         updateParams((params) => {
             let allParams = {...params};
             allParams[name]={
                 name: name,
                 action: itemsChecked,
-                option: null,
+                option: selection[name].option ,
             };
             return (allParams)
         });
+        // let objLinea = JSON.stringify(params);
+        // localStorage.setItem("emotions", objLinea);    
+        // console.log('params actuels', params);
     },[itemsChecked]);
 
     return <DisplayListOfActions >
                 {actions}
-                {displayAlert == true? <AlertParam/> : null}
+                {options}
+                {displayAlert == true? <AlertParam number = {itemsChecked.length}/> : null}   
             </DisplayListOfActions>
 }
     

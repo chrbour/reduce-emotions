@@ -20,17 +20,21 @@ function Thermometer() {
     const objLinea = localStorage.getItem("emotions");
     let preferencesList;
     objLinea != null? preferencesList = JSON.parse(objLinea) : preferencesList = "";
-    console.log('T objLinea', objLinea);
     let preferences = {};
     const [feelEmotion, setFeelEmotion] = useState('noEmotion');
     const [containerColor, setContainerColor] = useState(emotionsWithoutAction[feelEmotion].color);
     preferencesList === "" ? preferences = defaultEmotions : preferences = preferencesList;
     emotionsWithoutAction.greenEmotion.action = preferences.greenEmotion.action;
+    emotionsWithoutAction.greenEmotion.option = preferences.greenEmotion.option;
     emotionsWithoutAction.yellowEmotion.action = preferences.yellowEmotion.action;
+    emotionsWithoutAction.yellowEmotion.option = preferences.yellowEmotion.option;
     emotionsWithoutAction.redEmotion.action = preferences.redEmotion.action;
+    emotionsWithoutAction.redEmotion.option = preferences.redEmotion.option;
     emotionsWithoutAction.brownEmotion.action = preferences.brownEmotion.action;
+    emotionsWithoutAction.brownEmotion.option = preferences.brownEmotion.option;
     emotionsWithoutAction.blackEmotion.action = preferences.blackEmotion.action;
-
+    emotionsWithoutAction.blackEmotion.option = preferences.blackEmotion.option;
+    console.log(preferencesList);
     const actionTriangle = (e) => {
         setFeelEmotion(e);
         setContainerColor(emotionsWithoutAction[e].color)

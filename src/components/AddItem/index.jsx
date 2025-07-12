@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import {useState, useContext} from 'react';
+import {useNavigate} from 'react-router-dom';
+import { SavingParamsContext, EmotionsContext } from "../../utils/context/Context";
 
 const ContainerAddItem = styled.div`
     z-index: 6;
@@ -21,32 +24,91 @@ const ContainerAddItem = styled.div`
     
     @keyframes entering{
         from{
-            transform: translateX(100vw)
+            transform: translateX(100vw) translateY(-50%)
         }
         to{
-            transform: translateX(-50%)
+            transform: translateX(-50%) translateY(-50%)
         }
     }
     @keyframes closing{
         from{
-            transform: translateX(-50%)
+            transform: translateX(-50%) translateY(-50%)
         }
         to{
-            transform: translateX(100vw);  
+            transform: translateX(100vw) translateY(-50%);  
         }
     }
 `
+const Button = styled.button`
+    margin: 5px;    
+`
+const Label = styled.label`
+    font-size: 22px;
+    color: #FFFFFF
+`
+const Input = styled.input`
+    width: 90%;
+    height: 50px;
+    font-Size: 20px;
+    margin: 10px auto
+    `
+
 const AddItem = ({...props}) => {
-    const {act, setAct, color} = props;
+    const {act, setAct, display} = props;
+    const color = display.color;
+    const [answer, updateAnswer] = useState('');
+    const {params, updateParams} = useContext(SavingParamsContext);
+    const {allEmotions} = useContext(EmotionsContext);
+    let Navigate = useNavigate();
+
+    const inputChange = (e) => {
+        if (e.target.value.length > 50){
+            alert('Trop long');
+            e.target.value = "";
+        }
+        updateAnswer(e.target.value)
+    }
+    const validation = () => {console.log('option: ',params[display.name].option);
+        if(answer != '' 
+            && (allEmotions[display.name].action.includes(answer) == false
+            //|| (params[display.name].option != null && params[display.name].option.includes(answer) == false)
+            )){
+                let updateOption = params[display.name].option;
+                answer != updateOption && (updateOption == null || updateOption == "")? (updateOption = [answer], console.log('réponse:', answer, updateOption)) : null;
+                answer != updateOption && (updateOption != null || updateOption == "")? (updateOption = [...updateOption, answer], console.log(updateOption)) : null;
+                let updateOptions = {...params,
+                    [display.name]: {...params[display.name],
+                        option: updateOption
+                    }
+                };
+                updateParams(updateOptions);
+                localStorage.setItem("emotions", JSON.stringify(updateOptions));
+                console.log('resultat: ',updateOptions );
+                setAct('closing');
+                setTimeout(() => {
+                    updateAnswer("");
+                    Navigate('/Configure')}
+                    , "1500"
+                );
+            }
+        else {
+            alert('Ce champ ne peut ni être vide, ni contenir un élément déjà présent !')
+        } 
+    }
+    const annulation = () => {
+        setAct('closing');
+        setTimeout(() => {updateAnswer("")}, "1500");
+    }
     return(
         <ContainerAddItem act = {act} id = "AddItem__Container" color = {color}>
-            <label htmlFor = "newAction" style = {{color: '#FFFFFF', fontSize: '22px'}}>Qu&apos;elle action veux-tu ajouter?</label>
-            <input type="text" id = "newAction" placeholder = {color} style = {{width: '90%', height: '50px', fontSize:'20px', margin: '10px auto'}}/>
+            <Label htmlFor = "newAction">Qu&apos;elle action veux-tu ajouter?</Label>
+            <Input type="text" id = "newAction" value = {answer} onChange = {inputChange}/>
             <div>
-                <button style = {{margin: '5px'}}  >Valider</button>
-                <button style = {{margin: '5px'}} onClick = {() => setAct('closing')}>Annuler</button>
+                <Button onClick = {validation}>Valider</Button>
+                <Button onClick = {annulation}>Annuler</Button>
             </div>
         </ContainerAddItem>
+        
     )
 }
 export default AddItem;
@@ -54,5 +116,6 @@ export default AddItem;
 AddItem.propTypes = {
     act: PropTypes.string,
     setAct: PropTypes.func,
-    color: PropTypes.string
+    color: PropTypes.string,
+    display: PropTypes.object
 }
