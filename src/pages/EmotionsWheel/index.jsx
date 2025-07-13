@@ -138,7 +138,6 @@ function EmotionsWheel() {
                 }
                 intens%2 == 0 ? assoc = intens/2 : assoc = (intens-1)/2;
                 setAssociatedEmotion(assoc);
-                console.log(emotions.intensites[base].length, base, assoc, intens);
             }
         }
     }
@@ -149,7 +148,6 @@ function EmotionsWheel() {
         if (angle !=-85){
             settriangleactivated('left');
             for (let i = 0; i < 35; i++){
-                console.log('i:', i);
                 if (intens + 1 > emotions.intensites[base].length-1){
                     intens = 0;
                     setIntensityEmotion(intens);

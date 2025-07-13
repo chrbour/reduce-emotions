@@ -28,26 +28,19 @@ const Configure = () => {
     if (objLinea){
         selection = JSON.parse(objLinea); 
     }
-    const save = () => {
-        if(message == ''){
-            let objLinea = JSON.stringify(params);
-            localStorage.setItem("emotions", objLinea);
-            setMessage('Votre sélection a été enregistrée !');
-            
-        }
-    }
+   
     const reset = () => {
         if(message == ''){
             localStorage.clear();
             setMessage('Retour aux paramètres par défaut.');
         }
-        }
-        const cancel = () => {
+    }
+    const cancel = () => {
         if (message == ''){
             Navigate("/Thermometer")  
         }
         
-        }
+    }
     return(
         <div id = "configure" >
             <h1 id = "configure__title">Paramétrage du thermomètre</h1>
@@ -164,9 +157,8 @@ const Configure = () => {
                 }
             </Container>
             <div>
-                <button className = "configure__btn" style = {{backgroundColor: '#5CE65C'}} onClick = {save}>Enregistrer</button>
-                <button className = "configure__btn" style = {{backgroundColor: '#b3ebf2'}} onClick = {reset}>Réinitialiser</button>
-                <button className = "configure__btn" onClick = {cancel}>Annuler</button>
+                <button className = "configure__btn" style = {{backgroundColor: '#b3ebf2', position: 'fixed', bottom: '40%', left: '90%', transform: 'translateX(0)'}} onClick = {reset}>Réinitialiser</button>
+                <button className = "configure__btn" style = {{backgroundColor: '#babcbcff', position: 'fixed', bottom: '30%', left: '90%', transform: 'translateX(25%)'}} onClick = {cancel}>Retour</button>
             </div>
            {message != ''? <Message message = {message}/> : null}
         </div>

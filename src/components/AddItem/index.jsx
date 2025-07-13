@@ -68,14 +68,13 @@ const AddItem = ({...props}) => {
         }
         updateAnswer(e.target.value)
     }
-    const validation = () => {console.log('option: ',params[display.name].option);
+    const validation = () => {
         if(answer != '' 
             && (allEmotions[display.name].action.includes(answer) == false
-            //|| (params[display.name].option != null && params[display.name].option.includes(answer) == false)
             )){
                 let updateOption = params[display.name].option;
-                answer != updateOption && (updateOption == null || updateOption == "")? (updateOption = [answer], console.log('réponse:', answer, updateOption)) : null;
-                answer != updateOption && (updateOption != null || updateOption == "")? (updateOption = [...updateOption, answer], console.log(updateOption)) : null;
+                answer != updateOption && (updateOption == null || updateOption == "")? updateOption = [answer]: null;
+                answer != updateOption && (updateOption != null || updateOption == "")? updateOption = [...updateOption, answer] : null;
                 let updateOptions = {...params,
                     [display.name]: {...params[display.name],
                         option: updateOption
@@ -83,7 +82,6 @@ const AddItem = ({...props}) => {
                 };
                 updateParams(updateOptions);
                 localStorage.setItem("emotions", JSON.stringify(updateOptions));
-                console.log('resultat: ',updateOptions );
                 setAct('closing');
                 setTimeout(() => {
                     updateAnswer("");

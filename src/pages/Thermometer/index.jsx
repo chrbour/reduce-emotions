@@ -34,7 +34,7 @@ function Thermometer() {
     emotionsWithoutAction.brownEmotion.option = preferences.brownEmotion.option;
     emotionsWithoutAction.blackEmotion.action = preferences.blackEmotion.action;
     emotionsWithoutAction.blackEmotion.option = preferences.blackEmotion.option;
-    console.log(preferencesList);
+    
     const actionTriangle = (e) => {
         setFeelEmotion(e);
         setContainerColor(emotionsWithoutAction[e].color)

@@ -28,6 +28,7 @@ const TextListOfActions = styled.div`
 const ListOfActions = ({display}) => {
     const {image_LinkAndName} = useContext(EmotionsContext);
     let picture;
+    let options = [];
     let actions = image_LinkAndName.map((i, id) => {
         for (let element of display.action){
             if(element === i){
@@ -45,20 +46,25 @@ const ListOfActions = ({display}) => {
             }
         }    
     });
-    // let options = display.option.map((element, id)=>{
-    //         picture = display.icon;
-    //         return (
-    //                 <ContainerListOfActions id = "containerListOfActions" key = {id} >
-    //                     <ContainerImgListOfActions id = "containerListOfActions__contImg" >
-    //                         <ImgListOfActions src={picture} alt = "actions" />
-    //                     </ContainerImgListOfActions>
-    //                     <TextListOfActions id = "containerListOfActions__text" >
-    //                         <p>{element}</p>
-    //                     </TextListOfActions>   
-    //                 </ContainerListOfActions>
-    //             )
-    //     });
-    return <div>{actions}{/*{options}*/}</div>
+    display.action.map((e)=>{
+        if (image_LinkAndName.includes(e) == false){
+            options.push(e)
+        }
+    })
+    let optionsSelected = options.map((element, id)=>{
+            picture = display.icon;
+            return (
+                    <ContainerListOfActions id = "containerListOfActions" key = {id} >
+                        <ContainerImgListOfActions id = "containerListOfActions__contImg" >
+                            <ImgListOfActions src={picture} alt = "actions" />
+                        </ContainerImgListOfActions>
+                        <TextListOfActions id = "containerListOfActions__text" >
+                            <p>{element}</p>
+                        </TextListOfActions>   
+                    </ContainerListOfActions>
+                )
+        });
+    return <div>{actions}{optionsSelected}</div>
 }
 
 ListOfActions.propTypes = {

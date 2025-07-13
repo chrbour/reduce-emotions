@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import ListOfActions from "../ListOfActions";
 
 const Emotion = ({emotion}) => {
-    const {icon, title} = emotion;console.log('Emotion:', emotion);
+    const {icon, title} = emotion;
     return(
         <>
             {

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import {useState, useContext, useEffect} from 'react';
+import { useNavigate } from "react-router-dom";
 import {SavingParamsContext, EmotionsContext} from "../../utils/context/Context";
 import AlertParam from "../AlertParam";
 
@@ -40,11 +41,13 @@ const TextListOfActions = styled.div`
 `
 
 const ListOfActionsParams = ({display, selection}) => {
+    const Navigate = useNavigate();
+    let name = display.name;
     const {image_LinkAndName} = useContext(EmotionsContext);
     let actionPreSelected = [];
     let picture;
     let selectionArray = Object.keys(selection).map((key) => [Number(key), selection[key]]);
-    selectionArray.map((e,id) => { if (selectionArray[id][1].name === display.name){
+    selectionArray.map((e,id) => { if (selectionArray[id][1].name === name){
         actionPreSelected = selectionArray[id][1].action;
     }});     
     const [itemsChecked, setItemsChecked] = useState(actionPreSelected);
@@ -55,7 +58,7 @@ const ListOfActionsParams = ({display, selection}) => {
     const [nbActionsBlack, updateNbActionsBlack] = useState(selection.blackEmotion.action.length); 
     const [displayAlert, setDisplayAlert] = useState(false);
     const {params, updateParams} = useContext(SavingParamsContext);
-    let name = display.name;
+    
 
     const isChecked = (id, element) => {
         if (itemsChecked?.includes(element)){
@@ -78,49 +81,52 @@ const ListOfActionsParams = ({display, selection}) => {
         setItemsChecked((prevCheckedItems)=>{
             if (checked){
                 const addingItem = [...prevCheckedItems, value];
-                switch(display.name){
+                switch(name){
                     case 'greenEmotion': updateNbActionsGreen(nbActionsGreen + 1); break;
                     case 'yellowEmotion': updateNbActionsYellow(nbActionsYellow + 1); break;
                     case 'redEmotion': updateNbActionsRed(nbActionsRed + 1); break;
                     case 'brownEmotion': updateNbActionsBrown(nbActionsBrown + 1); break;
                     case 'blackEmotion': updateNbActionsBlack(nbActionsBlack + 1); break;
                 };
-                console.log('addingItem', addingItem, 'params', params[display.ContainerImgListOfActions]);
                 const paramsActualized = params;
-                paramsActualized[display.name].action = addingItem;
+                paramsActualized[name].action = addingItem;
                 let objLinea = JSON.stringify(paramsActualized);
                 localStorage.setItem("emotions", objLinea);
                 return addingItem;
             }
             else {
                 const removingItem = prevCheckedItems.filter((e) => e != value);
-                switch(display.name){
+                switch(name){
                     case 'greenEmotion': updateNbActionsGreen(nbActionsGreen - 1); break;
                     case 'yellowEmotion': updateNbActionsYellow(nbActionsYellow - 1); break;
                     case 'redEmotion': updateNbActionsRed(nbActionsRed - 1); break;
                     case 'brownEmotion': updateNbActionsBrown(nbActionsBrown - 1); break;
                     case 'blackEmotion': updateNbActionsBlack(nbActionsBlack - 1); break;
                 }
-                console.log('removingItem', removingItem,'params', params[display.name]);
                 const paramsActualized = params;
-                paramsActualized[display.name].action = removingItem;
+                paramsActualized[name].action = removingItem;
                 let objLinea = JSON.stringify(paramsActualized);
                 localStorage.setItem("emotions", objLinea);
                 return removingItem;
             }
-        });console.log('itemsCheked',itemsChecked, value);
-        console.log('selection',selection);
+        });
     };
     const erase = (e) => {
         e.preventDefault();
         let element = e.target.dataset.element;
-        
-        let index = selection[name].option.indexOf(element);
-        console.log("poubelle cliquée avant", name,selection[name].option, index);
-        selection[name].option.splice(index,1);
-        console.log("poubelle cliquée après", name,selection[name].option, index);
-        //const {checked, value} = e.target;
-        //console.log("Effacement:",value, checked)
+        let deleteOption = params[name].option.filter((e)=> e!= element);
+        selection[name].option = deleteOption;
+        params[name].option = deleteOption;
+        updateParams(params);
+        if (itemsChecked.includes(element)){
+            let index = itemsChecked.indexOf(element);
+            itemsChecked.splice(index, 1);
+            setItemsChecked(itemsChecked);
+        }
+        let paramsActualized = params;
+        let objLinea = JSON.stringify(paramsActualized);
+        localStorage.setItem("emotions", objLinea); 
+        Navigate("/Configure");
     }
 
     let index = -1; 
@@ -181,9 +187,7 @@ const ListOfActionsParams = ({display, selection}) => {
             };
             return (allParams)
         });
-        // let objLinea = JSON.stringify(params);
-        // localStorage.setItem("emotions", objLinea);    
-        // console.log('params actuels', params);
+
     },[itemsChecked]);
 
     return <DisplayListOfActions >
