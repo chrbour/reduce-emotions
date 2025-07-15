@@ -113,20 +113,25 @@ const ListOfActionsParams = ({display, selection}) => {
     };
     const erase = (e) => {
         e.preventDefault();
-        let element = e.target.dataset.element;
-        let deleteOption = params[name].option.filter((e)=> e!= element);
-        selection[name].option = deleteOption;
-        params[name].option = deleteOption;
-        updateParams(params);
-        if (itemsChecked.includes(element)){
-            let index = itemsChecked.indexOf(element);
-            itemsChecked.splice(index, 1);
-            setItemsChecked(itemsChecked);
+        if (selection[name].action.length > 1){
+            let element = e.target.dataset.element;
+            let deleteOption = params[name].option.filter((e)=> e!= element);
+            selection[name].option = deleteOption;
+            params[name].option = deleteOption;
+            updateParams(params);
+            if (itemsChecked.includes(element)){
+                let index = itemsChecked.indexOf(element);
+                itemsChecked.splice(index, 1);
+                setItemsChecked(itemsChecked);
+            }
+            let paramsActualized = params;
+            let objLinea = JSON.stringify(paramsActualized);
+            localStorage.setItem("emotions", objLinea); 
+            Navigate("/Configure");
         }
-        let paramsActualized = params;
-        let objLinea = JSON.stringify(paramsActualized);
-        localStorage.setItem("emotions", objLinea); 
-        Navigate("/Configure");
+        else{
+            displayAlert == false? setDisplayAlert(true) : setDisplayAlert(false);
+        }
     }
 
     let index = -1; 
@@ -193,7 +198,7 @@ const ListOfActionsParams = ({display, selection}) => {
     return <DisplayListOfActions >
                 {actions}
                 {options}
-                {displayAlert == true? <AlertParam number = {itemsChecked.length}/> : null}   
+                {displayAlert == true  ? <AlertParam number = {itemsChecked.length}/> : null}   
             </DisplayListOfActions>
 }
     

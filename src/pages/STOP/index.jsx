@@ -1,5 +1,5 @@
 import {useNavigate} from "react-router-dom";
-import stop from "../../assets/images/stop-drawn_1280.webp"
+import stop from "../../assets/images/stop-sign-37020_1280.webp";
 
 function STOP() {
     let Navigate = useNavigate();
@@ -10,11 +10,9 @@ function STOP() {
                 <p>Lorsque vous réagissez de façon impulsive, vous n&apos;avez pas le temps d&apos;utiliser vos compétences et vous centrer dans l&apos;esprit éclairé. <br />
                 Pour utiliser vos compétences, vous devez vous empêcher de réagir. <br />
                 Pour garder le contrôle, utilisez la compétence STOP.</p>
+                <img id = "Stop__imageContainer" src = {stop} alt = "Compétence STOP" />
             </div>
             <div id = "Stop__imageContainerAndText">
-                <div id = "Stop__imageContainer" className = "imageContainer">
-                    <img id = "Stop__image" src = {stop} alt = "Compétence STOP" />
-                </div>
                 <div id = "Stop__textContainer">
                     <div id = "Stop__text">
                         <p className = "Stop__text--initials">S</p>
@@ -25,7 +23,7 @@ function STOP() {
                         <p className = "Stop__text--details">Je reste concentré sur ma respiration pour revenir au calme.</p>
                         <p className = "Stop__text--initials">O</p>
                         <p className = "Stop__text--legend">Observation:</p>
-                        <p className = "Stop__text--details">J&apos;observe ce qui se passe en moi, ce que je ressens dans mon corps en accueillant toutes les sensations sans jugement. Qu&apos;est-ce que j&apos;éprouve?
+                        <p className = "Stop__text--details">J&apos;observe ce qui se passe en moi, ce que je ressens dans mon corps en accueillant toutes les sensations sans jugement.<br/> Qu&apos;est-ce que j&apos;éprouve?
                         <br/>Quelles sont les émotions, les sensations qui me traversent?</p>
                         <p className = "Stop__text--initials">P</p>
                         <p className = "Stop__text--legend">Présence:</p>

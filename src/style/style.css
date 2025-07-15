@@ -332,17 +332,17 @@ body {
 #Stop__imageContainer {
   height: 40vh;
 }
-#Stop__image {
-  height: 100%;
-}
 #Stop__textContainer {
-  height: 50vh;
   margin: 35px;
+  padding: 0;
+  background-color: #85b3cc;
+  border-radius: 20px;
 }
 #Stop__text {
   text-align: start;
   display: grid;
-  grid-template: 20% 20% 20% 20%/1fr 5fr 12fr;
+  height: 100%;
+  grid-template: 25% 25% 25% 25%/1fr 5fr 12fr;
   align-items: center;
 }
 #Stop__arrowTurnLeftContainer {
@@ -357,16 +357,18 @@ body {
 .Stop__text--initials {
   font-size: 50px;
   color: red;
-  margin: 0;
+  margin: 0 10px;
 }
 .Stop__text--legend {
   font-size: 30px;
   margin: 0;
+  color: white;
 }
 .Stop__text--details {
   font-size: 16px;
   padding: 10px;
   font-style: Arial;
+  color: rgb(109, 15, 15);
 }
 
 #EmotionsWheel__title {
