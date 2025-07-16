@@ -9,13 +9,14 @@ function Home() {
     return (
         <Fragment >
                 <div id = "Home">
-                    <div>
-                        <img  id = "Home__wallpaper" src={wallpaper} alt="wallpaper"/>
+                    <div id = "Home__imageContainer">
+                        <img  id = "Home__imageContainer--image" src={wallpaper} alt="wallpaper"/>
                     </div>
                     <div id = "Home__titleAndbuttons">
                         <h1 id = "Home__title" >MON PLAN DE<br/>PROTECTION<br/>PERSONNALISE</h1>
-                        <div id = "Home__buttons">
-                            <input id = "Home__buttons--inscription" onClick={() => Navigate("/Menu")}
+                        <p id = "Home__explanations">Ce site contient des outils permettant de<br/> reconnaître et de gérer tes émotions</p>
+                        <div id = "Home__buttonContainer">
+                            <input id = "Home__buttonContainer--button" onClick={() => Navigate("/Menu")}
                                 className = "button" type = "button" value = "Entrez"/>
                         </div>
                     </div>

@@ -9,12 +9,12 @@
     &__textContainer{
         margin: 35px;
         padding: 0;
-        background-color: #85b3ccff;
+        background-color: rgb(147, 196, 222);
         border-radius: 20px;
     }
     &__text{
         text-align: start;
-        display: grid;height: 100%;
+        display: grid;
         grid-template: 25% 25% 25% 25% / 1fr 5fr 12fr;
         align-items: center; 
     }

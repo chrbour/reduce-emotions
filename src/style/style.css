@@ -43,6 +43,8 @@
 #Credits {
   display: flex;
   color: black;
+  z-index: 2;
+  overflow: scroll;
   background-color: #D1EBFC;
   width: 40%;
   justify-content: center;
@@ -69,6 +71,12 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 1300px) {
+  #Credits {
+    width: 90%;
+    height: 90%;
+  }
+}
 body {
   overflow: hidden;
   font-family: "Inknut Antiqua", serif;
@@ -109,8 +117,12 @@ body {
   justify-content: center;
 }
 
-@media screen and (min-width: 1301px) {
-  #Home__wallpaper {
+@media screen and (min-width: 769px) {
+  #Home {
+    background-color: #3E3F3A;
+    z-index: -1;
+  }
+  #Home__imageContainer {
     width: 100vw;
     position: absolute;
     overflow: hidden;
@@ -118,7 +130,7 @@ body {
     left: 0px;
     bottom: 0px;
     right: 0px;
-    z-index: -1;
+    z-index: 0;
   }
   #Home__titleAndbuttons {
     width: 100vw;
@@ -131,34 +143,32 @@ body {
     color: #FFFFFF;
     padding: 120px 0 0 80px;
     margin: 0;
-    font-size: 5em;
+    font-size: 4em;
+    z-index: 1;
   }
   #Home__titleAndButtons {
     display: flex;
     align-items: end;
   }
-  #Home__buttons {
+  #Home__explanations {
+    color: #FFFFFF;
+    padding: 0 80px;
+    z-index: 1;
+  }
+  #Home__buttonContainer {
     display: flex;
     justify-content: center;
     padding: 0 0 50px;
   }
-  #Home__buttons--inscription {
+  #Home__buttonContainer--button {
     height: 60px;
     width: 160px;
-  }
-  #Home__buttons--connexion {
-    height: 60px;
-    width: 160px;
+    z-index: 1;
   }
   #Home__credits {
     position: absolute;
     bottom: 0px;
     padding: 0 50px;
-  }
-}
-@media screen and (max-width: 1765px) {
-  #Home__title {
-    font-size: 4em;
   }
 }
 @media screen and (max-width: 1450px) {
@@ -167,15 +177,20 @@ body {
   }
 }
 @media screen and (max-width: 1300px) {
-  #Home {
-    display: flex;
-    overflow: hidden;
-    flex-direction: column-reverse;
+  #Home__imageContainer--image {
+    transform: translateX(-25%);
   }
-  #Home__wallpaper {
-    display: flex;
-    width: 200vw;
-    transform: translate(-25%);
+}
+@media screen and (max-width: 768px) {
+  #Home {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: #3E3F3A;
+  }
+  #Home__imageContainer--image {
+    width: 100vw;
+    transform: translateX(0);
   }
   #Home__titleAndbuttons {
     width: 100vw;
@@ -192,25 +207,29 @@ body {
     font-size: 3em;
     text-align: center;
   }
-  #Home__buttons {
+  #Home__explanations {
+    color: #FFFFFF;
+    text-align: center;
+  }
+  #Home__buttonContainer {
     display: flex;
     justify-content: center;
     padding: 0 0 50px;
   }
-  #Home__buttons--inscription {
-    height: 60px;
-    width: 160px;
-  }
-  #Home__buttons--connexion {
+  #Home__buttonContainer--button {
     height: 60px;
     width: 160px;
   }
   #Home__credits {
     position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    bottom: 0px;
+    left: 5px;
+    top: 0px;
     padding: 0 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #Home__title {
+    font-size: 2em;
   }
 }
 @media screen and (min-width: 1301px) {
@@ -335,13 +354,12 @@ body {
 #Stop__textContainer {
   margin: 35px;
   padding: 0;
-  background-color: #85b3cc;
+  background-color: rgb(147, 196, 222);
   border-radius: 20px;
 }
 #Stop__text {
   text-align: start;
   display: grid;
-  height: 100%;
   grid-template: 25% 25% 25% 25%/1fr 5fr 12fr;
   align-items: center;
 }

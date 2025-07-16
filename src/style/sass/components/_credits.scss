@@ -1,5 +1,5 @@
 #Home__credits{
-    font-size:20px;
+    font-size: 20px;
     color: $textColor;
     &:hover{
         color: $textColorHover;
@@ -9,6 +9,8 @@
 #Credits{
     display: flex;
     color: black;
+    z-index: 2;
+    overflow: scroll;
     background-color: #D1EBFC;
     width: 40%;
     justify-content: center;
@@ -33,4 +35,12 @@
             cursor: pointer;
         }
     }
+}
+@media screen and (max-width: 1300px){
+    #Credits{
+        width: 90%;
+        height: 90%;
+    }
+    
+
 }

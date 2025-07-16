@@ -1,6 +1,7 @@
-@media screen and (min-width: 1301px){
+@media screen and (min-width: 769px){
     #Home{
-        &__wallpaper{
+        background-color: $backgroundColor;z-index: -1;
+        &__imageContainer{
             width: 100vw;
             position: absolute;
             overflow: hidden;
@@ -8,7 +9,7 @@
             left: 0px;
             bottom: 0px;
             right: 0px;
-            z-index: -1;
+            z-index: 0;
         }
         &__titleAndbuttons{
             width: 100vw;
@@ -21,23 +22,26 @@
             color: $textColor;
             padding: 120px 0 0 80px;
             margin: 0;
-            font-size: 5em; 
+            font-size: 4em; 
+            z-index: 1;
             &AndButtons{
                 display: flex;
                 align-items: end;
             }      
         }
-        &__buttons{
+        &__explanations{
+            color: $textColor;
+            padding: 0 80px;
+            z-index: 1;
+        }
+        &__buttonContainer{
             display: flex;
             justify-content: center;
             padding: 0 0 50px;
-            &--inscription{
+            &--button{
                 height: 60px;
                 width: 160px;
-            }
-            &--connexion{
-                height: 60px;
-                width: 160px;
+                z-index: 1;
             }
         }
         &__credits{
@@ -47,26 +51,29 @@
         }
     }
 }
-@media screen and (max-width: 1765px){
-    #Home__title{
-        font-size: 4em;
-    }
-}
+
 @media screen and (max-width: 1450px){
     #Home__title{
         font-size: 3em;
     }
 }
-
 @media screen and (max-width: 1300px){
+    #Home__imageContainer--image{
+        transform: translateX(-25%);
+    }
+}
+
+@media screen and (max-width: 768px){
     #Home{
-        display: flex;
         overflow: hidden;
-        flex-direction: column-reverse;
-        &__wallpaper{
-            display: flex;
-            width: 200vw;
-            transform: translate(-25%);
+        width: 100vw;
+        height: 100vh;
+        background-color: $backgroundColor;
+        &__imageContainer{
+            &--image{
+                width: 100vw;
+                transform: translateX(0);
+            }
         }
         &__titleAndbuttons{
             width: 100vw;
@@ -83,25 +90,29 @@
             font-size: 3em;  
             text-align: center;     
         }
-        &__buttons{
+        &__explanations{
+            color: $textColor;
+            text-align: center;
+        }
+        &__buttonContainer{
             display: flex;
             justify-content: center;
             padding: 0 0 50px;
-             &--inscription{
-                height: 60px;
-                width: 160px;
-            }
-            &--connexion{
+             &--button{
                 height: 60px;
                 width: 160px;
             }
         }
         &__credits{
             position: absolute;
-            left: 50%;
-            transform: translate(-50%);
-            bottom: 0px;
+            left: 5px;
+            top: 0px;
             padding: 0 50px;
         }
+    }
+}
+@media screen and (max-width: 600px){
+    #Home__title{
+        font-size: 2em;
     }
 }
