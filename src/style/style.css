@@ -333,6 +333,9 @@ body {
   #Anchor__image {
     height: 100vh;
   }
+  #Anchor__title {
+    padding: 10px;
+  }
   #Anchor__arrowTurnLeftContainer {
     height: 80px;
     width: 80px;
@@ -348,6 +351,12 @@ body {
   }
 }
 @media screen and (max-width: 1300px) {
+  #Anchor__image {
+    width: 100vw;
+  }
+  #Anchor__title {
+    padding: 10px;
+  }
   #Anchor__arrowTurnLeftContainer {
     width: 80px;
     height: 80px;
@@ -360,6 +369,11 @@ body {
     height: 60px;
     width: 350px;
     margin: 13px;
+  }
+}
+@media screen and (max-width: 1300px) and (min-width: 769px) {
+  #Anchor__image {
+    width: 80vw;
   }
 }
 #Stop__imageContainerAndText {
@@ -531,7 +545,7 @@ body {
   margin: 10px 60px;
   border-radius: 20px;
   color: #000000;
-  grid-template: 100%/30% 60%;
+  grid-template: 100%/30% 70%;
 }
 .rectangleTipp span {
   color: red;
