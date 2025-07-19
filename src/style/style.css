@@ -104,7 +104,7 @@ body {
     color: #FFFFFF;
     background-color: #3E3F3A;
     display: grid;
-    grid-template: 20% 1fr 5%;
+    grid-template: 20% 1fr 5%/100%;
     text-align: center;
     align-items: center;
     justify-items: center;
@@ -329,12 +329,12 @@ body {
     height: 100vh;
   }
 }
-@media screen and (min-width: 1301px) {
+@media screen and (min-width: 1601px) {
   #Anchor__image {
     height: 100vh;
   }
   #Anchor__title {
-    padding: 10px;
+    padding: 50px;
   }
   #Anchor__arrowTurnLeftContainer {
     height: 80px;
@@ -350,7 +350,19 @@ body {
     margin: 13px;
   }
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1600px) {
+  #Anchor {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    color: #FFFFFF;
+    background-color: #3E3F3A;
+    display: grid;
+    grid-template: 2fr 4fr 1fr/100%;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+  }
   #Anchor__image {
     width: 100vw;
   }
@@ -369,11 +381,6 @@ body {
     height: 60px;
     width: 350px;
     margin: 13px;
-  }
-}
-@media screen and (max-width: 1300px) and (min-width: 769px) {
-  #Anchor__image {
-    width: 80vw;
   }
 }
 #Stop__imageContainerAndText {
@@ -603,13 +610,13 @@ body {
 }
 
 @media screen and (max-width: 1300px) and (min-width: 799px) {
-  .page {
+  #Webresources {
     display: grid;
     grid-template: 100vh/40% 40% 8%;
   }
 }
 @media screen and (max-width: 798px) {
-  .page {
+  #Webresources {
     width: 100vw;
     height: 100vh;
     overflow: scroll;

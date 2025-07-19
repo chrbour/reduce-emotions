@@ -1,10 +1,10 @@
-@media screen and (min-width:1301px){
+@media screen and (min-width:1601px){
     #Anchor{
         &__image{
             height: 100vh;
         }
         &__title {
-            padding: 10px
+            padding: 50px
         }
         &__arrowTurnLeftContainer{
             height: 80px;
@@ -21,8 +21,18 @@
         margin: 13px;
     }
 }
-@media screen and (max-width:1300px){
+@media screen and (max-width:1600px){
     #Anchor{
+        width: 100vw;
+        height: 100vh;
+        overflow: scroll;
+        color: $textColor;
+        background-color: $backgroundColor;
+        display: grid;
+        grid-template: 2fr 4fr 1fr/100%;
+        text-align: center;
+        align-items: center;
+        justify-items: center;
         &__image{
             width: 100vw;
         }
@@ -43,9 +53,8 @@
         width: 350px;
         margin: 13px;
     }
+    .page{
+        
     }
-    @media screen and (max-width: 1300px) and (min-width: 769px){
-        #Anchor__image{
-            width: 80vw
-        }
-    }
+}  
+   

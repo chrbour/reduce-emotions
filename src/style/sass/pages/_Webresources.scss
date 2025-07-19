@@ -29,13 +29,13 @@
     }
 }
 @media screen and (max-width: 1300px) and (min-width: 799px){
-    .page{
+    #Webresources{
         display: grid;
         grid-template: 100vh / 40% 40% 8%;
             }
 }
 @media screen and (max-width:798px){
-    .page{
+    #Webresources{
         width: 100vw;
         height: 100vh;
         overflow: scroll;
