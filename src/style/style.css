@@ -73,8 +73,8 @@
 
 @media screen and (max-width: 1300px) {
   #Credits {
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
   }
 }
 body {
@@ -83,7 +83,7 @@ body {
   font-style: normal;
 }
 
-@media screen and (min-width: 1301px) {
+@media screen and (min-width: 769px) {
   .page {
     width: 100vw;
     height: 100vh;
@@ -96,7 +96,7 @@ body {
     align-items: center;
   }
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 768px) {
   .page {
     width: 100vw;
     height: 100vh;
@@ -582,7 +582,7 @@ body {
   font-size: 50px;
 }
 
-.webresources__button {
+.Webresources__button {
   background-color: #B2CBE3;
   font-size: 16px;
   color: black;
@@ -591,17 +591,37 @@ body {
   padding: 0 15px;
   border-radius: 20px;
 }
-.webresources__button a {
+.Webresources__button a {
   color: black;
 }
-.webresources__button a:hover {
+.Webresources__button a:hover {
   color: red;
   cursor: pointer;
 }
-.webresources__button:hover {
+.Webresources__button:hover {
   border: red solid 1px;
 }
 
+@media screen and (max-width: 1300px) and (min-width: 799px) {
+  .page {
+    display: grid;
+    grid-template: 100vh/40% 40% 8%;
+  }
+}
+@media screen and (max-width: 798px) {
+  .page {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    color: #FFFFFF;
+    background-color: #3E3F3A;
+    display: grid;
+    grid-template: 20% 1fr 5%;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+  }
+}
 #thermometer {
   overflow: hidden;
   font-family: "Inknut Antiqua", serif;

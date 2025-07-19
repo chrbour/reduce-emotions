@@ -9,7 +9,7 @@
         font-size: 50px ;
     }
 }
-.webresources__button{
+.Webresources__button{
     background-color: #B2CBE3;
     font-size: 16px;
     color: black;
@@ -26,5 +26,25 @@
     }
     &:hover{
         border: red solid 1px;
+    }
+}
+@media screen and (max-width: 1300px) and (min-width: 799px){
+    .page{
+        display: grid;
+        grid-template: 100vh / 40% 40% 8%;
+            }
+}
+@media screen and (max-width:798px){
+    .page{
+        width: 100vw;
+        height: 100vh;
+        overflow: scroll;
+        color: $textColor;
+        background-color: $backgroundColor;
+        display: grid;
+        grid-template: 20% 1fr 5%;
+        text-align: center;
+        align-items: center;
+        justify-items: center;
     }
 }
