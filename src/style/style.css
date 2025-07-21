@@ -329,7 +329,7 @@ body {
     height: 100vh;
   }
 }
-@media screen and (min-width: 1601px) {
+@media screen and (min-width: 1301px) {
   #Anchor__image {
     height: 100vh;
   }
@@ -350,7 +350,7 @@ body {
     margin: 13px;
   }
 }
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1300px) {
   #Anchor {
     width: 100vw;
     height: 100vh;
@@ -367,7 +367,7 @@ body {
     width: 100vw;
   }
   #Anchor__title {
-    padding: 10px;
+    padding: 50px;
   }
   #Anchor__arrowTurnLeftContainer {
     width: 80px;
@@ -514,6 +514,42 @@ body {
   font-size: 50px;
 }
 
+.rectangleTipp {
+  height: 20%;
+  display: grid;
+  grid-template: 100%/30% 70%;
+  padding: 10px;
+  margin: 10px 60px;
+  border-radius: 20px;
+  color: #000000;
+}
+.rectangleTipp span {
+  color: red;
+}
+
+.TIPP__imageContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TIPP__image {
+  width: 100%;
+}
+
+.TIPP__paragraph {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: center;
+  font-family: arial;
+  padding: 0;
+}
+.TIPP__paragraph h2, .TIPP__paragraph p {
+  margin: 0;
+}
+
 #TIPP__title--secondary {
   margin: 100px;
 }
@@ -528,6 +564,10 @@ body {
 }
 #TIPP__intenseExercise {
   background-color: #FFE3E3;
+}
+#TIPP__intenseExercise--image {
+  height: 100%;
+  width: auto;
 }
 #TIPP__pacedBreathing {
   background-color: #E1F9D2;
@@ -544,42 +584,69 @@ body {
   font-size: 50px;
 }
 
-.rectangleTipp {
-  overflow: visible;
-  height: 20%;
-  display: grid;
-  padding: 10px;
-  margin: 10px 60px;
-  border-radius: 20px;
-  color: #000000;
-  grid-template: 100%/30% 70%;
+@media screen and (max-width: 1300px) {
+  #TIPP {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    color: #FFFFFF;
+    background-color: #3E3F3A;
+    display: grid;
+    grid-template: 2fr 4fr 15%/100%;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+  }
+  .TIPP__image {
+    height: 100%;
+    width: auto;
+  }
 }
-.rectangleTipp span {
-  color: red;
+@media screen and (max-width: 900px) {
+  .rectangleTipp {
+    grid-template: 100%/100%;
+    height: 21%;
+  }
+  .TIPP__imageContainer {
+    display: none;
+  }
 }
-
-.TIPP__imageContainer {
-  height: 100%;
-  display: flex;
-  justify-content: center;
+@media screen and (max-width: 500px) {
+  .rectangleTipp {
+    height: 50%;
+  }
+  #TIPP {
+    display: flex;
+    flex-direction: column;
+  }
+  #TIPP__title--secondary {
+    margin: 50px 20px 150px;
+  }
+  #TIPP__arrowTurnLeftContainer {
+    margin: 200px 0;
+  }
+  #TIPP__arrowTurnLeftIcon {
+    font-size: 30px;
+  }
 }
-
-.TIPP__image {
-  height: 100%;
+@media screen and (max-width: 410px) {
+  #TIPP {
+    display: flex;
+    flex-direction: column;
+  }
+  #TIPP__title--secondary {
+    margin: 50px 20px 300px;
+  }
+  #TIPP__detailsContainer {
+    height: 100vh;
+  }
+  #TIPP__arrowTurnLeftContainer {
+    margin: 300px 0;
+  }
+  #TIPP__arrowTurnLeftIcon {
+    font-size: 30px;
+  }
 }
-
-.TIPP__paragraph {
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  justify-content: center;
-  font-family: arial;
-  padding: 0 30px 0 0;
-}
-.TIPP__paragraph h2, .TIPP__paragraph p {
-  margin: 0;
-}
-
 #Webresources__arrowTurnLeftContainer {
   height: 80px;
   width: 80px;
