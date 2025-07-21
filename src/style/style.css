@@ -428,6 +428,44 @@ body {
   color: rgb(109, 15, 15);
 }
 
+@media screen and (max-width: 1250px) {
+  #Stop {
+    overflow: scroll;
+    display: grid;
+    grid-template: 75% 1fr 5%/100%;
+    text-align: center;
+  }
+  #Stop__arrowTurnLeftContainer {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  #Stop {
+    overflow: scroll;
+    display: grid;
+    grid-template: 75% 1fr 5%/100%;
+  }
+  #Stop__arrowTurnLeftContainer {
+    margin: auto;
+  }
+  .Stop__text--initials {
+    font-size: 30px;
+  }
+  .Stop__text--legend {
+    font-size: 16px;
+  }
+  .Stop__text--details {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 430px) {
+  #Stop {
+    grid-template: 80% 1fr 5%/100%;
+  }
+  #Stop__title--primary {
+    font-size: 2rem;
+  }
+}
 #EmotionsWheel__title {
   display: flex;
   flex-direction: column;
