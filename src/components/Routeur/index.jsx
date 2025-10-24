@@ -19,20 +19,20 @@ function Routeur() {
     <React.StrictMode>
         <Router>
             <SavingParamsProvider>
-            <EmotionsProvider>
-                <Routes>
-                    <Route path = "/" element = {<Home/>} />  
-                    <Route path = "/Menu" element = {<Menu />} />
-                    <Route path = "/TIPP" element = {<TIPP />} />
-                    <Route path = "/Anchoring" element = {<Anchoring />} />
-                    <Route path = "/STOP" element = {<STOP />} />
-                    <Route path = "/EmotionsWheel" element = {<EmotionsWheel />} />
-                    <Route path = "/WebResources" element = {<WebResources />} />
-                    <Route path = "/Thermometer" element = {<Thermometer />} />
-                   <Route path = "/Configure" element = {<Configure/>} />                
-                    <Route path = "*" element = {<Error/>} />
-                </Routes>
-            </EmotionsProvider>
+                <EmotionsProvider>
+                    <Routes>
+                        <Route path = "/" element = {<Home/>} />  
+                        <Route path = "/Menu" element = {<Menu />} />
+                        <Route path = "/TIPP" element = {<TIPP />} />
+                        <Route path = "/Anchoring" element = {<Anchoring />} />
+                        <Route path = "/STOP" element = {<STOP />} />
+                        <Route path = "/EmotionsWheel" element = {<EmotionsWheel />} />
+                        <Route path = "/WebResources" element = {<WebResources />} />
+                        <Route path = "/Thermometer" element = {<Thermometer />} />
+                        <Route path = "/Configure" element = {<Configure/>} />                
+                        <Route path = "*" element = {<Error/>} />
+                    </Routes>
+                </EmotionsProvider>
             </SavingParamsProvider>
         </Router>
     </React.StrictMode>

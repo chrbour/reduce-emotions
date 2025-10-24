@@ -12,32 +12,31 @@ const Emotion = ({emotion}) => {
         <>
             {
             emotion.title != '' ? 
-                <>
-                    <div >
+                <div id = "emotionContainer__selected">
+                    <div id = "emotionContainer__selected--description">
                         <img src = {icon} alt = "Icône émotion" id = 'thermometer__frameEmotion'/>
-                        <h2 id = "emotion__title">{title}</h2>
+                        <h2 id = "emotionContainer__selected--title">{title}</h2>
                     </div>
                     <ListOfActions display = {emotion} />
-                </>
-                :
-                <>
-                <h2 style = {{display: 'flex', justifyContent: 'center', color: 'black'}}>Sélectionne une émotion à l&apos;aide des flèches</h2>
-                <div style = {{color: 'black', display: 'flex'}}>
-                    <img style = {{width: '20%'}} src = {green} alt="" />
-                    <img style = {{width: '20%'}} src = {yellow} alt="" />
-                    <img style = {{width: '20%'}} src = {red} alt="" />
-                    <img style = {{width: '20%'}} src = {brown} alt="" />
-                    <img style = {{width: '20%'}} src = {black} alt="" />
                 </div>
-                </>
+                :
+                <div id = "emotionContainer__notSelected">
+                    <h2 id = "emotionContainer__notSelected--selectEmotions" style = {{color: '#000000'}}>Sélectionne une émotion à l&apos;aide des flèches</h2>
+                    <div id = "emotionContainer__notSelected--icons">
+                        <img src = {green} alt="" />
+                        <img src = {yellow} alt="" />
+                        <img src = {red} alt="" />
+                        <img src = {brown} alt="" />
+                        <img src = {black} alt="" />
+                    </div>
+                </div>
             }
         </>
     )
 }
     
     Emotion.propTypes = {
-        emotion: PropTypes.object,
-        setContainerColor: PropTypes.func
+        emotion: PropTypes.object
     }
 
     export default Emotion;

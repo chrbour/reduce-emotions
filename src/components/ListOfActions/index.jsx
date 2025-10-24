@@ -4,11 +4,10 @@ import {useContext} from "react";
 import {EmotionsContext} from "../../utils/context/Context";
 
 const ContainerListOfActions = styled.div`
+    display: grid;
     grid-template: 100% / 150px 300px;
     border: 1px solid #000000;
     width: 500px; 
-    display: grid;
-    margin: 1px;
 `  
 const ContainerImgListOfActions = styled.div`
     border-right: 1px solid #000000;
@@ -17,7 +16,7 @@ const ContainerImgListOfActions = styled.div`
 `
 const ImgListOfActions = styled.img`
     height: 100px !important;
-    width: 148px;s
+    width: 148px;
     margin: auto;
 `
 const TextListOfActions = styled.div`

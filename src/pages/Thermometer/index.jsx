@@ -43,10 +43,13 @@ function Thermometer() {
         <div id = "thermometer">
             <div id = "thermometer__titleContainer">
                 <h1 id = "thermometer__titleContainer--primary">Thermomètre des émotions</h1>
-                <i className ="fa-solid fa-gear" onClick = {() => Navigate("/Configure")}></i>
-                <div id = "thermometer__titleContainer--bubble">Paramétrage des préférences</div>
+                <div>
+                    <div id = "thermometer__titleContainer--bubble">Paramétrage des préférences</div>
+                    <i className ="fa-solid fa-gear" onClick = {() => Navigate("/Configure")}></i>
+                    
+                </div>
             </div>
-            <p id = "thermometer__text">Comment te sens-tu?</p>
+        
             <div id = "thermometer__imageContainer">
                 <div id = "thermometer__imageContainer--image" >
                     <img src = {thermometer} alt="Thermomètre des émotions" />

@@ -1,60 +1,53 @@
 
-
 #thermometer{
     overflow: hidden;
     font-family: "Inknut Antiqua", serif;
     font-style: normal;
     color: $textColor;
     background-color: $backgroundColor;
+    width: 100vw;
+    height: 100vh;
     &__titleContainer{
-        display: flex; 
-        justify-content: center;
-        align-items: start;
         width: 100vw;
+        display: flex; 
+        justify-content: end;
+        align-items: center;
         & i{
-            font-size: 70px;
-            position: absolute;
-            right: 50px;
-            top: 20px;
+            font-size: 50px;
             &:hover{
                 color: $iconColorHover;
                 cursor: pointer;
             }
         }
+
         &--bubble{
-            position: absolute;
             display: flex;
             font-family: Arial;
             justify-content: center;
             align-items: center;
-            top: 30px;
-            right: 150px;
             font-size: 12px;
             width: 200px;
             height: 50px;
             color: white;
             background-color: black;
             border-radius: 20px;
-            &::after{
-                content: "";
-                height: 0;
-                width: 0;
-                border-left: 15px solid #000000;
-                border-top: 10px solid transparent;
-                border-bottom: 10px solid transparent;
-                position: absolute;
-                left: 100%;
-            }
+            margin-right: 10px;
             &:hover{
                 font-size: 13px;
+                cursor: pointer;
             }
+        }
+        &>div{
+            margin: 0 50px 0 200px ;
+            display: flex;
+            align-items: center;justify-content: center;
         }
     }
     &__imageContainer{
         display: flex;
         height: 90vh;
         align-items: center;
-        justify-content: end;
+        justify-content: center;
         &--image{
             display: flex;
             align-items: center;
@@ -63,7 +56,6 @@
             }
         }
         &--triangle{
-            height: 100%;
             display: grid;
             align-items: center;
             grid-template: repeat(5, 15vh) / 5vw; 
@@ -72,14 +64,12 @@
             }
         }
         &--rectangle{
-            width: 50vw;
-            height: 70vh;
+            width: 40vw;
             margin: 0 30px;
             border-radius: 30px; 
-            display: grid;
-            grid-template: 100% / 1.5fr 2fr;
-            text-align: center;
-            align-items: center;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
         }
     }
     &__arrowTurnLeftContainer{
@@ -88,7 +78,7 @@
         margin: 20px;
     }
     &__arrowTurnLeftIcon{
-        font-size: 50px ;
+        font-size: 50px;
     }
     &__text{
         position: absolute;
@@ -98,13 +88,15 @@
         margin: 0 10px;
     }
     &__frameEmotion{ 
-            height: 50% !important;grid-column-start: 1;
+            height: 50% !important;
             margin: auto;
         }
 }
 .thermometer{
     &__triangle{
         position: relative;
+        display:flex;
+        align-items: center;
         &--red{
             position: absolute;
             left: 0px;
@@ -114,13 +106,83 @@
                 opacity: 1;
             }
         }
+        
     }
 }
-#emotion__title{
+#emotionContainer{
+    &__selected--title{
     margin-top: -50px;
+    }
+    &__selected{
+        display: grid;
+        grid-template: 100% / 1.5fr 2fr;
+        text-align: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+    &__notSelected{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &--icons img{
+            width: 20%;
+            height:20%;
+        }
+    }
 }
 
+@media screen and (max-width: 1550px){
+    #emotionContainer{
+        &__selected--description{
+            display: flex; 
+            flex-direction: column;
+            align-items: center
+        }
+        &__selected__title{
+            margin: 0;
+        }
+    }
+    #thermometer{
+        &__frameEmotion{
+            width: 200px;
+        }
+    }
+}
 
-@media screen and (min-width: 120px){
+@media screen and (max-width: 1400px){
+    #thermometer__titleContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
+@media screen and (max-width: 1000px){
+    #thermometer{
+        overflow: scroll;
+        &__titleContainer--primary{
+            font-size: 30px;
+        }
+        &__imageContainer{
+            display: flex;
+            flex-direction: column;
+            &--image{
+                margin-top: 30px;
+                &>img{
+                    height: 70vh
+                }
+            }
+            &--triangle {
+                grid-template: repeat(5, 11vh) / 5vw; 
+            & img{
+                height: 4vh;
+            }
+            }
+        } 
+    }
+    #emotionContainer__notSelected--selectEmotions{
+        font-size: 14px;
+    }
 }

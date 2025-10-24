@@ -1,11 +1,14 @@
 #Stop{
-        &__imageContainerAndText{
-            display: flex;
-            flex-direction: column;
-        }
-        &__imageContainer{
-            height: 40vh;
-        }
+    &__title p{
+        padding: 30px;
+    }
+    &__imageContainerAndText{
+        display: flex;
+        flex-direction: column;
+    }
+    &__imageContainer{
+        height: 40vh;
+    }
     &__textContainer{
         margin: 35px;
         padding: 0;
