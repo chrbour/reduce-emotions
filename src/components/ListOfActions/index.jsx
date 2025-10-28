@@ -3,22 +3,13 @@ import styled from "styled-components";
 import {useContext} from "react";
 import {EmotionsContext} from "../../utils/context/Context";
 
-const ContainerListOfActions = styled.div`
-    display: grid;
-    grid-template: 100% / 150px 300px;
-    border: 1px solid #000000;
-    width: 500px; 
-`  
+  
 const ContainerImgListOfActions = styled.div`
     border-right: 1px solid #000000;
     display: flex;
     align-items: center;
 `
-const ImgListOfActions = styled.img`
-    height: 100px !important;
-    width: 148px;
-    margin: auto;
-`
+
 const TextListOfActions = styled.div`
     color: #000000; 
     margin: auto 20px;
@@ -33,14 +24,14 @@ const ListOfActions = ({display}) => {
             if(element === i){
                 picture = image_LinkAndName[id-1];
                 return (
-                    <ContainerListOfActions id = "containerListOfActions" key = {i} >
+                    <div id = "containerListOfActions" key = {i} >
                         <ContainerImgListOfActions id = "containerListOfActions__contImg" >
-                            <ImgListOfActions src={picture} alt = "actions" />
+                            <img src={picture} alt = "actions" id = "listOfActions__img"/>
                         </ContainerImgListOfActions>
                         <TextListOfActions id = "containerListOfActions__text" >
                             <p>{element}</p>
                         </TextListOfActions>   
-                    </ContainerListOfActions>
+                    </div>
                 )
             }
         }    
@@ -53,14 +44,14 @@ const ListOfActions = ({display}) => {
     let optionsSelected = options.map((element, id)=>{
             picture = display.icon;
             return (
-                    <ContainerListOfActions id = "containerListOfActions" key = {id} >
+                    <div id = "containerListOfActions" key = {id} >
                         <ContainerImgListOfActions id = "containerListOfActions__contImg" >
-                            <ImgListOfActions src={picture} alt = "actions" />
+                            <img src={picture} alt = "actions" id = "listOfActions__img"/>
                         </ContainerImgListOfActions>
                         <TextListOfActions id = "containerListOfActions__text" >
                             <p>{element}</p>
                         </TextListOfActions>   
-                    </ContainerListOfActions>
+                    </div>
                 )
         });
     return <div>{actions}{optionsSelected}</div>

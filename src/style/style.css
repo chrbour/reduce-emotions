@@ -785,6 +785,7 @@ body {
   height: 90vh;
   align-items: center;
   justify-content: center;
+  margin-top: 70px;
 }
 #thermometer__imageContainer--image {
   display: flex;
@@ -816,13 +817,6 @@ body {
 }
 #thermometer__arrowTurnLeftIcon {
   font-size: 50px;
-}
-#thermometer__text {
-  position: absolute;
-  bottom: 50%;
-  left: 1%;
-  font-size: 30px;
-  margin: 0 10px;
 }
 #thermometer__frameEmotion {
   height: 50% !important;
@@ -866,17 +860,34 @@ body {
   height: 20%;
 }
 
+#containerListOfActions {
+  display: grid;
+  grid-template: 100%/150px 65%;
+  border: 1px solid #000000;
+}
+#containerListOfActions__text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#listOfActions__img {
+  height: 100px !important;
+  width: 148px;
+  margin: auto;
+}
+
 @media screen and (max-width: 1550px) {
-  #emotionContainer__selected--description {
+  #emotionContainer__selected {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
-  #emotionContainer__selected__title {
-    margin: 0;
+  #emotionContainer__selected--title {
+    font-size: 20px;
   }
   #thermometer__frameEmotion {
     width: 200px;
+    margin-top: -50px;
   }
 }
 @media screen and (max-width: 1400px) {
@@ -896,6 +907,7 @@ body {
   #thermometer__imageContainer {
     display: flex;
     flex-direction: column;
+    margin-top: 0;
   }
   #thermometer__imageContainer--image {
     margin-top: 30px;
@@ -909,8 +921,36 @@ body {
   #thermometer__imageContainer--triangle img {
     height: 4vh;
   }
+  #thermometer__frameEmotion {
+    margin-top: -50px;
+  }
   #emotionContainer__notSelected--selectEmotions {
     font-size: 14px;
+  }
+  #listOfActions__img {
+    height: 80px !important;
+    width: 118px;
+  }
+  #containerListOfActions__text {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 900px) {
+  #thermometer__imageContainer--image > img {
+    height: 50vh;
+  }
+  #thermometer__imageContainer--triangle {
+    grid-template: repeat(5, 8vh)/5vw;
+  }
+  #thermometer__imageContainer--triangle img {
+    height: 4.55vh;
+  }
+  #containerListOfActions {
+    grid-template: 100%/30% 70%;
+  }
+  #listOfActions__img {
+    height: 40px !important;
+    width: 59px;
   }
 }
 #configure {
