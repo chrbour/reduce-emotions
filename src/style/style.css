@@ -749,6 +749,7 @@ body {
   display: flex;
   justify-content: end;
   align-items: center;
+  text-align: center;
 }
 #thermometer__titleContainer i {
   font-size: 50px;
@@ -777,15 +778,12 @@ body {
 #thermometer__titleContainer > div {
   margin: 0 50px 0 200px;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 #thermometer__imageContainer {
   display: flex;
   height: 90vh;
   align-items: center;
   justify-content: center;
-  margin-top: 70px;
 }
 #thermometer__imageContainer--image {
   display: flex;
@@ -892,9 +890,10 @@ body {
 }
 @media screen and (max-width: 1400px) {
   #thermometer__titleContainer {
-    display: flex;
     flex-direction: column;
-    align-items: center;
+  }
+  #thermometer__titleContainer > div {
+    margin: 0;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -995,13 +994,32 @@ body {
   font-weight: bold;
   text-align: center;
 }
-.configure__btn {
+.configure__btn--reset {
+  background: #b2ebf2;
+  position: fixed;
+  bottom: 40%;
+  left: 90%;
   color: #000000;
   font-size: 16px;
   margin: 10px;
   border: solid 2px black;
 }
-.configure__btn:hover {
+.configure__btn--reset:hover {
+  border: solid 2px white;
+  color: red;
+}
+.configure__btn--cancel {
+  background-color: #babcbc;
+  position: fixed;
+  bottom: 30%;
+  left: 90%;
+  transform: translateX(25%);
+  color: #000000;
+  font-size: 16px;
+  margin: 10px;
+  border: solid 2px black;
+}
+.configure__btn--cancel:hover {
   border: solid 2px white;
   color: red;
 }
@@ -1035,6 +1053,26 @@ input[type=checkbox]:checked:before {
   position: absolute;
   top: 25%;
   left: 25%;
+}
+
+@media screen and (max-width: 1650px) {
+  .configure__container {
+    height: 10000px !important;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .configure__btn--reset {
+    left: 80%;
+  }
+  .configure__btn--cancel {
+    left: 80%;
+  }
+  .containerListOfActionsParams {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

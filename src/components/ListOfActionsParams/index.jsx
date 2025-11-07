@@ -141,7 +141,7 @@ const ListOfActionsParams = ({display, selection}) => {
                 index++;
                 picture = image_LinkAndName[id-1];
                 return (
-                    <ContainerListOfActions id = "containerListOfActions" key = {AdressAndName} >
+                    <ContainerListOfActions id = "containerListOfActionsParams" key = {AdressAndName} >
                             <input type = "checkbox" id = {AdressAndName} value = {element} 
                                 checked = {isChecked(`checkbox${index}`, element)}
                                 onChange = {checkboxClick}
@@ -164,7 +164,7 @@ const ListOfActionsParams = ({display, selection}) => {
     else{
         options = selection[name].option.map((element, id)=>{
                 return (
-                    <ContainerListOfActions id = "containerListOfActions" key = {id} >
+                    <ContainerListOfActions id = "containerListOfActionsParams" key = {id} >
                             <input type = "checkbox" id = {id} value = {element} 
                                 checked = {isChecked(`checkbox${index}`, element)}
                                 onChange = {checkboxClick}
@@ -206,7 +206,7 @@ const ListOfActionsParams = ({display, selection}) => {
 ListOfActionsParams.propTypes = {
     display: PropTypes.object,
     selection: PropTypes.object,
-    option: PropTypes.object
+    option: PropTypes.object,
     }
 
 export default ListOfActionsParams;

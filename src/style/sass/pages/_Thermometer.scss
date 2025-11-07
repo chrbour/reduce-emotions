@@ -12,6 +12,7 @@
         display: flex; 
         justify-content: end;
         align-items: center;
+        text-align: center;
         & i{
             font-size: 50px;
             &:hover{
@@ -37,10 +38,10 @@
                 cursor: pointer;
             }
         }
-        &>div{
+        & > div{
             margin: 0 50px 0 200px ;
             display: flex;
-            align-items: center;justify-content: center;
+
         }
     }
     &__imageContainer{
@@ -48,7 +49,6 @@
         height: 90vh;
         align-items: center;
         justify-content: center;
-        margin-top: 70px;
         &--image{
             display: flex;
             align-items: center;
@@ -71,7 +71,6 @@
             display: flex;
             flex-direction: column;
             padding: 10px;
-            
         }
     }
     &__arrowTurnLeftContainer{
@@ -164,9 +163,11 @@
 
 @media screen and (max-width: 1400px){
     #thermometer__titleContainer{
-        display: flex;
         flex-direction: column;
-        align-items: center;
+        & > div{
+            margin: 0;
+        }
+        
     }
 }
 
@@ -230,5 +231,11 @@
     #listOfActions__img{
         height: 40px !important;
         width: 59px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    #thermometer__titleContainer{
+        
     }
 }

@@ -157,8 +157,8 @@ const Configure = () => {
                 }
             </Container>
             <div>
-                <button className = "configure__btn" style = {{backgroundColor: '#b3ebf2', position: 'fixed', bottom: '40%', left: '90%', transform: 'translateX(0)'}} onClick = {reset}>Réinitialiser</button>
-                <button className = "configure__btn" style = {{backgroundColor: '#babcbcff', position: 'fixed', bottom: '30%', left: '90%', transform: 'translateX(25%)'}} onClick = {cancel}>Retour</button>
+                <button className = "configure__btn--reset" onClick = {reset}>Réinitialiser</button>
+                <button className = "configure__btn--cancel" onClick = {cancel}>Retour</button>
             </div>
            {message != ''? <Message message = {message}/> : null}
         </div>
