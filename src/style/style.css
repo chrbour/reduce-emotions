@@ -1116,11 +1116,11 @@ input[type=checkbox]:checked:before {
     font-size: 30px;
   }
   .configure__btn--reset {
-    left: 70vw;
+    left: 68vw;
     font-size: 12px;
   }
   .configure__btn--cancel {
-    left: 70vw;
+    left: 68vw;
     font-size: 12px;
   }
 }
