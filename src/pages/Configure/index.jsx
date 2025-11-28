@@ -43,8 +43,10 @@ const Configure = () => {
     }
     return(
         <div id = "configure" >
-            <h1 id = "configure__title">Paramétrage du thermomètre</h1>
-            <p>5 items max par émotion, dont 2 émotions personnalisées max.</p>
+            <div id="configure__container--title">
+                <h1 id = "configure__title">Paramétrage du thermomètre</h1>
+                <p>5 items max par émotion, dont 2 émotions personnalisées max.</p>
+            </div>
             <Container color = {allEmotions.greenEmotion.color} size = {allEmotions.greenEmotion.action.length} className = "configure__container" >
                 <div className = "configure__imgContainer">
                     <img className = "configure__imgContainer--img" src= {allEmotions.greenEmotion.icon} alt="green emotion" />
@@ -163,7 +165,6 @@ const Configure = () => {
            {message != ''? <Message message = {message}/> : null}
         </div>
     )
-}
-    
+}   
 
 export default Configure;

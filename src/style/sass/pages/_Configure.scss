@@ -8,9 +8,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    &__container--title{
+      text-align: center;
+    }
 }
 
 .configure{
+  &__title{
+    display: flex;
+    justify-content: center;;
+    text-align: center;
+  }
   &__container{
     margin: 5px;
     height: 800px;
@@ -46,8 +54,8 @@
     &--reset{
       background: #b2ebf2;
       position: fixed;
-      bottom: 40%;
-      left: 90%;
+      bottom: 40vh;
+      left: 90vw;
       color: #000000;
       font-size: 16px;
       margin: 10px;
@@ -106,7 +114,7 @@ input[type="checkbox"]:checked {
   }
 }
 
-@media screen and (max-width: 1650px){
+@media screen and (max-width: 1740px){
   .configure{
     &__container{
       height: 10000px !important;
@@ -117,15 +125,95 @@ input[type="checkbox"]:checked {
     }
      &__btn{
       &--reset{
-        left: 80%;
+        left: 80vw;
+        top: 50vh; 
+        height: 60px;
       }
       &--cancel{
-        left: 80%;
+        left: 80vw;
+        top: 60vh;
+        height: 60px;
       }
     }
   }
-  .containerListOfActionsParams{
+  #containerListOfActionsParams{
+    margin: auto;
+}
+}
+
+@media screen and (max-width: 950px){
+  #containerListOfActionsParams{
+    grid: 100% / 50px 100px 200px;
+    width: 350px;
+  }
+  #configure{
+    align-items: start;
+    padding-left: 10px;
+    &__container--title{
+      width: 100%;
+    }
+    &__title{
+      font-size: 30px;
+    }
+  }
+  .configure{
+    &__btn{
+      &--reset{
+        left: 70vw;
+        font-size: 12px;
+      }
+      &--cancel{
+        left: 70vw;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 700px){
+  #containerListOfActionsParams{
+    grid: 100% / 50px 150px;
+    width: 180px;
+    &__contImg{
+        display:none
+    }
+  }
+  .configure__imgContainer{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    &--img{
+      width: 60%;
+    }
+    &--text{
+      font-size: 18px;
+      &+p{
+        font-size: 14px;
+      }
+    }
+  }
+  #AddItem__Container{
+    & label{
+      font-size: 14px;
+    }
+    & input{
+      font-size: 12px;
+    }
+    & button{
+      font-size: 10px;
+    }
+  }
+  .configure__imgContainer--text{
+    margin-top: -20px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  #AddItem__Container{
+    & div{
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

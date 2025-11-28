@@ -952,6 +952,21 @@ body {
     width: 59px;
   }
 }
+@media screen and (max-width: 550px) {
+  #thermometer__frameEmotion {
+    width: 150px;
+  }
+  #emotionContainer__selected--title {
+    font-size: 16px;
+    margin-top: -25px;
+  }
+  #containerListOfActions {
+    grid: 100%/100%;
+  }
+  #containerListOfActions__contImg {
+    display: none;
+  }
+}
 #configure {
   background-color: #3E3F3A;
   height: 100vh;
@@ -962,7 +977,15 @@ body {
   flex-direction: column;
   align-items: center;
 }
+#configure__container--title {
+  text-align: center;
+}
 
+.configure__title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 .configure__container {
   margin: 5px;
   height: 800px;
@@ -997,8 +1020,8 @@ body {
 .configure__btn--reset {
   background: #b2ebf2;
   position: fixed;
-  bottom: 40%;
-  left: 90%;
+  bottom: 40vh;
+  left: 90vw;
   color: #000000;
   font-size: 16px;
   margin: 10px;
@@ -1055,7 +1078,7 @@ input[type=checkbox]:checked:before {
   left: 25%;
 }
 
-@media screen and (max-width: 1650px) {
+@media screen and (max-width: 1740px) {
   .configure__container {
     height: 10000px !important;
     width: 50vw;
@@ -1064,14 +1087,82 @@ input[type=checkbox]:checked:before {
     align-items: center;
   }
   .configure__btn--reset {
-    left: 80%;
+    left: 80vw;
+    top: 50vh;
+    height: 60px;
   }
   .configure__btn--cancel {
-    left: 80%;
+    left: 80vw;
+    top: 60vh;
+    height: 60px;
   }
-  .containerListOfActionsParams {
+  #containerListOfActionsParams {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 950px) {
+  #containerListOfActionsParams {
+    grid: 100%/50px 100px 200px;
+    width: 350px;
+  }
+  #configure {
+    align-items: start;
+    padding-left: 10px;
+  }
+  #configure__container--title {
+    width: 100%;
+  }
+  #configure__title {
+    font-size: 30px;
+  }
+  .configure__btn--reset {
+    left: 70vw;
+    font-size: 12px;
+  }
+  .configure__btn--cancel {
+    left: 70vw;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 700px) {
+  #containerListOfActionsParams {
+    grid: 100%/50px 150px;
+    width: 180px;
+  }
+  #containerListOfActionsParams__contImg {
+    display: none;
+  }
+  .configure__imgContainer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .configure__imgContainer--img {
+    width: 60%;
+  }
+  .configure__imgContainer--text {
+    font-size: 18px;
+  }
+  .configure__imgContainer--text + p {
+    font-size: 14px;
+  }
+  #AddItem__Container label {
+    font-size: 14px;
+  }
+  #AddItem__Container input {
+    font-size: 12px;
+  }
+  #AddItem__Container button {
+    font-size: 10px;
+  }
+  .configure__imgContainer--text {
+    margin-top: -20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #AddItem__Container div {
+    display: flex;
+    flex-direction: column;
   }
 }
 

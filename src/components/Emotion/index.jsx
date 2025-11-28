@@ -23,11 +23,11 @@ const Emotion = ({emotion}) => {
                 <div id = "emotionContainer__notSelected">
                     <h2 id = "emotionContainer__notSelected--selectEmotions" style = {{color: '#000000'}}>Sélectionne une émotion à l&apos;aide des flèches</h2>
                     <div id = "emotionContainer__notSelected--icons">
-                        <img src = {green} alt="" />
-                        <img src = {yellow} alt="" />
-                        <img src = {red} alt="" />
-                        <img src = {brown} alt="" />
-                        <img src = {black} alt="" />
+                        <img src = {green} alt="nuage vert" />
+                        <img src = {yellow} alt="nuage jaune" />
+                        <img src = {red} alt="nuage rouge" />
+                        <img src = {brown} alt="nuage marron" />
+                        <img src = {black} alt="nuage noir" />
                     </div>
                 </div>
             }

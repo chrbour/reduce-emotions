@@ -235,7 +235,17 @@
 }
 
 @media screen and (max-width: 550px){
-    #thermometer__titleContainer{
-        
+    #thermometer__frameEmotion{
+        width: 150px;
+    }
+    #emotionContainer__selected--title{
+        font-size: 16px;
+        margin-top: -25px;
+    }
+    #containerListOfActions{
+        grid: 100% / 100%;
+        &__contImg{
+            display:none
+        }
     }
 }

@@ -146,10 +146,10 @@ const ListOfActionsParams = ({display, selection}) => {
                                 checked = {isChecked(`checkbox${index}`, element)}
                                 onChange = {checkboxClick}
                             />
-                        <ContainerImgListOfActions id = "containerListOfActions__contImg" >
+                        <ContainerImgListOfActions id = "containerListOfActionsParams__contImg" >
                             <ImgListOfActions src={picture} alt = "actions" />
                         </ContainerImgListOfActions>
-                        <TextListOfActions id = "containerListOfActions__text">
+                        <TextListOfActions id = "containerListOfActionsParams__text">
                             {element}
                         </TextListOfActions>   
                     </ContainerListOfActions>
@@ -174,12 +174,11 @@ const ListOfActionsParams = ({display, selection}) => {
                         </ContainerImgListOfActions>
                         <TextListOfActions id = "containerListOfActions__text">
                             {element}
-                            <i style = {{fontSize: "20px", margin: "0"}} className="fa-solid fa-trash-can" data-Element = {element} onClick = {erase}></i>
+                            <i style = {{fontSize: "20px", margin: "0 5px"}} className="fa-solid fa-trash-can" data-Element = {element} onClick = {erase}></i>
                         </TextListOfActions>   
                     </ContainerListOfActions>
                 )
-    }
-       
+        }
     );
     }
     useEffect (() => {
@@ -192,7 +191,6 @@ const ListOfActionsParams = ({display, selection}) => {
             };
             return (allParams)
         });
-
     },[itemsChecked]);
 
     return <DisplayListOfActions >
