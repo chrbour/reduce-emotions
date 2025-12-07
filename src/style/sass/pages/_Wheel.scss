@@ -3,6 +3,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        z-index: 3;
         &--instructions{
             text-align: start;
             font-size: 20px;
@@ -19,7 +20,7 @@
         &--wheel{
             height: 100%;
             width: auto;
-            z-index: 1;
+            z-index: 0;
         }
         &--triangleLeft{
             position: relative;
@@ -61,7 +62,6 @@
         }
         &--leftArrowContainer{
             position: relative;
-            z-index: 2;
             bottom: 5%;
         }
         &--leftArrow{
@@ -82,8 +82,66 @@
         height: 80px;
         width: 80px;
         margin: 20px;
+        z-index: 3;
     }
     &__arrowTurnLeftIcon{
-            font-size: 50px ;
+            font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 1700px){
+    #EmotionsWheel{
+        & li{
+            font-size: 15px;
+        }
+        &__image--trianglesAndWheel{
+            height: 60%;
+        }
+    }
+}
+@media screen and (max-width: 1300px){
+    #EmotionsWheel{
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+        & li{
+            font-size: 18px;
+        }
+        &__imageContainer{
+            margin-top: -100px;
+        }
+        &__arrowTurnLeftContainer{
+            padding: 20px 10px;
+        }
+    }
+}
+@media screen and (max-width: 700px){
+    #EmotionsWheel{
+        &__title{
+            & li{
+                font-size: 14px;
+            }
+            & p{
+                font-size: 12px;
+            }
+        }
+        &__image--trianglesAndWheel{
+            height: 55%;
+        }
+    }
+}
+@media screen and (max-width: 550px){
+    #EmotionsWheel{
+        &__title{
+            &--primary{
+                font-size: 40px;
+            }
+            & li{
+                font-size: 12px;
+            }
+        }
+        &__image--trianglesAndWheel{
+            height: 46%
+        }
     }
 }

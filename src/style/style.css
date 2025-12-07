@@ -471,6 +471,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 3;
 }
 #EmotionsWheel__title--instructions {
   text-align: start;
@@ -486,7 +487,7 @@ body {
 #EmotionsWheel__image--wheel {
   height: 100%;
   width: auto;
-  z-index: 1;
+  z-index: 0;
 }
 #EmotionsWheel__image--triangleLeft {
   position: relative;
@@ -528,7 +529,6 @@ body {
 }
 #EmotionsWheel__image--leftArrowContainer {
   position: relative;
-  z-index: 2;
   bottom: 5%;
 }
 #EmotionsWheel__image--leftArrow {
@@ -548,11 +548,58 @@ body {
   height: 80px;
   width: 80px;
   margin: 20px;
+  z-index: 3;
 }
 #EmotionsWheel__arrowTurnLeftIcon {
   font-size: 50px;
 }
 
+@media screen and (max-width: 1700px) {
+  #EmotionsWheel li {
+    font-size: 15px;
+  }
+  #EmotionsWheel__image--trianglesAndWheel {
+    height: 60%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  #EmotionsWheel {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+  }
+  #EmotionsWheel li {
+    font-size: 18px;
+  }
+  #EmotionsWheel__imageContainer {
+    margin-top: -100px;
+  }
+  #EmotionsWheel__arrowTurnLeftContainer {
+    padding: 20px 10px;
+  }
+}
+@media screen and (max-width: 700px) {
+  #EmotionsWheel__title li {
+    font-size: 14px;
+  }
+  #EmotionsWheel__title p {
+    font-size: 12px;
+  }
+  #EmotionsWheel__image--trianglesAndWheel {
+    height: 55%;
+  }
+}
+@media screen and (max-width: 550px) {
+  #EmotionsWheel__title--primary {
+    font-size: 40px;
+  }
+  #EmotionsWheel__title li {
+    font-size: 12px;
+  }
+  #EmotionsWheel__image--trianglesAndWheel {
+    height: 46%;
+  }
+}
 .rectangleTipp {
   height: 20%;
   display: grid;
