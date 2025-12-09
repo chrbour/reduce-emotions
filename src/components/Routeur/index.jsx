@@ -17,7 +17,7 @@ import Error from "../../pages/Error";
 function Routeur() {
     return (
     <React.StrictMode>
-        <Router>
+        <Router basename="/reduce-emotions/">
             <SavingParamsProvider>
                 <EmotionsProvider>
                     <Routes>
