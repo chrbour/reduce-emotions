@@ -571,11 +571,8 @@ body {
   #EmotionsWheel li {
     font-size: 18px;
   }
-  #EmotionsWheel__imageContainer {
-    margin-top: -100px;
-  }
   #EmotionsWheel__arrowTurnLeftContainer {
-    padding: 20px 10px;
+    padding: 20px 5px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -584,6 +581,9 @@ body {
   }
   #EmotionsWheel__title p {
     font-size: 12px;
+  }
+  #EmotionsWheel__imageContainer {
+    margin: -100px 0;
   }
   #EmotionsWheel__image--trianglesAndWheel {
     height: 55%;
@@ -596,8 +596,28 @@ body {
   #EmotionsWheel__title li {
     font-size: 12px;
   }
+  #EmotionsWheel__imageContainer {
+    margin: -200px 0;
+  }
   #EmotionsWheel__image--trianglesAndWheel {
-    height: 46%;
+    height: 36%;
+  }
+  #EmotionsWheel__image--leftArrow {
+    transform: rotate(140deg) scale(0.7);
+  }
+  #EmotionsWheel__image--leftArrowHover {
+    transform: rotate(140deg) scale(0.7);
+  }
+  #EmotionsWheel__image--rightArrow {
+    transform: rotate(40deg) scale(0.7);
+  }
+  #EmotionsWheel__image--rightArrowHover {
+    transform: rotate(40deg) scale(0.7);
+  }
+}
+@media screen and (max-width: 400px) {
+  #EmotionsWheel__image--trianglesAndWheel {
+    height: 30%;
   }
 }
 .rectangleTipp {
@@ -710,27 +730,19 @@ body {
   }
   #TIPP__arrowTurnLeftContainer {
     margin: 200px 0;
+    width: 100px;
+    padding: 25px 0;
   }
   #TIPP__arrowTurnLeftIcon {
-    font-size: 30px;
+    font-size: 50px;
   }
 }
 @media screen and (max-width: 410px) {
-  #TIPP {
-    display: flex;
-    flex-direction: column;
-  }
   #TIPP__title--secondary {
-    margin: 50px 20px 300px;
-  }
-  #TIPP__detailsContainer {
-    height: 100vh;
+    margin: 50px 20px 250px;
   }
   #TIPP__arrowTurnLeftContainer {
-    margin: 300px 0;
-  }
-  #TIPP__arrowTurnLeftIcon {
-    font-size: 30px;
+    margin: 250px 0;
   }
 }
 #Webresources__arrowTurnLeftContainer {
@@ -740,6 +752,9 @@ body {
 }
 #Webresources__arrowTurnLeftIcon {
   font-size: 50px;
+}
+#Webresources__image {
+  height: 350px;
 }
 
 .Webresources__button {
@@ -775,11 +790,18 @@ body {
     overflow: scroll;
     color: #FFFFFF;
     background-color: #3E3F3A;
-    display: grid;
-    grid-template: 20% 1fr 5%;
     text-align: center;
     align-items: center;
     justify-items: center;
+  }
+  #Webresources__title--primary {
+    font-size: 40px;
+  }
+  #Webresources__image {
+    height: 250px;
+  }
+  #Webresources__arrowTurnLeftContainer {
+    margin: auto;
   }
 }
 #thermometer {

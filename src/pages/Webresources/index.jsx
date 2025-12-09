@@ -10,7 +10,7 @@ function Webresources() {
                 <h1 id = "Webresources__title--primary">Ressources en ligne</h1>
             </div>
             <div id = "Webresources__imageContainer" className = "imageContainer">
-                <img src={netWork} alt="Internet" id = "Webresources__image" style={{height:'350px'}}/>
+                <img src={netWork} alt="Internet" id = "Webresources__image" />
                 <h3 id = "Webresources__relaxationProfonde">Relaxation profonde</h3>
                 <div>
                     <button type = "button" className = "Webresources__button"><a href="https://www.youtube.com/watch?v=rpB05dacHDo" target ="_blank">Lien 1</a></button>

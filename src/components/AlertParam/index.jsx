@@ -5,10 +5,10 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     padding: 50px;
-    width: auto;
     align-items: center;
+    text-align: center;
     border: 5px solid red;
-    width: 800px;
+    width: 60vw;
     position: absolute;
     top: 50%;
     left: 50%;

@@ -8,6 +8,9 @@
     &__arrowTurnLeftIcon{
         font-size: 50px ;
     }
+    &__image{
+        height: 350px;
+    }
 }
 .Webresources__button{
     background-color: #B2CBE3;
@@ -41,10 +44,17 @@
         overflow: scroll;
         color: $textColor;
         background-color: $backgroundColor;
-        display: grid;
-        grid-template: 20% 1fr 5%;
         text-align: center;
         align-items: center;
         justify-items: center;
+        &__title--primary{
+            font-size: 40px;
+        }
+        &__image{
+            height: 250px;
+        }
+        &__arrowTurnLeftContainer{
+            margin: auto;
+        }
     }
 }

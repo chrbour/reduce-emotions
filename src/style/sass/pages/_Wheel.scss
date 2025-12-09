@@ -107,11 +107,8 @@
         & li{
             font-size: 18px;
         }
-        &__imageContainer{
-            margin-top: -100px;
-        }
         &__arrowTurnLeftContainer{
-            padding: 20px 10px;
+            padding: 20px 5px;
         }
     }
 }
@@ -125,8 +122,13 @@
                 font-size: 12px;
             }
         }
-        &__image--trianglesAndWheel{
-            height: 55%;
+        &__image{
+            &Container{
+                margin: -100px 0;
+            }
+            &--trianglesAndWheel{
+                height: 55%;
+            }
         }
     }
 }
@@ -140,8 +142,34 @@
                 font-size: 12px;
             }
         }
-        &__image--trianglesAndWheel{
-            height: 46%
+        &__image{
+            &Container{
+                margin: -200px 0
+            }
+            &--trianglesAndWheel{
+                height: 36%;
+            }
+            &--leftArrow{
+                transform: rotate(140deg) scale(0.7);
+            }
+            &--leftArrowHover{
+                transform: rotate(140deg) scale(0.7);
+            }
+            &--rightArrow{
+                transform: rotate(40deg) scale(0.7);
+            }
+            &--rightArrowHover{
+                transform: rotate(40deg) scale(0.7);
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px){
+    #EmotionsWheel{
+        &__image{
+            &--trianglesAndWheel{
+                height: 30%;
+            }
         }
     }
 }
