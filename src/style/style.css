@@ -812,8 +812,8 @@ body {
   font-style: normal;
   color: #FFFFFF;
   background-color: #3E3F3A;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 #thermometer__titleContainer {
   width: 100vw;
