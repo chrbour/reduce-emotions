@@ -31,15 +31,6 @@
   cursor: pointer;
 }
 
-#Home__credits {
-  font-size: 20px;
-  color: #FFFFFF;
-}
-#Home__credits:hover {
-  color: rgb(123, 123, 237);
-  cursor: pointer;
-}
-
 #Credits {
   display: flex;
   color: black;
@@ -152,6 +143,7 @@ body {
     color: #FFFFFF;
     padding: 0 80px;
     z-index: 1;
+    text-shadow: 1px 1px black;
   }
   #Home__buttonContainer {
     display: flex;
@@ -167,16 +159,21 @@ body {
     position: absolute;
     bottom: 0px;
     padding: 0 50px;
+    text-shadow: 1px 1px black;
+    font-size: 20px;
+    color: #FFFFFF;
+  }
+  #Home__credits:hover {
+    color: rgb(123, 123, 237);
+    cursor: pointer;
   }
 }
-@media screen and (max-width: 1450px) {
-  #Home__title {
-    font-size: 3em;
-  }
-}
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1024px) {
   #Home__imageContainer--image {
-    transform: translateX(-25%);
+    transform: translateX(-25%) translateY(-10%);
+  }
+  #Home__title {
+    font-size: 2.5em;
   }
 }
 @media screen and (max-width: 768px) {
@@ -202,8 +199,8 @@ body {
     color: #FFFFFF;
     padding: 20px;
     margin: 0;
-    font-size: 3em;
     text-align: center;
+    font-size: 2em;
   }
   #Home__explanations {
     color: #FFFFFF;
@@ -223,11 +220,19 @@ body {
     left: 5px;
     top: 0px;
     padding: 0 50px;
+    color: #FFFFFF;
+  }
+  #Home__credits:hover {
+    color: rgb(123, 123, 237);
+    cursor: pointer;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
   #Home__title {
-    font-size: 2em;
+    margin: 50px 0 25px;
+  }
+  #Home__explanations {
+    margin-bottom: 20px;
   }
 }
 @media screen and (min-width: 1301px) {
@@ -814,8 +819,8 @@ body {
   font-style: normal;
   color: #FFFFFF;
   background-color: #3E3F3A;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 #thermometer__titleContainer {
   width: 100vw;

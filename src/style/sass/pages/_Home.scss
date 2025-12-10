@@ -33,6 +33,7 @@
             color: $textColor;
             padding: 0 80px;
             z-index: 1;
+            text-shadow: 1px 1px black;
         }
         &__buttonContainer{
             display: flex;
@@ -48,18 +49,25 @@
             position: absolute;
             bottom: 0px;
             padding: 0 50px;
+            text-shadow: 1px 1px black;
+            font-size: 20px;
+            color: $textColor;
+            &:hover{
+                color: $textColorHover;
+                cursor: pointer;
+            }
         }
     }
 }
 
-@media screen and (max-width: 1450px){
-    #Home__title{
-        font-size: 3em;
-    }
-}
-@media screen and (max-width: 1300px){
-    #Home__imageContainer--image{
-        transform: translateX(-25%);
+@media screen and (max-width: 1024px){
+    #Home{
+        &__imageContainer--image{
+        transform: translateX(-25%) translateY(-10%);
+        }
+        &__title{
+            font-size: 2.5em;
+        }
     }
 }
 
@@ -86,9 +94,9 @@
         &__title{
             color: $textColor;
             padding: 20px;
-            margin: 0;
-            font-size: 3em;  
-            text-align: center;     
+            margin: 0; 
+            text-align: center;
+            font-size: 2em;     
         }
         &__explanations{
             color: $textColor;
@@ -108,11 +116,21 @@
             left: 5px;
             top: 0px;
             padding: 0 50px;
+             color: $textColor;
+            &:hover{
+                color: $textColorHover;
+                cursor: pointer;
+            }
         }
     }
 }
-@media screen and (max-width: 600px){
-    #Home__title{
-        font-size: 2em;
+@media screen and (max-width: 480px){
+    #Home{
+        &__title{
+            margin: 50px 0 25px;
+        }
+        &__explanations{
+            margin-bottom: 20px;
+        }
     }
 }
