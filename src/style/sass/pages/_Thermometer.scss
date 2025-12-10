@@ -1,5 +1,7 @@
 
 #thermometer{
+    position: relative;
+    z-index: 10;
     overflow: hidden;
     font-family: "Inknut Antiqua", serif;
     font-style: normal;

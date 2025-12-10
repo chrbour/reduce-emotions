@@ -805,8 +805,6 @@ body {
   }
 }
 #thermometer {
-  position: relative;
-  z-index: 10;
   overflow: hidden;
   font-family: "Inknut Antiqua", serif;
   font-style: normal;
@@ -1235,6 +1233,4 @@ input[type=checkbox]:checked:before {
     display: flex;
     flex-direction: column;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=main.css.map */
