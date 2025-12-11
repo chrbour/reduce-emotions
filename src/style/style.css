@@ -410,14 +410,15 @@ body {
   }
 }
 #Stop__title p {
-  padding: 30px;
+  padding: 20px;
+  font-size: 14px;
 }
 #Stop__imageContainerAndText {
   display: flex;
   flex-direction: column;
 }
 #Stop__imageContainer {
-  height: 40vh;
+  height: 30vh;
 }
 #Stop__textContainer {
   margin: 35px;
@@ -428,20 +429,19 @@ body {
 #Stop__text {
   text-align: start;
   display: grid;
-  grid-template: 25% 25% 25% 25%/1fr 5fr 12fr;
+  grid-template: repeat(4, auto)/1fr 5fr 12fr;
   align-items: center;
 }
 #Stop__arrowTurnLeftContainer {
-  height: 80px;
-  width: 80px;
-  margin: 20px;
+  height: 50px;
+  width: 50px;
 }
 #Stop__arrowTurnLeftIcon {
   font-size: 50px;
 }
 
 .Stop__text--initials {
-  font-size: 50px;
+  font-size: 40px;
   color: red;
   margin: 0 10px;
 }
@@ -451,7 +451,7 @@ body {
   color: white;
 }
 .Stop__text--details {
-  font-size: 16px;
+  font-size: 12px;
   padding: 10px;
   font-style: Arial;
   color: rgb(109, 15, 15);
@@ -461,7 +461,7 @@ body {
   #Stop {
     overflow: scroll;
     display: grid;
-    grid-template: 75% 1fr 5%/100%;
+    grid-template: 1fr 1fr 5%/100%;
     text-align: center;
   }
   #Stop__arrowTurnLeftContainer {
@@ -469,14 +469,6 @@ body {
   }
 }
 @media screen and (max-width: 768px) {
-  #Stop {
-    overflow: scroll;
-    display: grid;
-    grid-template: 75% 1fr 5%/100%;
-  }
-  #Stop__arrowTurnLeftContainer {
-    margin: auto;
-  }
   .Stop__text--initials {
     font-size: 30px;
   }
@@ -487,10 +479,7 @@ body {
     font-size: 11px;
   }
 }
-@media screen and (max-width: 430px) {
-  #Stop {
-    grid-template: 80% 1fr 5%/100%;
-  }
+@media screen and (max-width: 480px) {
   #Stop__title--primary {
     font-size: 2rem;
   }
