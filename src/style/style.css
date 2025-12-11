@@ -34,7 +34,6 @@
 #Credits {
   display: flex;
   color: black;
-  overflow: scroll;
   z-index: 2;
   background-color: #D1EBFC;
   width: 50%;
@@ -68,10 +67,7 @@
 @media screen and (max-width: 1024px) {
   #Credits {
     width: 80%;
-    height: 80%;
   }
-}
-@media screen and (max-width: 768px) {
   #Credits li {
     font-size: 10px;
   }
@@ -80,6 +76,9 @@
   }
 }
 @media screen and (max-width: 480px) {
+  #Credits {
+    overflow: scroll;
+  }
   #Credits p, #Credits ul {
     font-size: 10px;
   }
