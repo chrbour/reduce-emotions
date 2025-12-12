@@ -463,11 +463,6 @@ body {
     font-size: 11px;
   }
 }
-@media screen and (max-width: 480px) {
-  #Stop__title--primary {
-    font-size: 2rem;
-  }
-}
 #EmotionsWheel__title {
   display: flex;
   flex-direction: column;
