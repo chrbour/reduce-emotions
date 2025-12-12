@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .button {
   font-size: 20px;
   font-family: inknut_antiqua-bold;
@@ -114,7 +115,7 @@ body {
     color: #FFFFFF;
     background-color: #3E3F3A;
     display: grid;
-    grid-template: 20% 1fr 5%/100%;
+    grid-template: 20% 1fr 15%/100%;
     text-align: center;
     align-items: center;
     justify-items: center;
@@ -739,16 +740,19 @@ body {
 }
 @media screen and (max-width: 410px) {
   #TIPP__title--secondary {
-    margin: 50px 20px 100px;
+    margin: 50px 20px 50px;
   }
 }
 #Webresources__arrowTurnLeftContainer {
-  height: 80px;
-  width: 80px;
-  margin: 20px;
+  height: 60px;
+  width: 60px;
+  margin: 0;
 }
 #Webresources__arrowTurnLeftIcon {
-  font-size: 50px;
+  font-size: 40px;
+}
+#Webresources__imageContainer {
+  margin: -30px 0 0;
 }
 #Webresources__image {
   height: 350px;
@@ -776,8 +780,12 @@ body {
 
 @media screen and (max-width: 1300px) and (min-width: 799px) {
   #Webresources {
+    overflow: scroll;
     display: grid;
     grid-template: 100vh/40% 40% 8%;
+  }
+  #Webresources__image {
+    height: 200px;
   }
 }
 @media screen and (max-width: 798px) {
@@ -795,10 +803,17 @@ body {
     font-size: 40px;
   }
   #Webresources__image {
-    height: 250px;
+    height: 200px;
   }
   #Webresources__arrowTurnLeftContainer {
-    margin: auto;
+    margin: 20px 0;
+  }
+  #Webresources__relaxationProfonde, #Webresources__cohérenceCardiaque, #Webresources__exercicesPhysiques {
+    margin: 5px;
+  }
+  .Webresources__button {
+    font-size: 10px;
+    margin: 3px;
   }
 }
 #thermometer {

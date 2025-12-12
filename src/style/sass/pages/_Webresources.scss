@@ -1,12 +1,15 @@
 
 #Webresources{
     &__arrowTurnLeftContainer{
-        height: 80px;
-        width: 80px;
-        margin: 20px;
+        height: 60px;
+        width: 60px;
+        margin: 0;
     }
     &__arrowTurnLeftIcon{
-        font-size: 50px ;
+        font-size: 40px ;
+    }
+    &__imageContainer{
+        margin: -30px 0 0;
     }
     &__image{
         height: 350px;
@@ -33,9 +36,14 @@
 }
 @media screen and (max-width: 1300px) and (min-width: 799px){
     #Webresources{
+        overflow: scroll;
         display: grid;
         grid-template: 100vh / 40% 40% 8%;
-            }
+        
+        &__image{
+            height: 200px;
+        }
+    }
 }
 @media screen and (max-width:798px){
     #Webresources{
@@ -51,10 +59,17 @@
             font-size: 40px;
         }
         &__image{
-            height: 250px;
+            height: 200px;
         }
         &__arrowTurnLeftContainer{
-            margin: auto;
+            margin: 20px 0;
         }
+        &__relaxationProfonde, &__cohérenceCardiaque, &__exercicesPhysiques{
+            margin: 5px;
+        }
+    }
+    .Webresources__button{
+        font-size: 10px;
+        margin: 3px;
     }
 }
