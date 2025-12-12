@@ -283,8 +283,8 @@ body {
     margin: 20px 0 50px;
   }
   #Menu__options--arrowTurnLeftContainer {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     margin: 20px;
   }
   #Menu__options--arrowTurnLeftIcon {
@@ -445,7 +445,7 @@ body {
   #Stop {
     overflow: scroll;
     display: grid;
-    grid-template: 1fr 1fr 5%/100%;
+    grid-template: 1fr 1fr 15%/100%;
     text-align: center;
   }
   #Stop__arrowTurnLeftContainer {
