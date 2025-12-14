@@ -40,6 +40,12 @@
     }
 }
 
+@media screen and (max-width: 1024px) and (max-height: 600px){
+    #Menu__imageContainer{
+        transform: translateX(-30%);
+    }
+    
+}
 @media screen and (max-width: 1024px) and (min-height: 601px){
     #Menu{
         overflow: scroll;
