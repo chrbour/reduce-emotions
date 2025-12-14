@@ -749,9 +749,9 @@ body {
   }
 }
 #Webresources__arrowTurnLeftContainer {
-  height: 60px;
-  width: 60px;
-  margin: 0;
+  height: 50px;
+  width: 50px;
+  margin: 0px;
 }
 #Webresources__arrowTurnLeftIcon {
   font-size: 40px;
@@ -789,6 +789,9 @@ body {
     display: grid;
     grid-template: 100vh/40% 40% 8%;
   }
+  #Webresources__relaxationProfonde, #Webresources__cohérenceCardiaque, #Webresources__exercicesPhysiques {
+    margin: 5px;
+  }
   #Webresources__image {
     height: 200px;
   }
@@ -808,10 +811,10 @@ body {
     font-size: 40px;
   }
   #Webresources__image {
-    height: 200px;
+    height: 160px;
   }
   #Webresources__arrowTurnLeftContainer {
-    margin: 20px 0;
+    margin: -50px 0 0;
   }
   #Webresources__relaxationProfonde, #Webresources__cohérenceCardiaque, #Webresources__exercicesPhysiques {
     margin: 5px;

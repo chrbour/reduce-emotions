@@ -1,9 +1,9 @@
 
 #Webresources{
     &__arrowTurnLeftContainer{
-        height: 60px;
-        width: 60px;
-        margin: 0;
+        height: 50px;
+        width: 50px;
+        margin: 0px;
     }
     &__arrowTurnLeftIcon{
         font-size: 40px ;
@@ -39,7 +39,9 @@
         overflow: scroll;
         display: grid;
         grid-template: 100vh / 40% 40% 8%;
-        
+        &__relaxationProfonde, &__cohérenceCardiaque, &__exercicesPhysiques{
+            margin: 5px;
+        }
         &__image{
             height: 200px;
         }
@@ -59,10 +61,10 @@
             font-size: 40px;
         }
         &__image{
-            height: 200px;
+            height: 160px;
         }
         &__arrowTurnLeftContainer{
-            margin: 20px 0;
+            margin: -50px 0 0;
         }
         &__relaxationProfonde, &__cohérenceCardiaque, &__exercicesPhysiques{
             margin: 5px;
