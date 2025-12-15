@@ -36,10 +36,10 @@
 }
 #TIPP{
     &__title--secondary{
-        margin: 100px;
+        margin: 100px 10px;
     }
     &__detailsContainer{
-        height: auto;
+        height: 100%;
         width: auto;
         display: flex;
         flex-direction: column;
@@ -82,45 +82,50 @@
         text-align: center;
         align-items: center;
         justify-items: center;
+        &__detailsContainer{
+            height: 70%;
+            margin-top: -500px;
+        }
+        &__arrowTurnLeftContainer{
+        margin-top: -800px;
+    }
     }
     .TIPP__image{
-        height: 100%;
-        width: auto;
+        height: 200px;
+        width: 200px;
 }
 }
 @media screen and (max-width: 900px){
     .rectangleTipp{
         grid-template: 100% / 100%;
-        height: 21%;
+        height: auto;
     }
     .TIPP__imageContainer{
         display: none;
-}
+    }
+    #TIPP{
+        &__detailsContainer{
+            margin-top: 50px;
+        }
+        &__arrowTurnLeftContainer{
+            margin-top: 30px;
+        }
+    }
 }
 @media screen and (max-width: 500px){
     .rectangleTipp{
         height:50%;
     }
     #TIPP{
-         &__title--secondary{
-        margin: 50px 20px 50px;
-        }
         display: flex;
         flex-direction: column;
         &__arrowTurnLeftContainer{
-            margin: 40px 0;   
+            margin: 150px 0;   
             width: 100px;
             padding: 25px 0; 
         }
         &__arrowTurnLeftIcon{
             font-size: 50px ;
-        }
-    }
-}
-@media screen and (max-width: 410px){
-    #TIPP{
-         &__title--secondary{
-        margin: 50px 20px 50px;
         }
     }
 }
