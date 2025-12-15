@@ -593,9 +593,6 @@ body {
   }
 }
 @media screen and (max-width: 550px) {
-  #EmotionsWheel__title--primary {
-    font-size: 40px;
-  }
   #EmotionsWheel__title li {
     font-size: 12px;
   }
