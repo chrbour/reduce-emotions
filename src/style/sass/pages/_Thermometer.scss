@@ -224,16 +224,27 @@
             & img{
                 height: 4.55vh;
             }
+            }
         }
     }
+    #containerListOfActions{
+        grid-template: 100% / 30% 70%;
+    }
+    #listOfActions__img{
+        height: 40px !important;
+        width: 59px;
+    }
 }
-#containerListOfActions{
-    grid-template: 100% / 30% 70%;
-}
-#listOfActions__img{
-    height: 40px !important;
-    width: 59px;
-}
+
+@media screen and (max-width: 768px){
+    #thermometer{
+        position: fixed;  // Au lieu d'absolute
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;  // Plus haut que tout
+    }
 }
 
 @media screen and (max-width: 550px){
