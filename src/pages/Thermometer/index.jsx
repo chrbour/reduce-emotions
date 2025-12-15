@@ -40,7 +40,7 @@ function Thermometer() {
         setContainerColor(emotionsWithoutAction[e].color)
     }
     return (
-        <div id = "thermometer">
+        <div id = "thermometer" className = "page">
             <div id = "thermometer__titleContainer">
                 <h1 id = "thermometer__titleContainer--primary">Thermomètre des émotions</h1>
                 <div id = "thermometer__titleContainer--secondary">
