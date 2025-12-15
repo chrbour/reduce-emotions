@@ -620,7 +620,7 @@ body {
 }
 @media screen and (max-width: 400px) {
   #EmotionsWheel__image--trianglesAndWheel {
-    height: 30%;
+    width: auto;
   }
 }
 .rectangleTipp {
