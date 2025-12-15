@@ -93,4 +93,4 @@ function Thermometer() {
         </div>
     )
 }
-export default Thermometer    ;
+export default Thermometer;

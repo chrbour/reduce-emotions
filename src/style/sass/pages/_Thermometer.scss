@@ -4,13 +4,13 @@
     top: 0;
     left: 0;
     z-index: 10;
-    overflow: hidden;
+    overflow: scroll;
     font-family: "Inknut Antiqua", serif;
     font-style: normal;
     color: $textColor;
     background-color: $backgroundColor;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     &__titleContainer{
         width: 100vw;
         display: flex; 
@@ -175,81 +175,81 @@
     }
 }
 
-// @media screen and (max-width: 1000px){
-//     #thermometer{
-//         overflow: scroll;
-//         &__titleContainer--primary{
-//             font-size: 30px;
-//         }
-//         &__imageContainer{
-//             display: flex;
-//             flex-direction: column;
-//             margin-top: 0;
-//             &--image{
-//                 margin-top: 30px;
-//                 &>img{
-//                     height: 70vh
-//                 }
-//             }
-//             &--triangle {
-//                 grid-template: repeat(5, 11vh) / 5vw; 
-//                 & img{
-//                     height: 4vh;
-//                 }
-//             }
-//         } 
-//         &__frameEmotion{
-//             margin-top: -50px;
-//         }
-//     }
-//     #emotionContainer__notSelected--selectEmotions{
-//         font-size: 14px;
-//     }
+@media screen and (max-width: 1000px){
+    #thermometer{
+        overflow: scroll;
+        &__titleContainer--primary{
+            font-size: 30px;
+        }
+        &__imageContainer{
+            display: flex;
+            flex-direction: column;
+            margin-top: 0;
+            &--image{
+                margin-top: 30px;
+                &>img{
+                    height: 70vh
+                }
+            }
+            &--triangle {
+                grid-template: repeat(5, 11vh) / 5vw; 
+                & img{
+                    height: 4vh;
+                }
+            }
+        } 
+        &__frameEmotion{
+            margin-top: -50px;
+        }
+    }
+    #emotionContainer__notSelected--selectEmotions{
+        font-size: 14px;
+    }
     
-//     #listOfActions__img{
-//     height: 80px !important;
-//     width: 118px;
-//     }
-//     #containerListOfActions__text {
-//         font-size: 10px;
-//     }
-// }
+    #listOfActions__img{
+    height: 80px !important;
+    width: 118px;
+    }
+    #containerListOfActions__text {
+        font-size: 10px;
+    }
+}
 
-// @media screen and (max-width: 900px){
-//     #thermometer{
-//         &__imageContainer{
-//             &--image>img{
-//                 height:50vh
-//             }
-//             &--triangle{
-//             grid-template: repeat(5, 8vh) / 5vw; 
-//             & img{
-//                 height: 4.55vh;
-//             }
-//         }
-//         }
-//     }
-//     #containerListOfActions{
-//         grid-template: 100% / 30% 70%;
-//     }
-//     #listOfActions__img{
-//         height: 40px !important;
-//         width: 59px;
-//     }
-// }
+@media screen and (max-width: 900px){
+    #thermometer{
+        &__imageContainer{
+            &--image>img{
+                height:50vh
+            }
+            &--triangle{
+            grid-template: repeat(5, 8vh) / 5vw; 
+            & img{
+                height: 4.55vh;
+            }
+        }
+    }
+}
+#containerListOfActions{
+    grid-template: 100% / 30% 70%;
+}
+#listOfActions__img{
+    height: 40px !important;
+    width: 59px;
+}
+}
 
-// @media screen and (max-width: 550px){
-//     #thermometer__frameEmotion{
-//         width: 150px;
-//     }
-//     #emotionContainer__selected--title{
-//         font-size: 16px;
-//         margin-top: -25px;
-//     }
-//     #containerListOfActions{
-//         grid: 100% / 100%;
-//         &__contImg{
-//             display:none
-//         }
-//     }
-// }
+@media screen and (max-width: 550px){
+#thermometer__frameEmotion{
+    width: 150px;
+}
+#emotionContainer__selected--title{
+    font-size: 16px;
+    margin-top: -25px;
+}
+#containerListOfActions{
+    grid: 100% / 100%;
+    &__contImg{
+        display:none
+    }
+}
+}
