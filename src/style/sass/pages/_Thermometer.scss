@@ -1,9 +1,7 @@
 
 #thermometer{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
+    display: grid;
+    grid-template: 100% / 100%;
     overflow: scroll;
     font-family: "Inknut Antiqua", serif;
     font-style: normal;
