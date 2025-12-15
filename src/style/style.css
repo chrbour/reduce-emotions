@@ -324,7 +324,7 @@ body {
     left: 20px;
   }
   #Menu__options input {
-    font-size: 12px;
+    font-size: 14px;
   }
   #Menu__options--title {
     margin: 20px 0px;
@@ -481,6 +481,7 @@ body {
 }
 #EmotionsWheel__imageContainer {
   height: 100%;
+  margin: 50px;
   width: auto;
 }
 #EmotionsWheel__image--trianglesAndWheel {
@@ -561,7 +562,7 @@ body {
     font-size: 15px;
   }
   #EmotionsWheel__image--trianglesAndWheel {
-    height: 60%;
+    height: 80%;
   }
 }
 @media screen and (max-width: 1300px) {
@@ -599,7 +600,7 @@ body {
     font-size: 12px;
   }
   #EmotionsWheel__imageContainer {
-    margin: -200px 0;
+    margin: -150px 0;
   }
   #EmotionsWheel__image--trianglesAndWheel {
     height: 36%;
@@ -666,7 +667,7 @@ body {
   margin: 100px;
 }
 #TIPP__detailsContainer {
-  height: 100vh;
+  height: auto;
   width: auto;
   display: flex;
   flex-direction: column;

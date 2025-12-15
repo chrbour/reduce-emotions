@@ -10,7 +10,7 @@
         }
     }
     &__imageContainer{
-        height: 100%;
+        height: 100%;margin: 50px;
         width: auto;
     }
     &__image{
@@ -95,7 +95,7 @@
             font-size: 15px;
         }
         &__image--trianglesAndWheel{
-            height: 60%;
+            height: 80%;
         }
     }
 }
@@ -144,7 +144,7 @@
         }
         &__image{
             &Container{
-                margin: -200px 0
+                margin: -150px 0;
             }
             &--trianglesAndWheel{
                 height: 36%;
