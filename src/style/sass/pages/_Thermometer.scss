@@ -1,5 +1,10 @@
 
 #thermometer{
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
     display: grid;
     grid-template: 100% / 100%;
     overflow: scroll;
@@ -238,12 +243,9 @@
 
 @media screen and (max-width: 768px){
     #thermometer{
-        position: fixed;  // Au lieu d'absolute
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 100;  // Plus haut que tout
+        height: 100%;  // Au lieu de 100vh pour éviter les barres
+        min-height: 100vh;
+        background-color: $backgroundColor !important;  // Force l'opacité
     }
 }
 
