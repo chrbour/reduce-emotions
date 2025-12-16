@@ -76,6 +76,7 @@
             display: flex;
             flex-direction: column;
             padding: 10px;
+            background-color: $backgroundColor;  // ← Ajoutez ceci
         }
     }
     &__arrowTurnLeftContainer{
@@ -125,6 +126,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: $backgroundColor;  // ← Ajoutez ceci
         &--icons img{
             width: 20%;
             height:20%;
@@ -136,6 +138,7 @@
     display: grid;
     grid-template: 100% / 150px 65%;
     border: 1px solid #000000;
+    background-color: $backgroundColor;  // ← Ajoutez ceci
     &__text {
         display: flex;
         flex-wrap: wrap;

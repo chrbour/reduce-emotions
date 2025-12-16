@@ -908,6 +908,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  background-color: #3E3F3A;
 }
 #thermometer__arrowTurnLeftContainer {
   height: 80px;
@@ -953,6 +954,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #3E3F3A;
 }
 #emotionContainer__notSelected--icons img {
   width: 20%;
@@ -963,6 +965,7 @@ body {
   display: grid;
   grid-template: 100%/150px 65%;
   border: 1px solid #000000;
+  background-color: #3E3F3A;
 }
 #containerListOfActions__text {
   display: flex;
