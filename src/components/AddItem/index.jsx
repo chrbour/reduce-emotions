@@ -98,15 +98,15 @@ const AddItem = ({...props}) => {
         setTimeout(() => {updateAnswer("")}, "1500");
     }
     return(
-        <ContainerAddItem act = {act} id = "AddItem__Container" color = {color}>
-            <Label htmlFor = "newAction">Qu&apos;elle action veux-tu ajouter?</Label>
-            <Input type="text" id = "newAction" value = {answer} onChange = {inputChange}/>
-            <div>
-                <Button onClick = {validation}>Valider</Button>
-                <Button onClick = {annulation}>Annuler</Button>
-            </div>
-        </ContainerAddItem>
-        
+        // <ContainerAddItem act = {act} id = "AddItem__Container" color = {color}>
+        //     <Label htmlFor = "newAction">Qu&apos;elle action veux-tu ajouter?</Label>
+        //     <Input type="text" id = "newAction" value = {answer} onChange = {inputChange}/>
+        //     <div>
+        //         <Button onClick = {validation}>Valider</Button>
+        //         <Button onClick = {annulation}>Annuler</Button>
+        //     </div>
+        // </ContainerAddItem>
+        <p>Test</p>
     )
 }
 export default AddItem;
