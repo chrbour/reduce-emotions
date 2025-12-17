@@ -832,18 +832,13 @@ body {
   }
 }
 #thermometer {
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 100vw;
-  height: 100vh;
   overflow: scroll;
   font-family: "Inknut Antiqua", serif;
   font-style: normal;
   color: #FFFFFF;
   background-color: #3E3F3A;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 }
 #thermometer__titleContainer {
   width: 100vw;

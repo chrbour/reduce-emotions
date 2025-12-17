@@ -1,17 +1,12 @@
 
 #thermometer{
-    top: 0;
-    left: 0;
-    z-index: 100;
-    width: 100vw;
-    height: 100vh;
     overflow: scroll;
     font-family: "Inknut Antiqua", serif;
     font-style: normal;
     color: $textColor;
     background-color: $backgroundColor;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     &__titleContainer{
         width: 100vw;
         display: flex; 
