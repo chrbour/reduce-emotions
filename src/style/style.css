@@ -832,7 +832,6 @@ body {
   }
 }
 #thermometer {
-  overflow: scroll;
   font-family: "Inknut Antiqua", serif;
   font-style: normal;
   color: #FFFFFF;
@@ -993,9 +992,6 @@ body {
   }
 }
 @media screen and (max-width: 1000px) {
-  #thermometer {
-    overflow: scroll;
-  }
   #thermometer__titleContainer--primary {
     font-size: 30px;
   }

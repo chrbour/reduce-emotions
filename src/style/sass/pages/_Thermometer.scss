@@ -1,6 +1,5 @@
 
 #thermometer{
-    overflow: scroll;
     font-family: "Inknut Antiqua", serif;
     font-style: normal;
     color: $textColor;
@@ -173,7 +172,6 @@
 
 @media screen and (max-width: 1000px){
     #thermometer{
-        overflow: scroll;
         &__titleContainer--primary{
             font-size: 30px;
         }
