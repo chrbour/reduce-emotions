@@ -832,12 +832,13 @@ body {
   }
 }
 #thermometer {
+  overflow: scroll;
   font-family: "Inknut Antiqua", serif;
   font-style: normal;
   color: #FFFFFF;
   background-color: #3E3F3A;
   width: 100vw;
-  min-height: 100dvh;
+  height: 100vh;
 }
 #thermometer__titleContainer {
   width: 100vw;
@@ -942,7 +943,7 @@ body {
   margin: 10px 0;
 }
 #emotionContainer__notSelected {
-  min-height: 100dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -992,6 +993,9 @@ body {
   }
 }
 @media screen and (max-width: 1000px) {
+  #thermometer {
+    overflow: scroll;
+  }
   #thermometer__titleContainer--primary {
     font-size: 30px;
   }
@@ -1046,7 +1050,8 @@ body {
 }
 @media screen and (max-width: 768px) {
   #thermometer {
-    min-height: 100dvh;
+    height: 100%;
+    min-height: 100vh;
     background-color: #3E3F3A !important;
   }
 }
