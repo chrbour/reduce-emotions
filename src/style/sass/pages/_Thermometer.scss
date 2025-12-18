@@ -1,13 +1,12 @@
 
 #thermometer{
-    
-    overflow: scroll;
     font-family: "Inknut Antiqua", serif;
-    font-style: normal;
     color: $textColor;
     background-color: $backgroundColor;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;;
     &__titleContainer{
         width: 100vw;
         display: flex; 
@@ -47,25 +46,30 @@
     }
     &__imageContainer{
         display: flex;
-        height: 90vh;
+       min-height: auto;
         align-items: center;
         justify-content: center;
         &--image{
             display: flex;
             align-items: center;
             & img{
-                height: 90vh;
+                max-height: 90dvh;
+                width: auto;
             }
         }
         &--triangle{
             display: grid;
             align-items: center;
-            grid-template: repeat(5, 15vh) / 5vw; 
+            grid-template: repeat(5, minmax(60px, auto)) / 5vw; 
             & img{
                 height: 8vh;
             }
         }
         &--rectangle{
+            position: relative;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform: translateZ(0);
             width: 40vw;
             margin: 0 30px;
             border-radius: 30px; 
@@ -237,9 +241,7 @@
 
 @media screen and (max-width: 768px){
     #thermometer{
-        height: 100%;  // Au lieu de 100vh pour éviter les barres
-        min-height: 100vh;
-        background-color: $backgroundColor !important;  // Force l'opacité
+        min-height: 100dvh;
     }
 }
 
