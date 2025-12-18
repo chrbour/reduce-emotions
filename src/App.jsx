@@ -3,7 +3,7 @@ import Routeur from "./components/Routeur";
 
 export default function App() {
   return (
-    <StrictMode>
+    <StrictMode className="debug-no-animation">
       <Routeur/>
     </StrictMode>
   )

@@ -66,3 +66,33 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* RESET SAFE MOBILE */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* BASE */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* ROOT REACT */
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* DEBUG TEMPORAIRE — à enlever après */
+.debug-no-animation * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
