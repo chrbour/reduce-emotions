@@ -6,7 +6,7 @@ import { SavingParamsContext, EmotionsContext } from "../../utils/context/Contex
 
 const ContainerAddItem = styled.div`
     z-index: 6;
-    position: absolute;
+    position: fixed;
     padding: 20px;
     top: 50%;
     left: 50%; 
@@ -24,7 +24,7 @@ const ContainerAddItem = styled.div`
     
     @keyframes entering{
         from{
-            transform: translateX(100vw) translateY(-50%)
+            transform: translateX(100%) translateY(-50%)
         }
         to{
             transform: translateX(-50%) translateY(-50%)
@@ -35,7 +35,7 @@ const ContainerAddItem = styled.div`
             transform: translateX(-50%) translateY(-50%)
         }
         to{
-            transform: translateX(100vw) translateY(-50%);  
+            transform: translateX(100%) translateY(-50%);  
         }
     }
 `
