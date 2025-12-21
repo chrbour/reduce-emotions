@@ -91,7 +91,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  min-height: 100dvh;
+  min-height: 100d%;
   overflow-x: hidden;
 }
 
@@ -103,7 +103,7 @@ body {
 @media screen and (min-width: 769px) {
   .page {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: grid;
     grid-template: 100%/40% 1fr 8%;
     padding: 0px;
@@ -116,7 +116,7 @@ body {
 @media screen and (max-width: 768px) {
   .page {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     overflow: scroll;
     color: #FFFFFF;
     background-color: #3E3F3A;
@@ -150,7 +150,7 @@ body {
   }
   #Home__titleAndbuttons {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -207,7 +207,7 @@ body {
   #Home {
     overflow: hidden;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color: #3E3F3A;
   }
   #Home__imageContainer--image {
@@ -265,7 +265,7 @@ body {
 @media screen, screen and (max-width: 1024px) and (max-height: 600px) {
   #Menu {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
   }
   #Menu__imageContainer {
     position: absolute;
@@ -278,7 +278,7 @@ body {
     top: 0;
     left: 100px;
     width: 40vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -353,7 +353,7 @@ body {
 }
 @media screen and (min-width: 1301px) {
   #Anchor__image {
-    height: 100vh;
+    height: 100%;
   }
   #Anchor__title {
     padding: 50px;
@@ -375,7 +375,7 @@ body {
 @media screen and (max-width: 1300px) {
   #Anchor {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     overflow: scroll;
     color: #FFFFFF;
     background-color: #3E3F3A;
@@ -414,7 +414,7 @@ body {
   flex-direction: column;
 }
 #Stop__imageContainer {
-  height: 30vh;
+  height: 30%;
 }
 #Stop__textContainer {
   margin: 35px;
@@ -703,7 +703,7 @@ body {
 @media screen and (max-width: 1300px) {
   #TIPP {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     overflow: scroll;
     color: #FFFFFF;
     background-color: #3E3F3A;
@@ -796,7 +796,7 @@ body {
   #Webresources {
     overflow: scroll;
     display: grid;
-    grid-template: 100vh/40% 40% 8%;
+    grid-template: 100%/40% 40% 8%;
   }
   #Webresources__relaxationProfonde, #Webresources__cohérenceCardiaque, #Webresources__exercicesPhysiques {
     margin: 5px;
@@ -812,7 +812,7 @@ body {
 @media screen and (max-width: 798px) {
   #Webresources {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     overflow: scroll;
     color: #FFFFFF;
     background-color: #3E3F3A;
@@ -842,7 +842,7 @@ body {
   color: #FFFFFF;
   background-color: #3E3F3A;
   width: 100%;
-  min-height: 100dvh;
+  min-height: 100d%;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -892,7 +892,7 @@ body {
   align-items: center;
 }
 #thermometer__imageContainer--image img {
-  max-height: 90dvh;
+  max-height: 90d%;
   width: auto;
 }
 #thermometer__imageContainer--triangle {
@@ -901,7 +901,7 @@ body {
   grid-template: repeat(5, minmax(60px, auto))/5vw;
 }
 #thermometer__imageContainer--triangle img {
-  height: 8vh;
+  height: 8%;
 }
 #thermometer__imageContainer--rectangle {
   position: relative;
@@ -1019,13 +1019,13 @@ body {
     margin-top: 30px;
   }
   #thermometer__imageContainer--image > img {
-    height: 70vh;
+    height: 70%;
   }
   #thermometer__imageContainer--triangle {
-    grid-template: repeat(5, 11vh)/5vw;
+    grid-template: repeat(5, 11%)/5vw;
   }
   #thermometer__imageContainer--triangle img {
-    height: 4vh;
+    height: 4%;
   }
   #thermometer__frameEmotion {
     margin-top: -50px;
@@ -1043,13 +1043,13 @@ body {
 }
 @media screen and (max-width: 900px) {
   #thermometer__imageContainer--image > img {
-    height: 50vh;
+    height: 50%;
   }
   #thermometer__imageContainer--triangle {
-    grid-template: repeat(5, 8vh)/5vw;
+    grid-template: repeat(5, 8%)/5vw;
   }
   #thermometer__imageContainer--triangle img {
-    height: 4.55vh;
+    height: 4.55%;
   }
   #containerListOfActions {
     grid-template: 100%/30% 70%;
@@ -1061,7 +1061,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   #thermometer {
-    min-height: 100dvh;
+    min-height: 100d%;
   }
 }
 @media screen and (max-width: 550px) {
@@ -1081,7 +1081,7 @@ body {
 }
 #configure {
   background-color: #3E3F3A;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   color: #FFFFFF;
   overflow: scroll;
@@ -1132,7 +1132,7 @@ body {
 .configure__btn--reset {
   background: #b2ebf2;
   position: fixed;
-  bottom: 40vh;
+  bottom: 40%;
   left: 90vw;
   color: #000000;
   font-size: 16px;
@@ -1200,12 +1200,12 @@ input[type=checkbox]:checked:before {
   }
   .configure__btn--reset {
     left: 80vw;
-    top: 50vh;
+    top: 50%;
     height: 60px;
   }
   .configure__btn--cancel {
     left: 80vw;
-    top: 60vh;
+    top: 60%;
     height: 60px;
   }
   #containerListOfActionsParams {
