@@ -3,12 +3,10 @@
     font-family: "Inknut Antiqua", serif;
     color: $textColor;
     background-color: $backgroundColor;
-    width: 100%;
-    min-height: 100dvh;
-    overflow-x: hidden;
-    overflow-y: auto;;
+    width: 140%;
+    height: 100%;
     &__titleContainer{
-        width: 100vw;
+        width: 100%;
         display: flex; 
         justify-content: end;
         align-items: center;
@@ -88,10 +86,12 @@
     }
     
     &__frameEmotion{ 
-            height: 50% !important;
+            height: 50%;
             margin: auto;
         }
 }
+
+
 .thermometer{
     &__triangle{
         position: relative;

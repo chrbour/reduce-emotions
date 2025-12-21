@@ -104,18 +104,18 @@ Please change the parent <Route path="${d}"> to <Route path="${d==="/"?"*":`${d}
     
     @keyframes entering{
         from{
-            transform: translateX(100%) translateY(-50%)
+            transform: translateX(100vh) translateY(50%);
         }
         to{
-            transform: translateX(-50%) translateY(-50%)
+            transform: translateX(-50vh) translateY(50%)
         }
     }
     @keyframes closing{
         from{
-            transform: translateX(-50%) translateY(-50%)
+            transform: translateX(-50vh) translateY(50%);
         }
         to{
-            transform: translateX(100%) translateY(-50%);  
+            transform: translateX(100%vh) translateY(50%);  
         }
     }
 `,yc=U.button`
