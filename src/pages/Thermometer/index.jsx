@@ -45,7 +45,7 @@ function Thermometer() {
                 <h1 id = "thermometer__titleContainer--primary">Thermomètre des émotions</h1>
                 <div id = "thermometer__titleContainer--secondary">
                     <div id = "thermometer__titleContainer--bubble">Paramétrage des préférences</div>
-                    {/* <i className ="fa-solid fa-gear" onClick = {() => Navigate("/Configure")}></i>   */}
+                    <i className ="fa-solid fa-gear" onClick = {() => Navigate("/Configure")}></i>  
                 </div>
             </div>
         
@@ -86,7 +86,7 @@ function Thermometer() {
                 <div id = "thermometer__arrowTurnLeftContainer" className = "returnIconContainer"> 
                     <i id = "thermometer__arrowTurnLeftIcon" 
                         className = "fa-solid fa-rotate-left returnIcon"
-                        // onClick = {() => Navigate("/Menu")}
+                        onClick = {() => Navigate("/Menu")}
                         >
                     </i>
                 </div> 
