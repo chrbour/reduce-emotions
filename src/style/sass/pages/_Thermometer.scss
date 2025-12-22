@@ -3,7 +3,7 @@
     font-family: "Inknut Antiqua", serif;
     color: $textColor;
     background-color: $backgroundColor;
-    width: 140%;
+    width: 100%;
     height: 100%;
     &__titleContainer{
         width: 100%;
@@ -44,23 +44,25 @@
     }
     &__imageContainer{
         display: flex;
-       min-height: auto;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        margin: auto;
         &--image{
             display: flex;
             align-items: center;
+            height: 100%;
             & img{
-                max-height: 90dvh;
-                width: auto;
+               height: 800px;
+                
             }
         }
         &--triangle{
             display: grid;
             align-items: center;
-            grid-template: repeat(5, minmax(60px, auto)) / 5vw; 
+            grid-template: repeat(5, 125px) / 60px; 
             & img{
-                height: 8vh;
+                height: 60px;
             }
         }
         &--rectangle{
@@ -68,7 +70,7 @@
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
             transform: translateZ(0);
-            width: 40vw;
+            width: 40%;
             margin: 0 30px;
             border-radius: 30px; 
             display: flex;
@@ -189,13 +191,13 @@
             &--image{
                 margin-top: 30px;
                 &>img{
-                    height: 70vh
+                    height: 70%
                 }
             }
             &--triangle {
-                grid-template: repeat(5, 11vh) / 5vw; 
+                grid-template: repeat(5, 11%) / 5%; 
                 & img{
-                    height: 4vh;
+                    height: 4%;
                 }
             }
         } 
@@ -220,12 +222,12 @@
     #thermometer{
         &__imageContainer{
             &--image>img{
-                height:50vh
+                height:50%
             }
             &--triangle{
-            grid-template: repeat(5, 8vh) / 5vw; 
+            grid-template: repeat(5, 8%) / 5%; 
             & img{
-                height: 4.55vh;
+                height: 4.55%;
             }
             }
         }
@@ -241,7 +243,7 @@
 
 @media screen and (max-width: 768px){
     #thermometer{
-        min-height: 100dvh;
+        min-height: 100%;
     }
 }
 
