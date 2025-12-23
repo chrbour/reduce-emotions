@@ -2,6 +2,7 @@
     #Menu{
         width: 100vw;
         height: 100vh;
+        overflow: hidden;
         &__imageContainer{
             position: absolute;
             top: 0;
@@ -48,7 +49,6 @@
 }
 @media screen and (max-width: 1024px) and (min-height: 601px){
     #Menu{
-        overflow: scroll;
         display: flex;
         flex-direction: column;
         &__imageContainer{

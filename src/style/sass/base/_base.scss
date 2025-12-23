@@ -2,8 +2,8 @@
 
 @media screen and (min-width:769px){
     .page{
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         display: grid;
         grid-template: 100% / 40% 1fr 8%;
         padding: 0px;
